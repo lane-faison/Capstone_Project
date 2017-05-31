@@ -30,7 +30,7 @@ class AuthenticationVC: UIViewController {
                     // Navigate to the success VC
                     self.navigateToAuthenticatedVC()
                 } else {
-                    if let error = error as? NSError {
+                    if let error = error as NSError? {
                         // Display an error of a specific type
                         let message = self.errorMessageForLAErrorCode(errorCode: error.code)
                         self.showAlertViewAfterEvaluatingPolicyWithMessage(message: message)
@@ -41,7 +41,6 @@ class AuthenticationVC: UIViewController {
             showAlertViewForNoBiometrics()
             return
         }
-        
     }
     
     func showAlertViewAfterEvaluatingPolicyWithMessage(message: String) {
@@ -98,6 +97,5 @@ class AuthenticationVC: UIViewController {
             self.present(alertVC, animated: true, completion: nil)
         }
     }
-
 }
 

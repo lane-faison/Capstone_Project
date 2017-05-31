@@ -6,11 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AuthenticationVC-->
+        <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AuthenticationVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,44 +18,79 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9Z-Pi-t5m" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
-                                <rect key="frame" x="66" y="313" width="243" height="40"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TRK-0z-peP">
+                                <rect key="frame" x="0.0" y="101" width="375" height="421.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MissionPR_logo" translatesAutoresizingMaskIntoConstraints="NO" id="4dQ-BR-6VD">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="FTT-3X-mUT"/>
+                                            <constraint firstAttribute="width" constant="125" id="htK-m8-MFe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MissionPR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7r-qp-bR5">
+                                        <rect key="frame" x="71.5" y="135" width="232.5" height="81"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="81" id="KCn-Al-Dnt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finally, an app that makes tracking all your fitness goals easy and in one place. Let's get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhw-a3-O9a">
+                                        <rect key="frame" x="50" y="228" width="275" height="121"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="121" id="4Or-t4-v41"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9Z-Pi-t5m" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="381.5" width="275" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="275" id="SeG-pB-yaj"/>
+                                            <constraint firstAttribute="height" constant="40" id="XYZ-K6-kYJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                        <state key="normal" title="Use Touch ID">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="useTouchIdPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQF-hR-6rk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="XYZ-K6-kYJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jhw-a3-O9a" secondAttribute="trailing" constant="50" id="jpx-K8-buN"/>
+                                    <constraint firstItem="Jhw-a3-O9a" firstAttribute="leading" secondItem="TRK-0z-peP" secondAttribute="leading" constant="50" id="yoq-cS-E1K"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                <state key="normal" title="Use Touch ID">
-                                    <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.33613517999999998" green="0.69295846969999997" blue="0.92551267150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="useTouchIdPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQF-hR-6rk"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="O9Z-Pi-t5m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="2cC-gm-AbC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="O9Z-Pi-t5m" secondAttribute="trailing" constant="50" id="Kjx-HZ-sK9"/>
-                            <constraint firstItem="O9Z-Pi-t5m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gdo-kJ-MZC"/>
-                            <constraint firstItem="O9Z-Pi-t5m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hiP-bh-4wW"/>
+                            <constraint firstItem="TRK-0z-peP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8da-tS-gBk"/>
+                            <constraint firstItem="TRK-0z-peP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="93Q-eI-qAD"/>
+                            <constraint firstAttribute="trailing" secondItem="TRK-0z-peP" secondAttribute="trailing" id="ISm-NH-BNd"/>
+                            <constraint firstItem="TRK-0z-peP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YCi-ca-hzf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1Ex-hP-Ipt"/>
+                    <navigationItem key="navigationItem" title="Welcome" id="1Ex-hP-Ipt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUCCESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPG-vl-qK3">
-                                <rect key="frame" x="148.5" y="323" width="77" height="21"/>
+                                <rect key="frame" x="149" y="323" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -95,7 +129,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ecY-Sg-6bC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -111,4 +145,7 @@
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MissionPR_logo" width="400" height="512"/>
+    </resources>
 </document>
