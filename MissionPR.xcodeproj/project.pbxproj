@@ -14,6 +14,7 @@
 		F6F829901EDE2ABE00A2C183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F8298F1EDE2ABE00A2C183 /* Assets.xcassets */; };
 		F6F829931EDE2ABE00A2C183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F829911EDE2ABE00A2C183 /* LaunchScreen.storyboard */; };
 		F6F8299E1EDE306C00A2C183 /* RoundedOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */; };
+		F6F829A11EDE344200A2C183 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F6F829921EDE2ABE00A2C183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6F829941EDE2ABE00A2C183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedOutlineView.swift; sourceTree = "<group>"; };
+		F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F829A11EDE344200A2C183 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				F6F829841EDE2ABE00A2C183 /* MissionPR */,
 				F6F829831EDE2ABE00A2C183 /* Products */,
+				F6F8299F1EDE344100A2C183 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +96,14 @@
 				F6F829871EDE2ABE00A2C183 /* AuthenticationVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		F6F8299F1EDE344100A2C183 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
