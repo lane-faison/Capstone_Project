@@ -15,6 +15,7 @@
 		F6F829931EDE2ABE00A2C183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F829911EDE2ABE00A2C183 /* LaunchScreen.storyboard */; };
 		F6F8299E1EDE306C00A2C183 /* RoundedOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */; };
 		F6F829A11EDE344200A2C183 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */; };
+		F6F829A41EDEA4A300A2C183 /* stencil-army.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F6F829941EDE2ABE00A2C183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedOutlineView.swift; sourceTree = "<group>"; };
 		F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "stencil-army.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		F6F829841EDE2ABE00A2C183 /* MissionPR */ = {
 			isa = PBXGroup;
 			children = (
+				F6F829A21EDEA47600A2C183 /* Resources */,
 				F6F8299A1EDE2D1F00A2C183 /* Model */,
 				F6F8299B1EDE2D2D00A2C183 /* View */,
 				F6F8299C1EDE2D3900A2C183 /* Controller */,
@@ -104,6 +107,14 @@
 				F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6F829A21EDEA47600A2C183 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				F6F829931EDE2ABE00A2C183 /* LaunchScreen.storyboard in Resources */,
 				F6F829901EDE2ABE00A2C183 /* Assets.xcassets in Resources */,
 				F6F8298B1EDE2ABE00A2C183 /* Main.storyboard in Resources */,
+				F6F829A41EDEA4A300A2C183 /* stencil-army.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

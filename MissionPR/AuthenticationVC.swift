@@ -14,8 +14,8 @@ class AuthenticationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
+    
 
     @IBAction func useTouchIdPressed(_ sender: Any) {
         
