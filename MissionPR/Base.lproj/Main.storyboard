@@ -290,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="2871" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--GraphsVC-->
         <scene sceneID="BlO-GS-ZS7">
             <objects>
-                <viewController id="LeG-yv-NSc" sceneMemberID="viewController">
+                <viewController id="LeG-yv-NSc" customClass="GraphsVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k1s-zN-T8k"/>
                         <viewControllerLayoutGuide type="bottom" id="VfP-WO-atv"/>
@@ -301,12 +301,49 @@
                     <view key="view" contentMode="scaleToFill" id="xub-Hf-6ex">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YVk-kX-Ej3">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="BbO-kn-PLv" customClass="GoalCell" customModule="MissionPR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BbO-kn-PLv" id="sxS-xi-xGu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmS-41-vsl">
+                                                    <rect key="frame" x="8" y="8" width="304" height="84"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="tmS-41-vsl" secondAttribute="trailing" constant="8" id="2Ry-zw-sWh"/>
+                                                <constraint firstItem="tmS-41-vsl" firstAttribute="leading" secondItem="sxS-xi-xGu" secondAttribute="leading" constant="8" id="5fC-By-MRd"/>
+                                                <constraint firstAttribute="bottom" secondItem="tmS-41-vsl" secondAttribute="bottom" constant="8" id="Skf-uv-9ki"/>
+                                                <constraint firstItem="tmS-41-vsl" firstAttribute="top" secondItem="sxS-xi-xGu" secondAttribute="top" constant="8" id="s20-kM-MRF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VfP-WO-atv" firstAttribute="top" secondItem="YVk-kX-Ej3" secondAttribute="bottom" id="D3V-cP-Ose"/>
+                            <constraint firstAttribute="trailing" secondItem="YVk-kX-Ej3" secondAttribute="trailing" id="DyW-2w-Lcu"/>
+                            <constraint firstItem="YVk-kX-Ej3" firstAttribute="top" secondItem="k1s-zN-T8k" secondAttribute="bottom" id="OZt-ed-9yU"/>
+                            <constraint firstItem="YVk-kX-Ej3" firstAttribute="leading" secondItem="xub-Hf-6ex" secondAttribute="leading" id="rpu-92-izA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="YVk-kX-Ej3" id="BiS-Yw-Y7m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFh-EB-D0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3924" y="138"/>
+            <point key="canvasLocation" x="3922.5" y="137.32394366197184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ecY-Sg-6bC">
