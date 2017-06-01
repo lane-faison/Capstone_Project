@@ -179,6 +179,9 @@
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="ROQ-GA-eUT" kind="show" id="0u0-Sz-QS5"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ0-1m-FmZ">
                                                 <rect key="frame" x="13.5" y="75" width="83" height="25"/>
@@ -289,6 +292,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ja-gu-QcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2871" y="139"/>
+        </scene>
+        <!--Create New Goal-->
+        <scene sceneID="TdV-jX-lA9">
+            <objects>
+                <viewController title="Create New Goal" id="ROQ-GA-eUT" customClass="AddGoalVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SyK-5h-uh1"/>
+                        <viewControllerLayoutGuide type="bottom" id="HTJ-Oa-1Aw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wxs-Mr-NeP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVW-Jk-df8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2871" y="956"/>
         </scene>
         <!--Goals-->
         <scene sceneID="BlO-GS-ZS7">
