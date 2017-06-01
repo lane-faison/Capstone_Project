@@ -1,5 +1,5 @@
 //
-//  AddGoalVC.swift
+//  AddVisitVC.swift
 //  MissionPR
 //
 //  Created by Lane Faison on 6/1/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddGoalVC: UIViewController {
+class AddVisitVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
