@@ -21,7 +21,7 @@ class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
         tableView.delegate = self
         tableView.dataSource = self
 
-        generateTestData()
+//        generateTestData()
         attemptFetch()
     
     }
@@ -36,6 +36,7 @@ class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
         // update cell
         let goal = controller.object(at: indexPath as IndexPath)
         cell.configureCell(goalLift: goal)
+        cell.configureProgress(goalLift: goal)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,6 +126,24 @@ class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
         goal2.weight = 315
         goal2.reps = 3
         goal2.current = 245
+        
+        let goal3 = Goal_Lift(context: context)
+        goal3.name = "Deadlift"
+        goal3.weight = 400
+        goal3.reps = 1
+        goal3.current = 300
+        
+        let goal4 = Goal_Lift(context: context)
+        goal4.name = "Barbell Curl"
+        goal4.weight = 135
+        goal4.reps = 3
+        goal4.current = 50
+        
+        let goal5 = Goal_Lift(context: context)
+        goal5.name = "Shrug"
+        goal5.weight = 500
+        goal5.reps = 1
+        goal5.current = 200
         
         ad.saveContext()
     }
