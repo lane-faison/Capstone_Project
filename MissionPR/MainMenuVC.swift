@@ -55,6 +55,9 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
             print("AFTER TRY")
             if (data?.count)! > 0 {
                 print(data![0].name!)
+                setGymBtn.backgroundColor = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 1.0)
+                setGymBtn.setTitle("!", for: .normal)
+                setGymLabel.text = "Gym Location Set"
             }
         } catch {
             let error = error as NSError
