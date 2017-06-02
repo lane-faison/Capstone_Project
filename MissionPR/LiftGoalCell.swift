@@ -1,5 +1,5 @@
 //
-//  GoalCell.swift
+//  LiftGoalCell.swift
 //  MissionPR
 //
 //  Created by Lane Faison on 5/31/17.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class GoalCell: UITableViewCell {
-
+class LiftGoalCell: UITableViewCell {
+    
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var current: UILabel!
@@ -27,15 +27,25 @@ class GoalCell: UITableViewCell {
     
     func configureProgress(goalLift: Goal_Lift) {
         print("Configure process function...")
-       
+        
         let transform = CGAffineTransform(scaleX: 1.0, y: 8.0)
         self.progressView.transform = transform
         
         let progress = Float(goalLift.current)/Float(goalLift.weight)
-        let progressFactor:CGFloat = (CGFloat(progress)*255)/255
-
+        
         progressView.setProgress(Float(goalLift.current)/Float(goalLift.weight), animated: true)
-        progressView.progressTintColor = UIColor(red: 83/255, green: progressFactor, blue: 254/255, alpha: 1.0)
+        
+        if progress <= 1.00 {
+            progressView.progressTintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
+        }
+        if progress <= 0.85 {
+            progressView.progressTintColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1.0)
+        }
+        if progress <= 0.70 {
+            progressView.progressTintColor = UIColor(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
+        }
+        
+        
     }
-
+    
 }

@@ -27,12 +27,12 @@ class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath) as! GoalCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LiftGoalCell", for: indexPath) as! LiftGoalCell
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
     
-    func configureCell(cell: GoalCell, indexPath: NSIndexPath) {
+    func configureCell(cell: LiftGoalCell, indexPath: NSIndexPath) {
         // update cell
         let goal = controller.object(at: indexPath as IndexPath)
         cell.configureCell(goalLift: goal)
@@ -98,7 +98,7 @@ class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
             break
         case.update:
             if let indexPath = indexPath {
-                let cell = tableView.cellForRow(at: indexPath) as! GoalCell
+                let cell = tableView.cellForRow(at: indexPath) as! LiftGoalCell
                 // update the cell data
                 configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
@@ -123,27 +123,27 @@ class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
         
         let goal2 = Goal_Lift(context: context)
         goal2.name = "Back Squat"
-        goal2.weight = 315
-        goal2.reps = 3
-        goal2.current = 245
+        goal2.weight = 275
+        goal2.reps = 10
+        goal2.current = 205
         
         let goal3 = Goal_Lift(context: context)
         goal3.name = "Deadlift"
-        goal3.weight = 400
+        goal3.weight = 500
         goal3.reps = 1
-        goal3.current = 300
+        goal3.current = 365
         
         let goal4 = Goal_Lift(context: context)
         goal4.name = "Barbell Curl"
         goal4.weight = 135
-        goal4.reps = 3
-        goal4.current = 50
+        goal4.reps = 1
+        goal4.current = 105
         
         let goal5 = Goal_Lift(context: context)
-        goal5.name = "Shrug"
-        goal5.weight = 500
-        goal5.reps = 1
-        goal5.current = 200
+        goal5.name = "Weighted Pullups"
+        goal5.weight = 45
+        goal5.reps = 10
+        goal5.current = 30
         
         ad.saveContext()
     }
