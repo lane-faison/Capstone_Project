@@ -228,7 +228,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0x-hL-i4s" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="0.0" width="70" height="70"/>
-                                                <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="I2S-Wt-cci"/>
                                                     <constraint firstAttribute="width" constant="70" id="R9U-CF-kDg"/>
@@ -342,7 +342,6 @@
                                             <constraint firstItem="Rs1-rv-2S8" firstAttribute="leading" secondItem="0pF-Kp-SVD" secondAttribute="leading" id="6G2-m5-mSl"/>
                                             <constraint firstItem="Rs1-rv-2S8" firstAttribute="top" secondItem="0pF-Kp-SVD" secondAttribute="top" id="V3P-EE-Jdy"/>
                                             <constraint firstAttribute="trailing" secondItem="SDS-fz-rZ9" secondAttribute="trailing" id="Ycd-oP-ElH"/>
-                                            <constraint firstItem="SDS-fz-rZ9" firstAttribute="top" secondItem="Rs1-rv-2S8" secondAttribute="bottom" constant="20" id="dMi-B3-vZR"/>
                                             <constraint firstItem="SDS-fz-rZ9" firstAttribute="leading" secondItem="0pF-Kp-SVD" secondAttribute="leading" id="esc-jz-mzd"/>
                                             <constraint firstAttribute="trailing" secondItem="Rs1-rv-2S8" secondAttribute="trailing" id="vVe-Mh-weA"/>
                                         </constraints>
@@ -760,7 +759,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GoalCell" rowHeight="150" id="BbO-kn-PLv" customClass="GoalCell" customModule="MissionPR" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LiftGoalCell" rowHeight="150" id="BbO-kn-PLv" customClass="LiftGoalCell" customModule="MissionPR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BbO-kn-PLv" id="sxS-xi-xGu">
@@ -904,7 +903,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
