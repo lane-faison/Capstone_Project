@@ -22,7 +22,7 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         repsPicker.delegate = self
         repsPicker.dataSource = self
         goalPicker.delegate = self
@@ -92,6 +92,7 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         let currentWeight = self.current[currentPicker.selectedRow(inComponent: 0)]
         goal.current = Int16(currentWeight)
         ad.saveContext()
+        
     }
 
 

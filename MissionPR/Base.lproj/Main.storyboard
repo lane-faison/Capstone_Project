@@ -747,7 +747,7 @@
         <!--Goals-->
         <scene sceneID="BlO-GS-ZS7">
             <objects>
-                <viewController title="Goals" id="LeG-yv-NSc" customClass="GraphsVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="goalList" title="Goals" id="LeG-yv-NSc" customClass="GraphsVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k1s-zN-T8k"/>
                         <viewControllerLayoutGuide type="bottom" id="VfP-WO-atv"/>
@@ -902,9 +902,10 @@
         <!--Navigation Controller-->
         <scene sceneID="ecY-Sg-6bC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uO9-uf-Djl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -916,11 +917,14 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="G8l-YF-AcT">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vR3-gR-VZM"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uO9-uf-Djl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
