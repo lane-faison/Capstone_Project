@@ -33,6 +33,7 @@
 		F6F829A11EDE344200A2C183 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */; };
 		F6F829A41EDEA4A300A2C183 /* stencil-army.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */; };
 		F6FF35D11EE1384C0086C31D /* RunGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */; };
+		F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "stencil-army.ttf"; sourceTree = "<group>"; };
 		F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGoalCell.swift; sourceTree = "<group>"; };
+		F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalMenuVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				F620011A1EDF3D5B0067A794 /* MainMenuVC.swift */,
 				F693E61E1EDF9575002CCE33 /* GraphsVC.swift */,
 				F65D36121EE08823006C067A /* GoalSelectVC.swift */,
+				F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				F65D361C1EE09124006C067A /* AddVisitVC.swift in Sources */,
 				F65D36131EE08823006C067A /* GoalSelectVC.swift in Sources */,
 				F62001211EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift in Sources */,
+				F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */,
 				F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */,
 				F65D361A1EE090FF006C067A /* AddFoodVC.swift in Sources */,
 				F65D36111EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift in Sources */,
