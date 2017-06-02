@@ -335,7 +335,7 @@
                                                 <rect key="frame" x="0.0" y="60" width="318" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -386,15 +386,15 @@
                                             </pickerView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DxA-KN-Zhh">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-uc-xdQ">
                                         <rect key="frame" x="0.0" y="230" width="318" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvN-AL-ju3" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-Jg-3AY" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="iBG-79-SmS"/>
-                                                    <constraint firstAttribute="width" constant="50" id="ofD-gv-leq"/>
+                                                    <constraint firstAttribute="width" constant="50" id="GG4-QK-jJ5"/>
+                                                    <constraint firstAttribute="height" constant="50" id="beg-dA-Bfq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -407,33 +407,33 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="jIW-NQ-tiW"/>
+                                                    <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="wDz-dB-IW6"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select goal weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-UF-39c">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select current max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irj-FW-dzQ">
                                                 <rect key="frame" x="60" y="38.5" width="173" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-Fk-iR4">
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDG-h0-dJN">
                                                 <rect key="frame" x="243" y="0.0" width="75" height="100"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="mjO-22-iqH"/>
-                                                    <constraint firstAttribute="height" constant="100" id="xuQ-S4-jEk"/>
+                                                    <constraint firstAttribute="width" constant="75" id="W72-Az-0Ot"/>
+                                                    <constraint firstAttribute="height" constant="100" id="lAr-g3-SsJ"/>
                                                 </constraints>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-uc-xdQ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DxA-KN-Zhh">
                                         <rect key="frame" x="0.0" y="350" width="318" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-Jg-3AY" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvN-AL-ju3" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="GG4-QK-jJ5"/>
-                                                    <constraint firstAttribute="height" constant="50" id="beg-dA-Bfq"/>
+                                                    <constraint firstAttribute="height" constant="50" id="iBG-79-SmS"/>
+                                                    <constraint firstAttribute="width" constant="50" id="ofD-gv-leq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -446,20 +446,20 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="wDz-dB-IW6"/>
+                                                    <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="jIW-NQ-tiW"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select current weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irj-FW-dzQ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select goal max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-UF-39c">
                                                 <rect key="frame" x="60" y="38.5" width="173" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDG-h0-dJN">
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-Fk-iR4">
                                                 <rect key="frame" x="243" y="0.0" width="75" height="100"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="W72-Az-0Ot"/>
-                                                    <constraint firstAttribute="height" constant="100" id="lAr-g3-SsJ"/>
+                                                    <constraint firstAttribute="width" constant="75" id="mjO-22-iqH"/>
+                                                    <constraint firstAttribute="height" constant="100" id="xuQ-S4-jEk"/>
                                                 </constraints>
                                             </pickerView>
                                         </subviews>
@@ -902,10 +902,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ecY-Sg-6bC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uO9-uf-Djl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -925,6 +924,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vR3-gR-VZM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uO9-uf-Djl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
