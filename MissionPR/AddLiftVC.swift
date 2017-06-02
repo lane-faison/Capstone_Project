@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var repsPicker: UIPickerView!
@@ -32,6 +33,9 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         repsPicker.selectRow(0, inComponent: 0, animated: true)
         goalPicker.selectRow(19, inComponent: 0, animated: true)
         currentPicker.selectRow(19, inComponent: 0, animated: true)
+        
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
 
     }
     
@@ -72,6 +76,36 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         //update when selected
     }
     
+    @IBAction func addPressed(_ sender: Any) {
+        var goal: Goal_Lift!
+        goal = Goal_Lift(context: context)
+        
+        if let name = nameTextField.text {
+            goal.name = name
+        }
+        let reps = self.reps[repsPicker.selectedRow(inComponent: 0)]
+        goal.reps = Int16(reps)
+        
+        let goalWeight = self.goal[goalPicker.selectedRow(inComponent: 0)]
+        goal.weight = Int16(goalWeight)
+        
+        let currentWeight = self.current[currentPicker.selectedRow(inComponent: 0)]
+        goal.current = Int16(currentWeight)
+        ad.saveContext()
+    }
 
 
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+        
+    }
 }
