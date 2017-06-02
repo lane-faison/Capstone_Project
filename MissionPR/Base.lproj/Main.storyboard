@@ -482,6 +482,9 @@
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPressed:" destination="15j-Np-80E" eventType="touchUpInside" id="gOO-dt-mya"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -801,7 +804,7 @@
                                                                 <constraint firstAttribute="height" constant="52.5" id="jeQ-QA-Rnj"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="O2Y-ub-s6j">
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O2Y-ub-s6j">
                                                             <rect key="frame" x="8" y="80.5" width="343" height="2"/>
                                                             <color key="progressTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="trackTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -901,7 +904,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
