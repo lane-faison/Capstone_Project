@@ -26,17 +26,34 @@ class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
     
     }
     
+    func configureCell(cell: LiftGoalCell, indexPath: NSIndexPath) {
+        // update cell
+        let goal = controller.object(at: indexPath as IndexPath)
+        cell.configureCell(goalLift: goal)
+        cell.configureProgress(goalLift: goal)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LiftGoalCell", for: indexPath) as! LiftGoalCell
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
     
-    func configureCell(cell: LiftGoalCell, indexPath: NSIndexPath) {
-        // update cell
-        let goal = controller.object(at: indexPath as IndexPath)
-        cell.configureCell(goalLift: goal)
-        cell.configureProgress(goalLift: goal)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let objs = controller.fetchedObjects , objs.count > 0 {
+            let goal = objs[indexPath.row]
+            performSegue(withIdentifier: "editGoal", sender: goal)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editGoal" {
+            if let destination = segue.destination as? AddLiftVC {
+                if let goal = sender as? Goal_Lift {
+                    destination.goalToEdit = goal
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

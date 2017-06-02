@@ -16,13 +16,19 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     @IBOutlet weak var goalPicker: UIPickerView!
     @IBOutlet weak var currentPicker: UIPickerView!
     
+    var goalToEdit: Goal_Lift?
+    
     var reps = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     var goal = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200,205,210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295,300,305,310,315,320,325,330,335,340,345,350,355,360,365,370,375,380,385,390,395,400,405,410,415,420,425,430,435,440,445,450,455,460,465,470,475,480,485,490,495,500]
     var current = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200,205,210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295,300,305,310,315,320,325,330,335,340,345,350,355,360,365,370,375,380,385,390,395,400,405,410,415,420,425,430,435,440,445,450,455,460,465,470,475,480,485,490,495,500]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
+        
         repsPicker.delegate = self
         repsPicker.dataSource = self
         goalPicker.delegate = self
@@ -36,6 +42,10 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        if goalToEdit != nil {
+            loadGoalData()
+        }
 
     }
     
@@ -78,11 +88,17 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     
     @IBAction func addPressed(_ sender: Any) {
         var goal: Goal_Lift!
-        goal = Goal_Lift(context: context)
+        
+        if goalToEdit == nil {
+            goal = Goal_Lift(context: context)
+        } else {
+            goal = goalToEdit
+        }
         
         if let name = nameTextField.text {
             goal.name = name
         }
+        
         let reps = self.reps[repsPicker.selectedRow(inComponent: 0)]
         goal.reps = Int16(reps)
         
@@ -91,10 +107,27 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         
         let currentWeight = self.current[currentPicker.selectedRow(inComponent: 0)]
         goal.current = Int16(currentWeight)
-        ad.saveContext()
         
+        ad.saveContext()
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func loadGoalData() {
+        if let goal = goalToEdit {
+            nameTextField.text = goal.name
+            repsPicker.selectRow(0, inComponent: 0, animated: true)
+            currentPicker.selectRow(19, inComponent: 0, animated: true)
+            goalPicker.selectRow(19, inComponent: 0, animated: true)
+        }
     }
 
+    @IBAction func deletePressed(_ sender: Any) {
+        if goalToEdit != nil {
+            context.delete(goalToEdit!)
+            ad.saveContext()
+        }
+        navigationController?.popViewController(animated: true)
+    }
 
 }
 
