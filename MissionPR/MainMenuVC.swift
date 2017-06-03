@@ -17,12 +17,16 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var gymCheckInBtn: RoundedOutlineButton!
     @IBOutlet weak var setGymBtn: RoundedOutlineButton!
     @IBOutlet weak var setGymLabel: UILabel!
+    @IBOutlet weak var gymNameLabel: UILabel!
     
     var controller: NSFetchedResultsController<Gym_Location>!
+    var gymCoordinates = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gymCheckInBtn.isEnabled = false
+        gymNameLabel.isHidden = true
         
         attemptFetch()
     }
@@ -39,6 +43,12 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
         present(autocompleteController, animated: true, completion: nil)
     }
     
+    @IBAction func gymCheckInBtnPressed(_ sender: Any) {
+        
+        print("TAPPED")
+        print(gymCoordinates)
+    }
+    
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Gym_Location> = Gym_Location.fetchRequest()
         let nameSort = NSSortDescriptor(key: "name", ascending: false)
@@ -49,15 +59,17 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
         self.controller = controller
         
         do {
-            print("DO FETCH")
             try controller.performFetch()
             let data = controller.fetchedObjects
-            print("AFTER TRY")
+
             if (data?.count)! > 0 {
-                print(data![0].name!)
-                setGymBtn.backgroundColor = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 1.0)
+                gymCheckInBtn.isEnabled = true
+                gymNameLabel.isHidden = false
+                gymNameLabel.text = data![0].name!
+                setGymLabel.text = "Gym set to:"
+                
+                setGymBtn.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
                 setGymBtn.setTitle("!", for: .normal)
-                setGymLabel.text = "Gym Location Set"
             }
         } catch {
             let error = error as NSError
@@ -79,11 +91,13 @@ extension MainMenuVC: GMSAutocompleteViewControllerDelegate {
         gym.name = place.name
         gym.latitude = place.coordinate.latitude
         gym.longitude = place.coordinate.longitude
+        gymCoordinates = CLLocationCoordinate2D(latitude: gym.latitude, longitude: gym.longitude)
         ad.saveContext()
         print("Gym name: \(gym.name!)")
         print("Gym lat: \(gym.latitude)")
         print("Gym lng: \(gym.longitude)")
         dismiss(animated: true, completion: nil)
+        attemptFetch()
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
