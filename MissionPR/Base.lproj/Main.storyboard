@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="2015.2" y="138.98050974512745"/>
         </scene>
-        <!--Main Menu-->
+        <!--Home-->
         <scene sceneID="OlB-lP-hSw">
             <objects>
-                <viewController storyboardIdentifier="LoggedInVC" title="Main Menu" id="z0W-ie-S3c" customClass="MainMenuVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoggedInVC" title="Home" id="z0W-ie-S3c" customClass="MainMenuVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pvf-SK-UZ2"/>
                         <viewControllerLayoutGuide type="bottom" id="hAd-eU-oGd"/>
@@ -438,7 +438,7 @@
                                     <constraint firstAttribute="height" constant="50" id="xLY-1t-uM7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                <state key="normal" title="Add">
+                                <state key="normal" title="Save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -459,7 +459,7 @@
                             <constraint firstItem="VdE-zl-hOz" firstAttribute="centerX" secondItem="VJs-Yl-1Qu" secondAttribute="centerX" id="kaT-V9-hoS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Wi4-xx-5Nr">
+                    <navigationItem key="navigationItem" title="Lift Information" id="Wi4-xx-5Nr">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Veb-Nl-QRW">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -472,6 +472,7 @@
                         <outlet property="goalPicker" destination="sAH-Fk-iR4" id="0gu-EK-JB7"/>
                         <outlet property="nameTextField" destination="SDS-fz-rZ9" id="OTF-Ib-Zf4"/>
                         <outlet property="repsPicker" destination="Gre-7y-Cnx" id="Qve-oI-Qrw"/>
+                        <outlet property="submitBtn" destination="ccs-i7-WUA" id="OeC-A3-6OB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdX-do-ONQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -733,7 +734,7 @@
                             <constraint firstItem="vOR-JG-OiJ" firstAttribute="top" secondItem="TWt-pM-CSu" secondAttribute="bottom" constant="5" id="hRW-mu-aJi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nON-Eo-5QX"/>
+                    <navigationItem key="navigationItem" title="Categories" id="nON-Eo-5QX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GuP-k7-hMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -886,7 +887,7 @@
                             <constraint firstItem="YVk-kX-Ej3" firstAttribute="leading" secondItem="xub-Hf-6ex" secondAttribute="leading" id="rpu-92-izA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="87b-ad-tD3">
+                    <navigationItem key="navigationItem" title="List" id="87b-ad-tD3">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EM1-Fs-COv">
                             <connections>
                                 <segue destination="15j-Np-80E" kind="show" identifier="addNewGoal" id="n5C-2c-pjo"/>
@@ -902,10 +903,10 @@
             </objects>
             <point key="canvasLocation" x="5034" y="-885"/>
         </scene>
-        <!--Runs-->
+        <!--List-->
         <scene sceneID="mbZ-JT-GGF">
             <objects>
-                <viewController title="Runs" id="1CY-bl-nyH" customClass="RunsVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1CY-bl-nyH" customClass="RunsVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AOa-Zq-GfU"/>
                         <viewControllerLayoutGuide type="bottom" id="oCJ-W7-fOO"/>
@@ -915,7 +916,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="23Z-7V-k0k">
+                    <navigationItem key="navigationItem" title="List" id="23Z-7V-k0k">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gJh-qd-Xxf">
                             <connections>
                                 <segue destination="X7X-bc-XXH" kind="show" id="5ta-Dp-vWH"/>
@@ -940,7 +941,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5OU-49-awc">
+                    <navigationItem key="navigationItem" title="List" id="5OU-49-awc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FZv-xu-Pok">
                             <connections>
                                 <segue destination="Rco-4a-Xxg" kind="show" id="G7S-VP-gux"/>

@@ -15,6 +15,7 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     @IBOutlet weak var repsPicker: UIPickerView!
     @IBOutlet weak var goalPicker: UIPickerView!
     @IBOutlet weak var currentPicker: UIPickerView!
+    @IBOutlet weak var submitBtn: RoundedOutlineButton!
     
     var goalToEdit: Goal_Lift?
     
