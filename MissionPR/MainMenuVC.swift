@@ -9,8 +9,9 @@
 import UIKit
 import GooglePlaces
 import CoreData
+import CoreLocation
 
-class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
+class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var viewGoalsBtn: RoundedOutlineButton!
     @IBOutlet weak var addGoalsBtn: RoundedOutlineButton!
@@ -20,6 +21,8 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var gymNameLabel: UILabel!
     
     var controller: NSFetchedResultsController<Gym_Location>!
+    var manager = CLLocationManager()
+    var myLocation = CLLocationCoordinate2D()
     var gymCoordinates = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
@@ -28,7 +31,18 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
         gymCheckInBtn.isEnabled = false
         gymNameLabel.isHidden = true
         
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
         attemptFetch()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        print("TEST \(myLocation)")
     }
     
     @IBAction func setGymBtnPressed(_ sender: UIButton) {
@@ -47,6 +61,7 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         print("TAPPED")
         print(gymCoordinates)
+        print(myLocation)
     }
     
     func attemptFetch() {
