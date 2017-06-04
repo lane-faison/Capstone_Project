@@ -36,5 +36,7 @@
 	<array>
 		<string>stencil-army.ttf</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location so you can check in at your gym.</string>
 </dict>
 </plist>

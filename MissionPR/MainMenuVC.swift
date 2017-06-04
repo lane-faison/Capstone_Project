@@ -7,10 +7,17 @@
 //
 
 import UIKit
-import GooglePlaces
 import CoreData
+import CoreLocation
+import GooglePlaces
 
-class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
+
+class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate {
+    
+    var controller: NSFetchedResultsController<Gym_Location>!
+    var manager: CLLocationManager!
+    var myLocation = CLLocationCoordinate2D()
+    var gymCoordinates = CLLocationCoordinate2D()
     
     @IBOutlet weak var viewGoalsBtn: RoundedOutlineButton!
     @IBOutlet weak var addGoalsBtn: RoundedOutlineButton!
@@ -19,16 +26,26 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var setGymLabel: UILabel!
     @IBOutlet weak var gymNameLabel: UILabel!
     
-    var controller: NSFetchedResultsController<Gym_Location>!
-    var gymCoordinates = CLLocationCoordinate2D()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         gymCheckInBtn.isEnabled = false
         gymNameLabel.isHidden = true
         
+        DispatchQueue.main.async {
+            self.manager = CLLocationManager()
+            self.manager.delegate = self
+            self.manager.desiredAccuracy = kCLLocationAccuracyBest
+            self.manager.requestWhenInUseAuthorization()
+            self.manager.startUpdatingLocation()
+        }
+        
         attemptFetch()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        self.myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
     
     @IBAction func setGymBtnPressed(_ sender: UIButton) {
@@ -46,7 +63,8 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
     @IBAction func gymCheckInBtnPressed(_ sender: Any) {
         
         print("TAPPED")
-        print(gymCoordinates)
+        print("GymCoordinates: \(gymCoordinates)")
+        print("myLocation: \(myLocation)")
     }
     
     func attemptFetch() {
@@ -67,6 +85,8 @@ class MainMenuVC: UIViewController, NSFetchedResultsControllerDelegate {
                 gymNameLabel.isHidden = false
                 gymNameLabel.text = data![0].name!
                 setGymLabel.text = "Gym set to:"
+                
+                print("DATA: \(data![0])")
                 
                 setGymBtn.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
                 setGymBtn.setTitle("!", for: .normal)
@@ -91,7 +111,9 @@ extension MainMenuVC: GMSAutocompleteViewControllerDelegate {
         gym.name = place.name
         gym.latitude = place.coordinate.latitude
         gym.longitude = place.coordinate.longitude
+        
         gymCoordinates = CLLocationCoordinate2D(latitude: gym.latitude, longitude: gym.longitude)
+        
         ad.saveContext()
         print("Gym name: \(gym.name!)")
         print("Gym lat: \(gym.latitude)")
