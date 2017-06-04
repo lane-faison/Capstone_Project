@@ -138,33 +138,15 @@ class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
     func generateTestData() {
         let goal1 = Goal_Lift(context: context)
         goal1.name = "Flat Bench Press"
-        goal1.weight = 315
-        goal1.reps = 1
-        goal1.current = 275
+        goal1.weight = 225
+        goal1.reps = 10
+        goal1.current = 175
         
         let goal2 = Goal_Lift(context: context)
-        goal2.name = "Back Squat"
-        goal2.weight = 275
+        goal2.name = "Barbell Shoulder Press"
+        goal2.weight = 135
         goal2.reps = 10
-        goal2.current = 205
-        
-        let goal3 = Goal_Lift(context: context)
-        goal3.name = "Deadlift"
-        goal3.weight = 500
-        goal3.reps = 1
-        goal3.current = 365
-        
-        let goal4 = Goal_Lift(context: context)
-        goal4.name = "Barbell Curl"
-        goal4.weight = 135
-        goal4.reps = 1
-        goal4.current = 105
-        
-        let goal5 = Goal_Lift(context: context)
-        goal5.name = "Weighted Pullups"
-        goal5.weight = 45
-        goal5.reps = 10
-        goal5.current = 30
+        goal2.current = 95
         
         ad.saveContext()
     }
