@@ -17,20 +17,22 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
     var controller: NSFetchedResultsController<Gym_Location>!
     var manager: CLLocationManager!
     var myLocation = CLLocationCoordinate2D()
-    var gymCoordinates = CLLocationCoordinate2D()
+    var gymLocation = CLLocationCoordinate2D()
+//    var gym = Gym_Location(context: context)
     
     @IBOutlet weak var viewGoalsBtn: RoundedOutlineButton!
-    @IBOutlet weak var addGoalsBtn: RoundedOutlineButton!
     @IBOutlet weak var gymCheckInBtn: RoundedOutlineButton!
     @IBOutlet weak var setGymBtn: RoundedOutlineButton!
     @IBOutlet weak var setGymLabel: UILabel!
     @IBOutlet weak var gymNameLabel: UILabel!
+    @IBOutlet weak var gymStatusLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         gymCheckInBtn.isEnabled = false
         gymNameLabel.isHidden = true
+        gymStatusLabel.isHidden = true
         
         DispatchQueue.main.async {
             self.manager = CLLocationManager()
@@ -63,8 +65,23 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
     @IBAction func gymCheckInBtnPressed(_ sender: Any) {
         
         print("TAPPED")
-        print("GymCoordinates: \(gymCoordinates)")
+        print("GymCoordinates: \(gymLocation)")
         print("myLocation: \(myLocation)")
+        
+        let gymCoordinates = CLLocation(latitude: gymLocation.latitude, longitude: gymLocation.longitude)
+        let myCoordinates = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
+        let distance: CLLocationDistance = myCoordinates.distance(from: gymCoordinates)
+        print(distance)
+        if distance < 100 {
+            print("You are at the gym")
+            gymStatusLabel.text = "You are at the gym"
+            gymStatusLabel.isHidden = false
+        } else {
+            print("You are not at the gym")
+            gymStatusLabel.text = "You are not at the gym"
+            gymStatusLabel.isHidden = false
+        }
+        
     }
     
     func attemptFetch() {
@@ -87,6 +104,9 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
                 setGymLabel.text = "Gym set to:"
                 
                 print("DATA: \(data![0])")
+                
+                gymLocation.latitude = data![0].latitude
+                gymLocation.longitude = data![0].longitude
                 
                 setGymBtn.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
                 setGymBtn.setTitle("!", for: .normal)
@@ -112,7 +132,7 @@ extension MainMenuVC: GMSAutocompleteViewControllerDelegate {
         gym.latitude = place.coordinate.latitude
         gym.longitude = place.coordinate.longitude
         
-        gymCoordinates = CLLocationCoordinate2D(latitude: gym.latitude, longitude: gym.longitude)
+        gymLocation = CLLocationCoordinate2D(latitude: gym.latitude, longitude: gym.longitude)
         
         ad.saveContext()
         print("Gym name: \(gym.name!)")
