@@ -18,7 +18,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
     var manager: CLLocationManager!
     var myLocation = CLLocationCoordinate2D()
     var gymLocation = CLLocationCoordinate2D()
-//    var gym = Gym_Location(context: context)
+
     
     @IBOutlet weak var viewGoalsBtn: RoundedOutlineButton!
     @IBOutlet weak var gymCheckInBtn: RoundedOutlineButton!
@@ -64,14 +64,14 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
     
     @IBAction func gymCheckInBtnPressed(_ sender: Any) {
         
-        print("TAPPED")
+        print("########### TAPPED ###########")
         print("GymCoordinates: \(gymLocation)")
         print("myLocation: \(myLocation)")
         
         let gymCoordinates = CLLocation(latitude: gymLocation.latitude, longitude: gymLocation.longitude)
         let myCoordinates = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
         let distance: CLLocationDistance = myCoordinates.distance(from: gymCoordinates)
-        print(distance)
+        print("DISTANCE: \(distance)")
         if distance < 100 {
             print("You are at the gym")
             gymStatusLabel.text = "You are at the gym"
@@ -98,12 +98,11 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             let data = controller.fetchedObjects
 
             if (data?.count)! > 0 {
+                print("ALL GYM DATA: \(data!)")
                 gymCheckInBtn.isEnabled = true
                 gymNameLabel.isHidden = false
                 gymNameLabel.text = data![0].name!
                 setGymLabel.text = "Gym set to:"
-                
-                print("DATA: \(data![0])")
                 
                 gymLocation.latitude = data![0].latitude
                 gymLocation.longitude = data![0].longitude
@@ -122,22 +121,40 @@ extension MainMenuVC: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        print("Place name: \(place.name)")
-        print("Place address: \(String(describing: place.formattedAddress))")
-        print("Place attributions: \(String(describing: place.attributions))")
-        print("Place coordinates: \(place.coordinate)")
         
-        let gym = Gym_Location(context: context)
-        gym.name = place.name
-        gym.latitude = place.coordinate.latitude
-        gym.longitude = place.coordinate.longitude
+        let fetchRequest: NSFetchRequest<Gym_Location> = Gym_Location.fetchRequest()
         
-        gymLocation = CLLocationCoordinate2D(latitude: gym.latitude, longitude: gym.longitude)
+        do {
+            let array_gyms = try context.fetch(fetchRequest)
+            if array_gyms.count > 0 {
+                let gym = array_gyms[0]
+                gym.setValue(place.name, forKey: "name")
+                gym.setValue(place.coordinate.latitude, forKey: "latitude")
+                gym.setValue(place.coordinate.longitude, forKey: "longitude")
+                gymLocation = CLLocationCoordinate2D(latitude: gym.latitude, longitude: gym.longitude)
+                
+                do {
+                    try context.save()
+                    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+                    print("GYM UPDATED!!!")
+                } catch let error as NSError {
+                    print("Could not save \(error), \(error.userInfo)")
+                }  
+            } else {
+                let gym = Gym_Location(context: context)
+                gym.name = place.name
+                gym.latitude = place.coordinate.latitude
+                gym.longitude = place.coordinate.longitude
+                
+                gymLocation = CLLocationCoordinate2D(latitude: gym.latitude, longitude: gym.longitude)
+                ad.saveContext()
+                print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+                print("GYM CREATED!!!")
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
         
-        ad.saveContext()
-        print("Gym name: \(gym.name!)")
-        print("Gym lat: \(gym.latitude)")
-        print("Gym lng: \(gym.longitude)")
         dismiss(animated: true, completion: nil)
         attemptFetch()
     }
