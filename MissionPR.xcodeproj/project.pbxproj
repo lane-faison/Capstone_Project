@@ -21,6 +21,8 @@
 		F65D36161EE08FEB006C067A /* AddLiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36151EE08FEB006C067A /* AddLiftVC.swift */; };
 		F65D36181EE09055006C067A /* AddRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36171EE09055006C067A /* AddRunVC.swift */; };
 		F65D361A1EE090FF006C067A /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36191EE090FF006C067A /* AddFoodVC.swift */; };
+		F67F02E31EE5BE160065F168 /* Goal_Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F02E11EE5BE160065F168 /* Goal_Food+CoreDataClass.swift */; };
+		F67F02E41EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F02E21EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift */; };
 		F693E61F1EDF9575002CCE33 /* GraphsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693E61E1EDF9575002CCE33 /* GraphsVC.swift */; };
 		F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */; };
 		F6F829861EDE2ABE00A2C183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */; };
@@ -32,6 +34,7 @@
 		F6F8299E1EDE306C00A2C183 /* RoundedOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */; };
 		F6F829A11EDE344200A2C183 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */; };
 		F6F829A41EDEA4A300A2C183 /* stencil-army.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */; };
+		F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */; };
 		F6FF35D11EE1384C0086C31D /* RunGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */; };
 		F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */; };
 		F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D61EE1FE400086C31D /* RunsVC.swift */; };
@@ -56,6 +59,8 @@
 		F65D36151EE08FEB006C067A /* AddLiftVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLiftVC.swift; sourceTree = "<group>"; };
 		F65D36171EE09055006C067A /* AddRunVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRunVC.swift; sourceTree = "<group>"; };
 		F65D36191EE090FF006C067A /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
+		F67F02E11EE5BE160065F168 /* Goal_Food+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Food+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F67F02E21EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F693E61E1EDF9575002CCE33 /* GraphsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphsVC.swift; sourceTree = "<group>"; };
 		F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftGoalCell.swift; sourceTree = "<group>"; };
 		F6F829821EDE2ABE00A2C183 /* MissionPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissionPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +74,7 @@
 		F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedOutlineView.swift; sourceTree = "<group>"; };
 		F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "stencil-army.ttf"; sourceTree = "<group>"; };
+		F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodGoalCell.swift; sourceTree = "<group>"; };
 		F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGoalCell.swift; sourceTree = "<group>"; };
 		F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalMenuVC.swift; sourceTree = "<group>"; };
 		F6FF35D61EE1FE400086C31D /* RunsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsVC.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 		F62001221EDF5DC40067A794 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				F67F02E21EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift */,
 				F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */,
 				F65D360D1EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift */,
 				F620011F1EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift */,
@@ -157,6 +164,7 @@
 		F6F8299A1EDE2D1F00A2C183 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F67F02E11EE5BE160065F168 /* Goal_Food+CoreDataClass.swift */,
 				F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */,
 				F65D360C1EDFE715006C067A /* Goal_Visits+CoreDataClass.swift */,
 				F620011E1EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift */,
@@ -172,6 +180,7 @@
 				F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */,
 				F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */,
 				F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */,
+				F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -339,16 +348,19 @@
 				F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */,
 				F65D361A1EE090FF006C067A /* AddFoodVC.swift in Sources */,
 				F65D36111EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift in Sources */,
+				F67F02E31EE5BE160065F168 /* Goal_Food+CoreDataClass.swift in Sources */,
 				F65D360E1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift in Sources */,
 				F6FF35DB1EE1FEB50086C31D /* VisitVC.swift in Sources */,
 				F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
+				F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */,
 				F6FF35D11EE1384C0086C31D /* RunGoalCell.swift in Sources */,
 				F610904D1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift in Sources */,
 				F65D36101EDFE715006C067A /* Goal_Visits+CoreDataClass.swift in Sources */,
 				F6F829861EDE2ABE00A2C183 /* AppDelegate.swift in Sources */,
 				F610904E1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift in Sources */,
 				F65D360F1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift in Sources */,
+				F67F02E41EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift in Sources */,
 				F65D36181EE09055006C067A /* AddRunVC.swift in Sources */,
 				F6F8298E1EDE2ABE00A2C183 /* MissionPR.xcdatamodeld in Sources */,
 				F6FF35D91EE1FE9E0086C31D /* FoodVC.swift in Sources */,
