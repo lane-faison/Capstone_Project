@@ -114,11 +114,15 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     }
     
     func loadGoalData() {
-        if let goal = goalToEdit {
-            nameTextField.text = goal.name
-            repsPicker.selectRow(0, inComponent: 0, animated: true)
-            currentPicker.selectRow(19, inComponent: 0, animated: true)
-            goalPicker.selectRow(19, inComponent: 0, animated: true)
+        if let liftGoal = goalToEdit {
+            nameTextField.text = liftGoal.name
+
+            let indexOfReps = reps.index(of: Int(liftGoal.reps))
+            let indexOfCurrent = current.index(of: Int(liftGoal.current))
+            let indexOfGoal = goal.index(of: Int(liftGoal.weight))
+            repsPicker.selectRow(indexOfReps!, inComponent: 0, animated: true)
+            currentPicker.selectRow(indexOfCurrent!, inComponent: 0, animated: true)
+            goalPicker.selectRow(indexOfGoal!, inComponent: 0, animated: true)
         }
     }
 
