@@ -15,7 +15,8 @@ extension Gym_Visits {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Gym_Visits> {
         return NSFetchRequest<Gym_Visits>(entityName: "Gym_Visits")
     }
-
-    @NSManaged public var total: Int16
+    
+    @NSManaged public var date: NSDate
+    @NSManaged public var count: Int16
 
 }
