@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		592AD8B30BF18F56F967BBA7 /* Pods_MissionPR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A80AA58CDD61A549DFD44D /* Pods_MissionPR.framework */; };
+		F610904D1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F610904B1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift */; };
+		F610904E1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F610904C1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift */; };
 		F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011A1EDF3D5B0067A794 /* MainMenuVC.swift */; };
 		F620011D1EDF3F9B0067A794 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011C1EDF3F9B0067A794 /* Constants.swift */; };
 		F62001201EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011E1EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift */; };
@@ -42,6 +44,8 @@
 		336FFB2F87060AE3E2245311 /* Pods-MissionPR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissionPR.release.xcconfig"; path = "Pods/Target Support Files/Pods-MissionPR/Pods-MissionPR.release.xcconfig"; sourceTree = "<group>"; };
 		52A80AA58CDD61A549DFD44D /* Pods_MissionPR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissionPR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE882F1FE23FBA1CD47062E8 /* Pods-MissionPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissionPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MissionPR/Pods-MissionPR.debug.xcconfig"; sourceTree = "<group>"; };
+		F610904B1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Visits+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F610904C1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Visits+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F620011A1EDF3D5B0067A794 /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		F620011C1EDF3F9B0067A794 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F620011E1EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Location+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */,
 				F65D360D1EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift */,
 				F620011F1EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift */,
+				F610904C1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */,
 				F65D360C1EDFE715006C067A /* Goal_Visits+CoreDataClass.swift */,
 				F620011E1EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift */,
+				F610904B1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift */,
 				F62001221EDF5DC40067A794 /* Generated */,
 			);
 			name = Model;
@@ -342,8 +348,10 @@
 				F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
 				F6FF35D11EE1384C0086C31D /* RunGoalCell.swift in Sources */,
+				F610904D1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift in Sources */,
 				F65D36101EDFE715006C067A /* Goal_Visits+CoreDataClass.swift in Sources */,
 				F6F829861EDE2ABE00A2C183 /* AppDelegate.swift in Sources */,
+				F610904E1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift in Sources */,
 				F65D360F1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift in Sources */,
 				F65D36181EE09055006C067A /* AddRunVC.swift in Sources */,
 				F6F8298E1EDE2ABE00A2C183 /* MissionPR.xcdatamodeld in Sources */,

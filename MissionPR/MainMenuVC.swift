@@ -15,6 +15,7 @@ import GooglePlaces
 class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate {
     
     var controller: NSFetchedResultsController<Gym_Location>!
+    var controller2: NSFetchedResultsController<Gym_Visits>!
     var manager: CLLocationManager!
     var myLocation = CLLocationCoordinate2D()
     var gymLocation = CLLocationCoordinate2D()
@@ -72,10 +73,50 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         let myCoordinates = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
         let distance: CLLocationDistance = myCoordinates.distance(from: gymCoordinates)
         print("DISTANCE: \(distance)")
-        if distance < 100 {
+        if distance < 300 {
             print("You are at the gym")
             gymStatusLabel.text = "You are at the gym"
             gymStatusLabel.isHidden = false
+            
+            let fetchRequest: NSFetchRequest<Gym_Visits> = Gym_Visits.fetchRequest()
+            let numberSort = NSSortDescriptor(key: "total", ascending: false)
+            fetchRequest.sortDescriptors = [numberSort]
+            let controller2 = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            controller2.delegate = self
+            self.controller2 = controller2
+            
+            do{
+                try controller2.performFetch()
+                let data = controller2.fetchedObjects
+                
+                if (data?.count)! > 0 {
+                    print("ALL VISIT DATA: \(data!)")
+                    let visit = data![0]
+                    var currentCount = visit.total
+                    currentCount += 1
+                    visit.setValue(currentCount, forKey: "total")
+                    do {
+                        try context.save()
+                        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+                        print("VISIT COUNT UPDATED!!!")
+                        print(currentCount)
+                    } catch let error as NSError {
+                        print("Could not save \(error), \(error.userInfo)")
+                    }
+                } else {
+                    let firstVisit: Gym_Visits = Gym_Visits(context: context)
+                    firstVisit.total = 1
+                    ad.saveContext()
+                    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+                    print("COUNT CREATED!!!")
+                    print(firstVisit.total)
+                }
+            } catch {
+                let error = error as NSError
+                print("\(error)")
+            }
+            
         } else {
             print("You are not at the gym")
             gymStatusLabel.text = "You are not at the gym"
