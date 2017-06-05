@@ -977,7 +977,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-z3-uAd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodGoalCell" rowHeight="150" id="ar2-ah-Na4" customClass="FoodGoalCell" customModule="MissionPR" customModuleProvider="target">
@@ -1070,13 +1070,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTL-S6-0b8" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                <rect key="frame" x="152" y="557" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="l0d-0y-okk"/>
+                                    <constraint firstAttribute="height" constant="70" id="sDa-g6-Cbb"/>
+                                </constraints>
+                                <state key="normal" title="Camera"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ui5-z3-uAd" firstAttribute="leading" secondItem="OHz-t5-hHa" secondAttribute="leading" id="J0O-Vp-s1o"/>
-                            <constraint firstAttribute="trailing" secondItem="Ui5-z3-uAd" secondAttribute="trailing" id="PWt-h6-W31"/>
-                            <constraint firstItem="Ui5-z3-uAd" firstAttribute="top" secondItem="6aj-kD-bfy" secondAttribute="bottom" id="fhS-yz-wCW"/>
-                            <constraint firstItem="aFb-uW-gby" firstAttribute="top" secondItem="Ui5-z3-uAd" secondAttribute="bottom" id="hC2-1R-FT5"/>
+                            <constraint firstItem="aFb-uW-gby" firstAttribute="top" secondItem="Ui5-z3-uAd" secondAttribute="bottom" constant="150" id="N5l-H7-0fM"/>
+                            <constraint firstItem="Ui5-z3-uAd" firstAttribute="leading" secondItem="OHz-t5-hHa" secondAttribute="leading" id="O7O-4b-Fw8"/>
+                            <constraint firstAttribute="trailing" secondItem="Ui5-z3-uAd" secondAttribute="trailing" id="PJ9-Es-z71"/>
+                            <constraint firstItem="XTL-S6-0b8" firstAttribute="centerX" secondItem="OHz-t5-hHa" secondAttribute="centerX" id="bMd-nN-FXZ"/>
+                            <constraint firstItem="Ui5-z3-uAd" firstAttribute="top" secondItem="OHz-t5-hHa" secondAttribute="top" id="xYR-bs-1cM"/>
+                            <constraint firstItem="aFb-uW-gby" firstAttribute="top" secondItem="XTL-S6-0b8" secondAttribute="bottom" constant="40" id="yUI-LO-PeQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="5OU-49-awc">
@@ -1133,7 +1154,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
