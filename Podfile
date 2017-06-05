@@ -8,5 +8,7 @@ target 'MissionPR' do
   # Pods for MissionPR
   
 pod 'GooglePlaces'
+pod 'SwiftyJSON', '~> 3.1.4'
+
 
 end

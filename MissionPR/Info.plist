@@ -38,5 +38,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location so you can check in at your gym.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need to access your photos in order to record the food you&apos;ve eaten.</string>
 </dict>
 </plist>

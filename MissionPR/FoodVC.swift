@@ -119,8 +119,7 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         goal1.date = Date() as NSDate
         goal1.count = 1
      
-        
         ad.saveContext()
     }
-
 }
+
