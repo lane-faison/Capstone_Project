@@ -19,3 +19,7 @@ let GP_KEY: String = "AIzaSyA3M24U3IUF8X2VU_CI1YuIrPXJQidUBPA"
 //    .secondary-text-color  { color: #757575; }
 //    .divider-color         { border-color: #BDBDBD; }
 //    .green                 { green-color: #4CD964 }
+
+// TODO LIST:
+//  1. Make sure that user cannot check into gym multiple times in a row. Separate by 3 hours?
+//  2. Change main menu in some way after user has checked-in so that they know it's successful
