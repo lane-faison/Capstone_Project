@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var controller: NSFetchedResultsController<Goal_Food>!
@@ -18,10 +18,14 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
-
-//        generateTestData()
+        
+        //        generateTestData()
         attemptFetch()
     }
     
@@ -29,7 +33,7 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         // update cell
         let goal = controller.object(at: indexPath as IndexPath)
         cell.configureCell(goalFood: goal)
-//        cell.configureProgress(goalFood: goal)
+        //        cell.configureProgress(goalFood: goal)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,6 +41,8 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = controller.sections {
@@ -57,69 +63,86 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         return 150
     }
     
-    func attemptFetch() {
-        let fetchRequest: NSFetchRequest<Goal_Food> = Goal_Food.fetchRequest()
-        let foodSort = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [foodSort]
-        
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        controller.delegate = self
-        self.controller = controller
-        
-        do {
-            try self.controller.performFetch()
-        } catch {
-            let error = error as NSError
-            print("\(error)")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let objs = controller.fetchedObjects , objs.count > 0 {
+            let goal = objs[indexPath.row]
+            performSegue(withIdentifier: "updateGoal", sender: goal)
         }
     }
     
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.beginUpdates()
-    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.endUpdates()
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        switch(type) {
-        case.insert:
-            if let indexPath = newIndexPath {
-                tableView.insertRows(at: [indexPath], with: .fade)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "updateGoal" {
+            if let destination = segue.destination as? AddFoodVC {
+                if let goal = sender as? Goal_Food {
+                    destination.foodToCheck = goal
+                }
             }
-            break
-        case.delete:
-            if let indexPath = indexPath {
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-            break
-        case.update:
-            if let indexPath = indexPath {
-                let cell = tableView.cellForRow(at: indexPath) as! FoodGoalCell
-                // update the cell data
-                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
-            }
-            break
-        case.move:
-            if let indexPath = indexPath {
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-            if let indexPath = newIndexPath {
-                tableView.insertRows(at: [indexPath], with: .fade)
-            }
-            break
         }
     }
     
-    func generateTestData() {
-        let goal1 = Goal_Food(context: context)
-        goal1.name = "Apple-A-Day"
-        goal1.date = Date() as NSDate
-        goal1.count = 1
-     
-        ad.saveContext()
-    }
+        func attemptFetch() {
+            let fetchRequest: NSFetchRequest<Goal_Food> = Goal_Food.fetchRequest()
+            let foodSort = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [foodSort]
+            
+            let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            controller.delegate = self
+            self.controller = controller
+            
+            do {
+                try self.controller.performFetch()
+            } catch {
+                let error = error as NSError
+                print("\(error)")
+            }
+        }
+        
+        func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+            tableView.beginUpdates()
+        }
+        
+        func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+            tableView.endUpdates()
+        }
+        
+        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+            switch(type) {
+            case.insert:
+                if let indexPath = newIndexPath {
+                    tableView.insertRows(at: [indexPath], with: .fade)
+                }
+                break
+            case.delete:
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                break
+            case.update:
+                if let indexPath = indexPath {
+                    let cell = tableView.cellForRow(at: indexPath) as! FoodGoalCell
+                    // update the cell data
+                    configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+                }
+                break
+            case.move:
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                if let indexPath = newIndexPath {
+                    tableView.insertRows(at: [indexPath], with: .fade)
+                }
+                break
+            }
+        }
+        
+        func generateTestData() {
+            let goal1 = Goal_Food(context: context)
+            goal1.name = "Apple-A-Day"
+            goal1.date = Date() as NSDate
+            goal1.count = 1
+            
+            ad.saveContext()
+        }
 }
 

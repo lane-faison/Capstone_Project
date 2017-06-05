@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class AddFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var labelResults: UITextView!
     @IBOutlet weak var faceResults: UITextView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -22,12 +22,13 @@ class AddFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     var googleURL: URL {
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(GP_KEY)")!
     }
-    
+    var foodToCheck: Goal_Food?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-
-
+        
+        print(foodToCheck?.name)
     }
     
     //$$$$$$$$$$$$$$$$$$$$$ IMAGE RECOGNITION FUNCTIONS $$$$$$$$$$$$$$$$$$$$$$
@@ -38,8 +39,8 @@ class AddFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         
         present(imagePicker, animated: true, completion: nil)
     }
-
-
+    
+    
 }
 
 /// Image processing
