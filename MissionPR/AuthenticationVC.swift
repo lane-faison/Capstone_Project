@@ -52,7 +52,7 @@ class AuthenticationVC: UIViewController {
         
         switch errorCode {
         case LAError.appCancel.rawValue:
-            message = "Authentication was cancelled by application"
+            message = "Authentication was canceled by application"
         case LAError.authenticationFailed.rawValue:
             message = "The user failed to provide valid credentials"
         case LAError.invalidContext.rawValue:
@@ -60,7 +60,7 @@ class AuthenticationVC: UIViewController {
         case LAError.passcodeNotSet.rawValue:
             message = "Passcode is not set on the device"
         case LAError.systemCancel.rawValue:
-            message = "Authentication was cancelled by the system"
+            message = "Authentication was canceled by the system"
         case LAError.touchIDLockout.rawValue:
             message = "Too many failed attempts"
         case LAError.touchIDNotAvailable.rawValue:
