@@ -37,7 +37,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MissionPR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7r-qp-bR5">
-                                        <rect key="frame" x="68" y="135" width="239" height="81"/>
+                                        <rect key="frame" x="59.5" y="135" width="256" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="81" id="KCn-Al-Dnt"/>
                                         </constraints>
@@ -546,25 +546,6 @@
             </objects>
             <point key="canvasLocation" x="5966" y="439"/>
         </scene>
-        <!--New Gym Goal-->
-        <scene sceneID="6WL-8L-iEw">
-            <objects>
-                <viewController title="New Gym Goal" id="Thr-fp-7d9" customClass="AddVisitVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Kv2-vb-5Nf"/>
-                        <viewControllerLayoutGuide type="bottom" id="zvm-lM-NNK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Rdv-fB-30Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ZE9-RU-gXb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XpR-JM-oiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5966" y="1106"/>
-        </scene>
         <!--Goal Menu-->
         <scene sceneID="dQd-Y1-v19">
             <objects>
@@ -669,7 +650,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQ9-e7-ui2">
                                         <rect key="frame" x="0.0" y="299" width="375" height="144.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FruitPic" translatesAutoresizingMaskIntoConstraints="NO" id="ILL-gW-9D1">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruit-basket" translatesAutoresizingMaskIntoConstraints="NO" id="ILL-gW-9D1">
                                                 <rect key="frame" x="0.0" y="-0.5" width="375" height="144.5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrP-sd-bXS" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
@@ -712,7 +693,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-jg-fjK">
                                         <rect key="frame" x="0.0" y="448.5" width="375" height="144.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GymPic" translatesAutoresizingMaskIntoConstraints="NO" id="1VH-oM-z5h">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GymPic2" translatesAutoresizingMaskIntoConstraints="NO" id="1VH-oM-z5h">
                                                 <rect key="frame" x="0.0" y="-0.5" width="375" height="144.5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb2-aY-15f" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
@@ -1029,13 +1010,7 @@
                             <constraint firstItem="W5z-nx-H98" firstAttribute="centerY" secondItem="Wrx-Bj-Qz0" secondAttribute="centerY" id="Twx-j1-1mO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="t2f-l5-FSS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="41O-ls-8ez">
-                            <connections>
-                                <segue destination="Thr-fp-7d9" kind="show" id="M1i-pF-IDV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="t2f-l5-FSS"/>
                     <connections>
                         <outlet property="testLabel" destination="W5z-nx-H98" id="f3q-YZ-sKM"/>
                     </connections>
@@ -1075,11 +1050,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FruitPic" width="800" height="508"/>
-        <image name="GymPic" width="2500" height="1666"/>
+        <image name="GymPic2" width="800" height="432"/>
         <image name="LiftPic" width="1109" height="614"/>
         <image name="MissionPR_logo" width="600" height="600"/>
-        <image name="RunPic" width="640" height="427"/>
+        <image name="RunPic" width="640" height="339"/>
+        <image name="fruit-basket" width="3840" height="1782"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Hg0-AU-8gO"/>

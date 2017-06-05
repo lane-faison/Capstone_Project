@@ -90,59 +90,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             ad.saveContext()
             print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
             print("COUNT CREATED!!!")
-            print(newVisit.count)
             print(newVisit.date)
-            
-//            let fetchRequest: NSFetchRequest<Gym_Visits> = Gym_Visits.fetchRequest()
-//            let numberSort = NSSortDescriptor(key: "total", ascending: false)
-//            fetchRequest.sortDescriptors = [numberSort]
-//            let controller2 = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-//            
-//            controller2.delegate = self
-//            self.controller2 = controller2
-//            
-//            do{
-//                try controller2.performFetch()
-//                let data = controller2.fetchedObjects
-//                let visitNumber = data?.count
-//                var newVisit: Gym_Visits!
-//                newVisit.count = 1
-//                newVisit.date = Date() as NSDate
-//                ad.saveContext()
-//                print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-//                print("COUNT CREATED!!!")
-//                print(newVisit.count)
-//                print(newVisit.date)
-                
-                
-//                if (data?.count)! > 0 {
-//                    print("ALL VISIT DATA: \(data!)")
-//                    let visit = data![0]
-//                    var currentCount = visit.count
-//                    currentCount += 1
-//                    visit.setValue(currentCount, forKey: "count")
-//                    
-//                    do {
-//                        try context.save()
-//                        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-//                        print("VISIT COUNT UPDATED!!!")
-//                        print(currentCount)
-//                    } catch let error as NSError {
-//                        print("Could not save \(error), \(error.userInfo)")
-//                    }
-//                } else {
-//                    let newVisit: Gym_Visits = Gym_Visits(context: context)
-//                    newVisit.count = 1
-//                    ad.saveContext()
-//                    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-//                    print("COUNT CREATED!!!")
-//                    print(newVisit.count)
-//                }
-//            } catch {
-//                let error = error as NSError
-//                print("\(error)")
-//            }
-            
         } else {
             print("You are not at the gym")
             gymStatusLabel.text = "You are not at the gym"

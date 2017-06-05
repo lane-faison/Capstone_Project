@@ -21,7 +21,6 @@
 		F65D36161EE08FEB006C067A /* AddLiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36151EE08FEB006C067A /* AddLiftVC.swift */; };
 		F65D36181EE09055006C067A /* AddRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36171EE09055006C067A /* AddRunVC.swift */; };
 		F65D361A1EE090FF006C067A /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36191EE090FF006C067A /* AddFoodVC.swift */; };
-		F65D361C1EE09124006C067A /* AddVisitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D361B1EE09124006C067A /* AddVisitVC.swift */; };
 		F693E61F1EDF9575002CCE33 /* GraphsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693E61E1EDF9575002CCE33 /* GraphsVC.swift */; };
 		F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */; };
 		F6F829861EDE2ABE00A2C183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */; };
@@ -57,7 +56,6 @@
 		F65D36151EE08FEB006C067A /* AddLiftVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLiftVC.swift; sourceTree = "<group>"; };
 		F65D36171EE09055006C067A /* AddRunVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRunVC.swift; sourceTree = "<group>"; };
 		F65D36191EE090FF006C067A /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
-		F65D361B1EE09124006C067A /* AddVisitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVisitVC.swift; sourceTree = "<group>"; };
 		F693E61E1EDF9575002CCE33 /* GraphsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphsVC.swift; sourceTree = "<group>"; };
 		F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftGoalCell.swift; sourceTree = "<group>"; };
 		F6F829821EDE2ABE00A2C183 /* MissionPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissionPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +115,6 @@
 				F65D36151EE08FEB006C067A /* AddLiftVC.swift */,
 				F65D36171EE09055006C067A /* AddRunVC.swift */,
 				F65D36191EE090FF006C067A /* AddFoodVC.swift */,
-				F65D361B1EE09124006C067A /* AddVisitVC.swift */,
 			);
 			name = "Add Controller";
 			sourceTree = "<group>";
@@ -337,7 +334,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F65D361C1EE09124006C067A /* AddVisitVC.swift in Sources */,
 				F62001211EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift in Sources */,
 				F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */,
 				F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */,
