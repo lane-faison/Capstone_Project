@@ -501,6 +501,10 @@
                         <outlet property="goalPicker" destination="sAH-Fk-iR4" id="0gu-EK-JB7"/>
                         <outlet property="nameTextField" destination="SDS-fz-rZ9" id="OTF-Ib-Zf4"/>
                         <outlet property="repsPicker" destination="Gre-7y-Cnx" id="Qve-oI-Qrw"/>
+                        <outlet property="step1Label" destination="FTc-eS-YHT" id="iLw-ym-8lc"/>
+                        <outlet property="step2Label" destination="1Po-Nn-Oqi" id="GmS-p6-J3F"/>
+                        <outlet property="step3Label" destination="irj-FW-dzQ" id="zdC-12-Bac"/>
+                        <outlet property="step4Label" destination="sxh-UF-39c" id="dej-69-Str"/>
                         <outlet property="submitBtn" destination="ccs-i7-WUA" id="OeC-A3-6OB"/>
                     </connections>
                 </viewController>
@@ -1024,7 +1028,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
