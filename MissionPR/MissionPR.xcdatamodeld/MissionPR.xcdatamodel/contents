@@ -20,10 +20,14 @@
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Gym_Visits" representedClassName=".Gym_Visits" syncable="YES">
+        <attribute name="total" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Goal_Lift" positionX="-54" positionY="18" width="128" height="105"/>
+        <element name="Goal_Run" positionX="-45" positionY="27" width="128" height="90"/>
         <element name="Goal_Visits" positionX="-36" positionY="45" width="128" height="75"/>
         <element name="Gym_Location" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Goal_Run" positionX="-45" positionY="27" width="128" height="90"/>
+        <element name="Gym_Visits" positionX="-45" positionY="27" width="128" height="60"/>
     </elements>
 </model>
