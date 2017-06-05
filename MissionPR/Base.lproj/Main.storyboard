@@ -566,7 +566,6 @@
                                 <rect key="frame" x="0.0" y="194" width="375" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="7mY-yK-5KC"/>
                                     <constraint firstAttribute="height" constant="120" id="iMY-OD-Wsd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1035,7 +1034,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-z3-uAd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodGoalCell" rowHeight="150" id="ar2-ah-Na4" customClass="FoodGoalCell" customModule="MissionPR" customModuleProvider="target">
@@ -1128,48 +1127,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTL-S6-0b8" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
-                                <rect key="frame" x="152" y="557" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="l0d-0y-okk"/>
-                                    <constraint firstAttribute="height" constant="70" id="sDa-g6-Cbb"/>
-                                </constraints>
-                                <state key="normal" title="Camera"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="findPhotoBtnPressed:" destination="eFU-L0-sHn" eventType="touchUpInside" id="Clp-xm-G2g"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aFb-uW-gby" firstAttribute="top" secondItem="Ui5-z3-uAd" secondAttribute="bottom" constant="150" id="N5l-H7-0fM"/>
+                            <constraint firstItem="aFb-uW-gby" firstAttribute="top" secondItem="Ui5-z3-uAd" secondAttribute="bottom" id="N5l-H7-0fM"/>
                             <constraint firstItem="Ui5-z3-uAd" firstAttribute="leading" secondItem="OHz-t5-hHa" secondAttribute="leading" id="O7O-4b-Fw8"/>
                             <constraint firstAttribute="trailing" secondItem="Ui5-z3-uAd" secondAttribute="trailing" id="PJ9-Es-z71"/>
-                            <constraint firstItem="XTL-S6-0b8" firstAttribute="centerX" secondItem="OHz-t5-hHa" secondAttribute="centerX" id="bMd-nN-FXZ"/>
                             <constraint firstItem="Ui5-z3-uAd" firstAttribute="top" secondItem="OHz-t5-hHa" secondAttribute="top" id="xYR-bs-1cM"/>
-                            <constraint firstItem="aFb-uW-gby" firstAttribute="top" secondItem="XTL-S6-0b8" secondAttribute="bottom" constant="40" id="yUI-LO-PeQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="5OU-49-awc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FZv-xu-Pok">
-                            <connections>
-                                <segue destination="Rco-4a-Xxg" kind="show" id="G7S-VP-gux"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FZv-xu-Pok"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Ui5-z3-uAd" id="Chu-To-CAt"/>
+                        <segue destination="Rco-4a-Xxg" kind="show" identifier="updateGoal" id="wXr-Y1-Eo9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfO-CA-1AK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1248,6 +1220,6 @@
         <image name="fruit-basket" width="3840" height="1782"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hg0-AU-8gO"/>
+        <segue reference="n5C-2c-pjo"/>
     </inferredMetricsTieBreakers>
 </document>
