@@ -52,7 +52,7 @@ class AuthenticationVC: UIViewController {
         
         switch errorCode {
         case LAError.appCancel.rawValue:
-            message = "Authentication was canceled by application"
+            message = "Authentication was cancelled by application"
         case LAError.authenticationFailed.rawValue:
             message = "The user failed to provide valid credentials"
         case LAError.invalidContext.rawValue:
