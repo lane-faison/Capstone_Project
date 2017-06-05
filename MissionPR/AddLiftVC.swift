@@ -11,6 +11,12 @@ import CoreData
 
 class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
 
+    @IBOutlet weak var step1Label: UILabel!
+    @IBOutlet weak var step2Label: UILabel!
+    @IBOutlet weak var step3Label: UILabel!
+    @IBOutlet weak var step4Label: UILabel!
+    
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var repsPicker: UIPickerView!
     @IBOutlet weak var goalPicker: UIPickerView!
@@ -46,6 +52,10 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         
         if goalToEdit != nil {
             loadGoalData()
+            step1Label.text = "Edit your goal's name"
+            step2Label.text = "Change number of reps"
+            step3Label.text = "Update current max"
+            step4Label.text = "Update goal max"
         }
 
     }
