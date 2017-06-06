@@ -25,15 +25,18 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.delegate = self
         tableView.dataSource = self
         
-//        generateTestData()
+        //        generateTestData()
         attemptFetch()
     }
     
     func configureCell(cell: FoodGoalCell, indexPath: NSIndexPath) {
         // update cell
+        
         let goal = controller.object(at: indexPath as IndexPath)
+//        cell.attemptFetch()
         cell.configureCell(goalFood: goal)
-        //        cell.configureProgress(goalFood: goal)
+
+        // cell.configureProgress(goalFood: goal)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,8 +44,6 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
-    
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = controller.sections {
@@ -80,76 +81,72 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
-        func attemptFetch() {
-            let fetchRequest: NSFetchRequest<Goal_Food> = Goal_Food.fetchRequest()
-            let foodSort = NSSortDescriptor(key: "name", ascending: true)
-            fetchRequest.sortDescriptors = [foodSort]
-            
-            let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            
-            controller.delegate = self
-            self.controller = controller
-            
-            do {
-                try self.controller.performFetch()
-            } catch {
-                let error = error as NSError
-                print("\(error)")
+    func attemptFetch() {
+        let fetchRequest: NSFetchRequest<Goal_Food> = Goal_Food.fetchRequest()
+        let foodSort = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [foodSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self
+        self.controller = controller
+        
+        do {
+            try self.controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch(type) {
+        case.insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
             }
-        }
-        
-        func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            tableView.beginUpdates()
-        }
-        
-        func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            tableView.endUpdates()
-        }
-        
-        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-            switch(type) {
-            case.insert:
-                if let indexPath = newIndexPath {
-                    tableView.insertRows(at: [indexPath], with: .fade)
-                }
-                break
-            case.delete:
-                if let indexPath = indexPath {
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-                break
-            case.update:
-                if let indexPath = indexPath {
-                    let cell = tableView.cellForRow(at: indexPath) as! FoodGoalCell
-                    // update the cell data
-                    configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
-                }
-                break
-            case.move:
-                if let indexPath = indexPath {
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-                if let indexPath = newIndexPath {
-                    tableView.insertRows(at: [indexPath], with: .fade)
-                }
-                break
+            break
+        case.delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
+            break
+        case.update:
+            if let indexPath = indexPath {
+                let cell = tableView.cellForRow(at: indexPath) as! FoodGoalCell
+                // update the cell data
+                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+            }
+            break
+        case.move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
         }
+    }
+    
+    func generateTestData() {
+        let goal1 = Goal_Food(context: context)
+        goal1.name = "Fruit"
+        goal1.date = Date() as NSDate
         
-        func generateTestData() {
-            let goal1 = Goal_Food(context: context)
-            goal1.name = "Fruit"
-            goal1.date = Date() as NSDate
-            
-            let goal2 = Goal_Food(context: context)
-            goal2.name = "Vegetables"
-            goal2.date = Date() as NSDate
-            
-            let goal3 = Goal_Food(context: context)
-            goal3.name = "Dairy"
-            goal3.date = Date() as NSDate
-            
-            ad.saveContext()
-        }
+        let goal2 = Goal_Food(context: context)
+        goal2.name = "Vegetables"
+        goal2.date = Date() as NSDate
+
+        ad.saveContext()
+    }
 }
 

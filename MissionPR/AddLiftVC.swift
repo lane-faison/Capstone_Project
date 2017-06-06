@@ -16,7 +16,6 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     @IBOutlet weak var step3Label: UILabel!
     @IBOutlet weak var step4Label: UILabel!
     
-    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var repsPicker: UIPickerView!
     @IBOutlet weak var goalPicker: UIPickerView!
@@ -57,7 +56,6 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
             step3Label.text = "Update current max"
             step4Label.text = "Update goal max"
         }
-
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
