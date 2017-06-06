@@ -18,8 +18,13 @@ class FoodGoalCell: UITableViewCell {
     
     func configureCell(goalFood: Goal_Food) {
         view.layer.cornerRadius = 5
-        name.text = goalFood.name
         
+        if goalFood.name == "fruit" {
+            name.text = "Fruit"
+        }
+        if goalFood.name == "vegetable" {
+            name.text = "Vegetables"
+        }        
     }
     
 }

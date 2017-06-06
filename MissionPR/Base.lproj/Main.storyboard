@@ -37,7 +37,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MissionPR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7r-qp-bR5">
-                                        <rect key="frame" x="68" y="135" width="239" height="81"/>
+                                        <rect key="frame" x="59.5" y="135" width="256" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="81" id="KCn-Al-Dnt"/>
                                         </constraints>
@@ -562,21 +562,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-fJ-DDG">
-                                <rect key="frame" x="0.0" y="194" width="375" height="120"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="iMY-OD-Wsd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mCL-Hs-qQe">
-                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="XoN-7M-F9J"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -585,20 +570,12 @@
                             <constraint firstItem="RCi-CX-Rax" firstAttribute="centerY" secondItem="Sdp-Yx-zer" secondAttribute="centerY" id="Lmz-ON-md2"/>
                             <constraint firstAttribute="trailing" secondItem="3aV-fg-2xS" secondAttribute="trailing" id="MX9-ci-Quk"/>
                             <constraint firstItem="3aV-fg-2xS" firstAttribute="top" secondItem="WA3-KB-TyQ" secondAttribute="bottom" id="V9j-mo-SGJ"/>
-                            <constraint firstAttribute="trailing" secondItem="lhg-fJ-DDG" secondAttribute="trailing" id="WJ3-7b-xdu"/>
-                            <constraint firstItem="ToM-1h-tll" firstAttribute="top" secondItem="mCL-Hs-qQe" secondAttribute="bottom" id="Wft-TW-pr2"/>
-                            <constraint firstAttribute="trailing" secondItem="mCL-Hs-qQe" secondAttribute="trailing" id="ie4-zX-7KW"/>
-                            <constraint firstItem="mCL-Hs-qQe" firstAttribute="leading" secondItem="Sdp-Yx-zer" secondAttribute="leading" id="knf-qo-Ap2"/>
                             <constraint firstItem="Eje-Ek-GY1" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="mZ1-eI-Jp9"/>
                             <constraint firstItem="RCi-CX-Rax" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="nkG-3J-hmT"/>
-                            <constraint firstItem="lhg-fJ-DDG" firstAttribute="leading" secondItem="Sdp-Yx-zer" secondAttribute="leading" id="qU4-lD-BBn"/>
-                            <constraint firstItem="lhg-fJ-DDG" firstAttribute="top" secondItem="3aV-fg-2xS" secondAttribute="bottom" constant="10" id="zwI-kd-Ypc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ToX-4q-MsW"/>
                     <connections>
-                        <outlet property="faceResults" destination="lhg-fJ-DDG" id="pBS-92-pqd"/>
-                        <outlet property="imageView" destination="mCL-Hs-qQe" id="fei-ZS-e4z"/>
                         <outlet property="labelResults" destination="3aV-fg-2xS" id="1aO-NO-Vq0"/>
                         <outlet property="spinner" destination="Eje-Ek-GY1" id="Mu4-9T-Xnk"/>
                     </connections>
@@ -994,7 +971,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dm8-kk-uw4" id="UOm-1w-0GD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1266,7 +1243,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

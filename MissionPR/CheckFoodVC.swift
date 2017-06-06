@@ -7,15 +7,13 @@
 //
 
 import UIKit
+import CoreData
 import SwiftyJSON
 
 class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var labelResults: UITextView!
-    @IBOutlet weak var faceResults: UITextView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
-    @IBOutlet weak var imageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
     let session = URLSession.shared
@@ -23,10 +21,12 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(GP_KEY)")!
     }
     var foodToCheck: Goal_Food!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imagePicker.delegate = self
+        spinner.isHidden = true
         
         if foodToCheck != nil {
             print(foodToCheck.name!)
@@ -41,8 +41,6 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         
         present(imagePicker, animated: true, completion: nil)
     }
-    
-    
 }
 
 /// Image processing
@@ -54,16 +52,14 @@ extension CheckFoodVC {
         // Update UI on the main thread
         DispatchQueue.main.async(execute: {
             
-            
             // Use SwiftyJSON to parse results
             let json = JSON(data: dataToParse)
             let errorObj: JSON = json["error"]
             
             self.spinner.stopAnimating()
-            self.imageView.isHidden = true
             self.labelResults.isHidden = false
-            self.faceResults.isHidden = false
-            self.faceResults.text = ""
+//            self.faceResults.isHidden = false
+//            self.faceResults.text = ""
             
             // Check for errors
             if (errorObj.dictionaryValue != [:]) {
@@ -74,36 +70,36 @@ extension CheckFoodVC {
                 let responses: JSON = json["responses"][0]
                 
                 // Get face annotations
-                let faceAnnotations: JSON = responses["faceAnnotations"]
-                if faceAnnotations != nil {
-                    let emotions: Array<String> = ["joy", "sorrow", "surprise", "anger"]
-                    
-                    let numPeopleDetected:Int = faceAnnotations.count
-                    
-                    self.faceResults.text = "People detected: \(numPeopleDetected)\n\nEmotions detected:\n"
-                    
-                    var emotionTotals: [String: Double] = ["sorrow": 0, "joy": 0, "surprise": 0, "anger": 0]
-                    var emotionLikelihoods: [String: Double] = ["VERY_LIKELY": 0.9, "LIKELY": 0.75, "POSSIBLE": 0.5, "UNLIKELY":0.25, "VERY_UNLIKELY": 0.0]
-                    
-                    for index in 0..<numPeopleDetected {
-                        let personData:JSON = faceAnnotations[index]
-                        
-                        // Sum all the detected emotions
-                        for emotion in emotions {
-                            let lookup = emotion + "Likelihood"
-                            let result:String = personData[lookup].stringValue
-                            emotionTotals[emotion]! += emotionLikelihoods[result]!
-                        }
-                    }
-                    // Get emotion likelihood as a % and display in UI
-                    for (emotion, total) in emotionTotals {
-                        let likelihood:Double = total / Double(numPeopleDetected)
-                        let percent: Int = Int(round(likelihood * 100))
-                        self.faceResults.text! += "\(emotion): \(percent)%\n"
-                    }
-                } else {
-                    self.faceResults.text = "No faces found"
-                }
+                //                let faceAnnotations: JSON = responses["faceAnnotations"]
+                //                if faceAnnotations != nil {
+                //                    let emotions: Array<String> = ["joy", "sorrow", "surprise", "anger"]
+                //
+                //                    let numPeopleDetected:Int = faceAnnotations.count
+                //
+                //                    self.faceResults.text = "People detected: \(numPeopleDetected)\n\nEmotions detected:\n"
+                //
+                //                    var emotionTotals: [String: Double] = ["sorrow": 0, "joy": 0, "surprise": 0, "anger": 0]
+                //                    var emotionLikelihoods: [String: Double] = ["VERY_LIKELY": 0.9, "LIKELY": 0.75, "POSSIBLE": 0.5, "UNLIKELY":0.25, "VERY_UNLIKELY": 0.0]
+                //
+                //                    for index in 0..<numPeopleDetected {
+                //                        let personData:JSON = faceAnnotations[index]
+                //
+                //                        // Sum all the detected emotions
+                //                        for emotion in emotions {
+                //                            let lookup = emotion + "Likelihood"
+                //                            let result:String = personData[lookup].stringValue
+                //                            emotionTotals[emotion]! += emotionLikelihoods[result]!
+                //                        }
+                //                    }
+                //                    // Get emotion likelihood as a % and display in UI
+                //                    for (emotion, total) in emotionTotals {
+                //                        let likelihood:Double = total / Double(numPeopleDetected)
+                //                        let percent: Int = Int(round(likelihood * 100))
+                //                        self.faceResults.text! += "\(emotion): \(percent)%\n"
+                //                    }
+                //                } else {
+                //                    self.faceResults.text = "No faces found"
+                //                }
                 
                 // Get label annotations
                 let labelAnnotations: JSON = responses["labelAnnotations"]
@@ -116,14 +112,25 @@ extension CheckFoodVC {
                         labels.append(label)
                     }
                     for label in labels {
-                        // if it's not the last item add a comma
-                        if labels[labels.count - 1] != label {
-                            labelResultsText += "\(label), "
+                        
+                        
+                        labelResultsText += "\(label), "
+                        
+                        if label == self.foodToCheck.name {
+                            print("$$$$$ We have detected a \(self.foodToCheck.name!)!")
+                            var foodFound: Food_Log!
+                            foodFound = Food_Log(context: context)
+                            foodFound.name = label
+                            foodFound.date = Date() as NSDate
+                            ad.saveContext()
+                            self.spinner.isHidden = true
+                            return
                         } else {
-                            labelResultsText += "\(label)"
+                            self.spinner.isHidden = true
+                            print("$$$$$ We did not find a match")
                         }
                     }
-                    self.labelResults.text = labelResultsText
+//                    self.labelResults.text = labelResultsText
                 } else {
                     self.labelResults.text = "No labels found"
                 }
@@ -134,10 +141,11 @@ extension CheckFoodVC {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFit
-            imageView.isHidden = true // You could optionally display the image here by setting imageView.image = pickedImage
+            //            imageView.contentMode = .scaleAspectFit
+            //            imageView.isHidden = true // You could optionally display the image here by setting imageView.image = pickedImage
+            spinner.isHidden = false
             spinner.startAnimating()
-            faceResults.isHidden = true
+//            faceResults.isHidden = true
             labelResults.isHidden = true
             
             // Base64 encode the image and create the request
