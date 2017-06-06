@@ -24,17 +24,23 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
     func configureCell(goalFood: Goal_Food) {
         view.layer.cornerRadius = 5
         
-        goal.text = "31"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        let nameOfMonth = dateFormatter.string(from: Date() as Date)
+        
+        let interval = Calendar.current.dateInterval(of: .month, for: Date() as Date)!
+        let daysInMonth = Calendar.current.dateComponents([.day], from: interval.start, to: interval.end).day!
+        goal.text = "\(daysInMonth)"
 
 //        attemptFetch()
         
         if goalFood.name == "fruit" {
-            name.text = "Fruit"
+            name.text = "🍎 Fruit in \(nameOfMonth)"
             attemptFetch()
             current.text = "\(totalFruit)"
         }
         if goalFood.name == "vegetable" {
-            name.text = "Vegetables"
+            name.text = "🥕 Vegetables in \(nameOfMonth)"
             attemptFetch()
             current.text = "\(totalVegetables)"
         }

@@ -123,7 +123,9 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
                 gymLocation.longitude = data![0].longitude
                 
                 setGymBtn.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
-                setGymBtn.setTitle("!", for: .normal)
+                setGymBtn.setTitle("🏋🏽", for: .normal)
+                let whiteFontColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+                setGymBtn.setTitleColor(whiteFontColor, for: .normal)
             }
         } catch {
             let error = error as NSError
