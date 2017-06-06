@@ -14,6 +14,7 @@ import SwiftyJSON
 class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var labelResults: UITextView!
+    @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     let imagePicker = UIImagePickerController()
@@ -26,8 +27,13 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
+        
         imagePicker.delegate = self
         spinner.isHidden = true
+        resultsLabel.isHidden = true
         
         if foodToCheck != nil {
             print(foodToCheck.name!)
@@ -133,13 +139,19 @@ extension CheckFoodVC {
                             foodFound.date = Date() as NSDate
                             ad.saveContext()
                             self.spinner.isHidden = true
+                            let nameCapitalized = label.capitalized
+                            self.resultsLabel.text = "Success! \(nameCapitalized) detected!"
+                            self.resultsLabel.isHidden = false
                             return
                         } else {
-                            self.spinner.isHidden = true
+
                             print("$$$$$ We did not find a match")
                         }
                     }
 //                    self.labelResults.text = labelResultsText
+                      self.spinner.isHidden = true
+                      self.resultsLabel.text = "Not a \(self.foodToCheck.name!)"
+                      self.resultsLabel.isHidden = false
                 } else {
                     self.labelResults.text = "No labels found"
                 }
