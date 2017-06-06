@@ -15,7 +15,7 @@ class AddFoodVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     @IBOutlet weak var foodPicker: UIPickerView!
     @IBOutlet weak var trackBtn: RoundedOutlineButton!
     
-    var foods = ["fruit","vegetable","dairy"]
+    var foods = ["Fruits","Vegetables"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,13 @@ class AddFoodVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         var food: Goal_Food!
         food = Goal_Food(context: context)
         let name = self.foods[foodPicker.selectedRow(inComponent: 0)]
-        food.name = name
+        
+        if name == "Fruits" {
+            food.name = "fruit"
+        }
+        if name == "Vegetables" {
+            food.name = "vegetable"
+        }
         food.date = Date() as NSDate
         
         ad.saveContext()
