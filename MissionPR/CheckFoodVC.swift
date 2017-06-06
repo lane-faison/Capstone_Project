@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 import CoreData
 import SwiftyJSON
 
@@ -36,10 +37,18 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     //$$$$$$$$$$$$$$$$$$$$$ IMAGE RECOGNITION FUNCTIONS $$$$$$$$$$$$$$$$$$$$$$
     
     @IBAction func findPhotoBtnPressed(_ sender: UIButton) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        
-        present(imagePicker, animated: true, completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.cameraCaptureMode = .photo
+            imagePicker.modalPresentationStyle = .fullScreen
+            present(imagePicker,animated: true,completion: nil)
+        }
+//        else {
+//            imagePicker.allowsEditing = false
+//            imagePicker.sourceType = .photoLibrary
+//            present(imagePicker, animated: true, completion: nil)
+//        }
     }
 }
 

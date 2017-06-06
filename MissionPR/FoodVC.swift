@@ -35,8 +35,7 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let goal = controller.object(at: indexPath as IndexPath)
 //        cell.attemptFetch()
         cell.configureCell(goalFood: goal)
-
-        // cell.configureProgress(goalFood: goal)
+        cell.configureProgress(goalFood: goal)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
