@@ -41,6 +41,35 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
         
     }
     
+    func configureProgress(goalFood: Goal_Food) {
+        
+        var foodSoFar = Int()
+        
+        if goalFood.name == "fruit" {
+            foodSoFar = totalFruit
+        }
+        if goalFood.name == "vegetable" {
+            foodSoFar = totalVegetables
+        }
+        
+        let transform = CGAffineTransform(scaleX: 1.0, y: 8.0)
+        self.progressView.transform = transform
+        
+        let progress = Float(foodSoFar)/Float(31)
+        
+        progressView.setProgress(Float(foodSoFar)/Float(31), animated: true)
+        
+        if progress <= 1.00 {
+            progressView.progressTintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
+        }
+        if progress <= 0.85 {
+            progressView.progressTintColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1.0)
+        }
+        if progress <= 0.70 {
+            progressView.progressTintColor = UIColor(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
+        }
+    }
+    
     func attemptFetch() {
         
         let fetchRequest: NSFetchRequest<Food_Log> = Food_Log.fetchRequest()
