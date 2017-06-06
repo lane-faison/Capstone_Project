@@ -25,7 +25,7 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.delegate = self
         tableView.dataSource = self
         
-        //        generateTestData()
+//        generateTestData()
         attemptFetch()
     }
     
@@ -72,7 +72,7 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "updateGoal" {
-            if let destination = segue.destination as? AddFoodVC {
+            if let destination = segue.destination as? CheckFoodVC {
                 if let goal = sender as? Goal_Food {
                     destination.foodToCheck = goal
                 }
@@ -138,9 +138,16 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         func generateTestData() {
             let goal1 = Goal_Food(context: context)
-            goal1.name = "Apple-A-Day"
+            goal1.name = "Fruit"
             goal1.date = Date() as NSDate
-            goal1.count = 1
+            
+            let goal2 = Goal_Food(context: context)
+            goal2.name = "Vegetables"
+            goal2.date = Date() as NSDate
+            
+            let goal3 = Goal_Food(context: context)
+            goal3.name = "Dairy"
+            goal3.date = Date() as NSDate
             
             ad.saveContext()
         }

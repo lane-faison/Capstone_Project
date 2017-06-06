@@ -37,7 +37,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MissionPR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7r-qp-bR5">
-                                        <rect key="frame" x="59.5" y="135" width="256" height="81"/>
+                                        <rect key="frame" x="68" y="135" width="239" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="81" id="KCn-Al-Dnt"/>
                                         </constraints>
@@ -534,7 +534,7 @@
         <!--New Food Goal-->
         <scene sceneID="6aL-RZ-9dL">
             <objects>
-                <viewController title="New Food Goal" id="Rco-4a-Xxg" customClass="AddFoodVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Food Goal" id="Rco-4a-Xxg" customClass="CheckFoodVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WA3-KB-TyQ"/>
                         <viewControllerLayoutGuide type="bottom" id="ToM-1h-tll"/>
@@ -814,7 +814,7 @@
         <!--Lifts-->
         <scene sceneID="BlO-GS-ZS7">
             <objects>
-                <viewController storyboardIdentifier="goalList" title="Lifts" id="LeG-yv-NSc" customClass="GraphsVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="goalList" title="Lifts" id="LeG-yv-NSc" customClass="LiftsVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k1s-zN-T8k"/>
                         <viewControllerLayoutGuide type="bottom" id="VfP-WO-atv"/>
@@ -994,7 +994,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dm8-kk-uw4" id="UOm-1w-0GD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1033,7 +1033,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-z3-uAd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-z3-uAd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1041,7 +1041,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ar2-ah-Na4" id="cCR-ac-sDM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5a-8r-491">
@@ -1137,7 +1137,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="5OU-49-awc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FZv-xu-Pok"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FZv-xu-Pok">
+                            <connections>
+                                <segue destination="MCt-0z-3aR" kind="show" id="QvO-Da-APb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Ui5-z3-uAd" id="Chu-To-CAt"/>
@@ -1180,7 +1184,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeT-2p-CCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5033" y="1106"/>
+            <point key="canvasLocation" x="5033" y="1832"/>
+        </scene>
+        <!--Add FoodVC-->
+        <scene sceneID="jBt-np-Lq9">
+            <objects>
+                <viewController id="MCt-0z-3aR" customClass="AddFoodVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xch-iV-IJf"/>
+                        <viewControllerLayoutGuide type="bottom" id="AAt-73-K2i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DES-oI-AHu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBM-Bm-pVr">
+                                <rect key="frame" x="10" y="234" width="355" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="bSL-y4-g73"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a food category you'd like to start tracking on a weekly basis:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6w-Zv-XQh">
+                                <rect key="frame" x="40" y="158.5" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="U7c-lz-uag"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B29-me-DHg" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                <rect key="frame" x="152" y="458.5" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="K09-jV-8v8"/>
+                                    <constraint firstAttribute="height" constant="70" id="a3h-sB-OjI"/>
+                                </constraints>
+                                <state key="normal" title="Track">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="trackBtnPressed:" destination="MCt-0z-3aR" eventType="touchUpInside" id="eiZ-68-7kA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="e6w-Zv-XQh" secondAttribute="trailing" constant="40" id="3jy-pp-WtE"/>
+                            <constraint firstItem="DBM-Bm-pVr" firstAttribute="centerY" secondItem="DES-oI-AHu" secondAttribute="centerY" id="4wB-be-Vrv"/>
+                            <constraint firstItem="e6w-Zv-XQh" firstAttribute="leading" secondItem="DES-oI-AHu" secondAttribute="leading" constant="40" id="6fb-lZ-8LZ"/>
+                            <constraint firstItem="DBM-Bm-pVr" firstAttribute="top" secondItem="e6w-Zv-XQh" secondAttribute="bottom" constant="25" id="HMx-KW-K42"/>
+                            <constraint firstAttribute="trailing" secondItem="DBM-Bm-pVr" secondAttribute="trailing" constant="10" id="N5j-Kp-qT9"/>
+                            <constraint firstItem="e6w-Zv-XQh" firstAttribute="centerX" secondItem="DES-oI-AHu" secondAttribute="centerX" id="ONO-oO-cAk"/>
+                            <constraint firstItem="DBM-Bm-pVr" firstAttribute="leading" secondItem="DES-oI-AHu" secondAttribute="leading" constant="10" id="X9G-nX-2Me"/>
+                            <constraint firstItem="B29-me-DHg" firstAttribute="top" secondItem="DBM-Bm-pVr" secondAttribute="bottom" constant="25" id="kPG-hu-2Bc"/>
+                            <constraint firstItem="B29-me-DHg" firstAttribute="centerX" secondItem="DES-oI-AHu" secondAttribute="centerX" id="mzm-qQ-XKL"/>
+                            <constraint firstItem="DBM-Bm-pVr" firstAttribute="centerX" secondItem="DES-oI-AHu" secondAttribute="centerX" id="rQa-ta-0Fd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="foodPicker" destination="DBM-Bm-pVr" id="8PL-tG-obO"/>
+                        <outlet property="trackBtn" destination="B29-me-DHg" id="vG2-2o-RMK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFT-b4-dGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5966" y="1200"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ecY-Sg-6bC">
