@@ -20,10 +20,12 @@
 		F65D36111EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D360D1EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift */; };
 		F65D36161EE08FEB006C067A /* AddLiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36151EE08FEB006C067A /* AddLiftVC.swift */; };
 		F65D36181EE09055006C067A /* AddRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36171EE09055006C067A /* AddRunVC.swift */; };
-		F65D361A1EE090FF006C067A /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36191EE090FF006C067A /* AddFoodVC.swift */; };
+		F65D361A1EE090FF006C067A /* CheckFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D36191EE090FF006C067A /* CheckFoodVC.swift */; };
 		F67F02E31EE5BE160065F168 /* Goal_Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F02E11EE5BE160065F168 /* Goal_Food+CoreDataClass.swift */; };
 		F67F02E41EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F02E21EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift */; };
-		F693E61F1EDF9575002CCE33 /* GraphsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693E61E1EDF9575002CCE33 /* GraphsVC.swift */; };
+		F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693E61E1EDF9575002CCE33 /* LiftsVC.swift */; };
+		F6AFD87F1EE644910093253B /* AddGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD87E1EE644910093253B /* AddGoalVC.swift */; };
+		F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8801EE64B430093253B /* AddFoodVC.swift */; };
 		F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */; };
 		F6F829861EDE2ABE00A2C183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */; };
 		F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F829871EDE2ABE00A2C183 /* AuthenticationVC.swift */; };
@@ -58,10 +60,12 @@
 		F65D360D1EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Visits+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F65D36151EE08FEB006C067A /* AddLiftVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLiftVC.swift; sourceTree = "<group>"; };
 		F65D36171EE09055006C067A /* AddRunVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRunVC.swift; sourceTree = "<group>"; };
-		F65D36191EE090FF006C067A /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
+		F65D36191EE090FF006C067A /* CheckFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckFoodVC.swift; sourceTree = "<group>"; };
 		F67F02E11EE5BE160065F168 /* Goal_Food+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Food+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F67F02E21EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F693E61E1EDF9575002CCE33 /* GraphsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphsVC.swift; sourceTree = "<group>"; };
+		F693E61E1EDF9575002CCE33 /* LiftsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftsVC.swift; sourceTree = "<group>"; };
+		F6AFD87E1EE644910093253B /* AddGoalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalVC.swift; sourceTree = "<group>"; };
+		F6AFD8801EE64B430093253B /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
 		F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftGoalCell.swift; sourceTree = "<group>"; };
 		F6F829821EDE2ABE00A2C183 /* MissionPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissionPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +125,8 @@
 			children = (
 				F65D36151EE08FEB006C067A /* AddLiftVC.swift */,
 				F65D36171EE09055006C067A /* AddRunVC.swift */,
-				F65D36191EE090FF006C067A /* AddFoodVC.swift */,
+				F6AFD87E1EE644910093253B /* AddGoalVC.swift */,
+				F6AFD8801EE64B430093253B /* AddFoodVC.swift */,
 			);
 			name = "Add Controller";
 			sourceTree = "<group>";
@@ -191,10 +196,11 @@
 				F65D36141EE08FD4006C067A /* Add Controller */,
 				F620011A1EDF3D5B0067A794 /* MainMenuVC.swift */,
 				F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */,
-				F693E61E1EDF9575002CCE33 /* GraphsVC.swift */,
+				F693E61E1EDF9575002CCE33 /* LiftsVC.swift */,
 				F6FF35D61EE1FE400086C31D /* RunsVC.swift */,
-				F6FF35D81EE1FE9E0086C31D /* FoodVC.swift */,
 				F6FF35DA1EE1FEB50086C31D /* VisitVC.swift */,
+				F6FF35D81EE1FE9E0086C31D /* FoodVC.swift */,
+				F65D36191EE090FF006C067A /* CheckFoodVC.swift */,
 				F6F829871EDE2ABE00A2C183 /* AuthenticationVC.swift */,
 			);
 			name = Controller;
@@ -346,7 +352,9 @@
 				F62001211EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift in Sources */,
 				F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */,
 				F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */,
-				F65D361A1EE090FF006C067A /* AddFoodVC.swift in Sources */,
+				F6AFD87F1EE644910093253B /* AddGoalVC.swift in Sources */,
+				F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */,
+				F65D361A1EE090FF006C067A /* CheckFoodVC.swift in Sources */,
 				F65D36111EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift in Sources */,
 				F67F02E31EE5BE160065F168 /* Goal_Food+CoreDataClass.swift in Sources */,
 				F65D360E1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift in Sources */,
@@ -369,7 +377,7 @@
 				F62001201EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift in Sources */,
 				F620011D1EDF3F9B0067A794 /* Constants.swift in Sources */,
 				F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */,
-				F693E61F1EDF9575002CCE33 /* GraphsVC.swift in Sources */,
+				F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

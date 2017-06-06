@@ -18,6 +18,5 @@ extension Goal_Food {
 
     @NSManaged public var date: NSDate?
     @NSManaged public var name: String?
-    @NSManaged public var count: Int16
 
 }

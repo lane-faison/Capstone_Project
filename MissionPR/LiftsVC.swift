@@ -1,5 +1,5 @@
 //
-//  GraphsVC.swift
+//  LiftsVC.swift
 //  MissionPR
 //
 //  Created by Lane Faison on 5/31/17.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class GraphsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
