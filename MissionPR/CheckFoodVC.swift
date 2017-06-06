@@ -136,7 +136,6 @@ extension CheckFoodVC {
                 }
             }
         })
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

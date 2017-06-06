@@ -26,7 +26,6 @@ class LiftGoalCell: UITableViewCell {
     }
     
     func configureProgress(goalLift: Goal_Lift) {
-        print("Configure process function...")
         
         let transform = CGAffineTransform(scaleX: 1.0, y: 8.0)
         self.progressView.transform = transform
@@ -44,8 +43,5 @@ class LiftGoalCell: UITableViewCell {
         if progress <= 0.70 {
             progressView.progressTintColor = UIColor(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
         }
-        
-        
     }
-    
 }

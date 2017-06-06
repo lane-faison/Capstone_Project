@@ -27,4 +27,3 @@ let GP_KEY: String = "AIzaSyA3M24U3IUF8X2VU_CI1YuIrPXJQidUBPA"
 //  2. Change main menu in some way after user has checked-in so that they know it's successful
 //  3. Fix bug in Current # on food goals. It is returning total for both food and vegetables
 //  4. Change Goal # in food goals to return total days in the current month, not preset 31.
-// Debug

@@ -12,7 +12,8 @@ import CoreData
 class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
 
     var controller: NSFetchedResultsController<Food_Log>!
-    var dayTrackerCount = Int()
+    var totalFruit = Int()
+    var totalVegetables = Int()
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var name: UILabel!
@@ -24,15 +25,20 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
         view.layer.cornerRadius = 5
         
         goal.text = "31"
+
+//        attemptFetch()
         
         if goalFood.name == "fruit" {
             name.text = "Fruit"
+            attemptFetch()
+            current.text = "\(totalFruit)"
         }
         if goalFood.name == "vegetable" {
             name.text = "Vegetables"
+            attemptFetch()
+            current.text = "\(totalVegetables)"
         }
         
-        attemptFetch()
     }
     
     func attemptFetch() {
@@ -50,6 +56,7 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
             try self.controller.performFetch()
             print("###### FETCH ######")
             let data = self.controller.fetchedObjects
+            
             if (data?.count)! > 0 {
                 print((data?.count)!)
                 for log in data! {
@@ -60,16 +67,20 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
                     
                     if component1.month == component2.month && component1.year == component2.year {
                         print("SAME MONTH & YEAR")
-                        dayTrackerCount += 1
-                        print(dayTrackerCount)
+                        if log.name == "fruit" {
+                            totalFruit += 1
+                            print("FOUND FRUIT")
+                        }
+                        if log.name == "vegetable" {
+                            totalVegetables += 1
+                            print("FOUND VEGETABLE")
+                        }
                     }
                 }
-                current.text = "\(dayTrackerCount)"
             }
         } catch {
             let error = error as NSError
             print("\(error)")
         }
     }
-    
 }
