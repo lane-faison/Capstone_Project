@@ -142,6 +142,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="viewGoalsBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="EAZ-TE-K5L"/>
                                                     <segue destination="2YC-wm-zjb" kind="show" id="CY6-uB-cHx"/>
                                                 </connections>
                                             </button>
