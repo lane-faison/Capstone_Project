@@ -14,6 +14,7 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
     var controller: NSFetchedResultsController<Food_Log>!
     var totalFruit = Int()
     var totalVegetables = Int()
+    var daysInMonth = Int()
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var name: UILabel!
@@ -29,7 +30,7 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
         let nameOfMonth = dateFormatter.string(from: Date() as Date)
         
         let interval = Calendar.current.dateInterval(of: .month, for: Date() as Date)!
-        let daysInMonth = Calendar.current.dateComponents([.day], from: interval.start, to: interval.end).day!
+        daysInMonth = Calendar.current.dateComponents([.day], from: interval.start, to: interval.end).day!
         goal.text = "\(daysInMonth)"
 
 //        attemptFetch()
@@ -58,12 +59,12 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
             foodSoFar = totalVegetables
         }
         
-        let transform = CGAffineTransform(scaleX: 1.0, y: 8.0)
+        let transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         self.progressView.transform = transform
         
-        let progress = Float(foodSoFar)/Float(31)
+        let progress = Float(foodSoFar)/Float(daysInMonth)
         
-        progressView.setProgress(Float(foodSoFar)/Float(31), animated: true)
+        progressView.setProgress(Float(foodSoFar)/Float(daysInMonth), animated: true)
         
         if progress <= 1.00 {
             progressView.progressTintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
