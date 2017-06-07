@@ -148,6 +148,12 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
         goal2.reps = 10
         goal2.current = 95
         
+        let goal3 = Goal_Lift(context: context)
+        goal3.name = "Barbell Squat"
+        goal3.weight = 205
+        goal3.reps = 10
+        goal3.current = 175
+        
         ad.saveContext()
     }
 
