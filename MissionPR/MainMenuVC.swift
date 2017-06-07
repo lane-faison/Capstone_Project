@@ -19,6 +19,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
     var manager: CLLocationManager!
     var myLocation = CLLocationCoordinate2D()
     var gymLocation = CLLocationCoordinate2D()
+    var okayToCheckIn = Bool()
 
     
     @IBOutlet weak var viewGoalsBtn: RoundedOutlineButton!
@@ -34,6 +35,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         gymCheckInBtn.isEnabled = false
         gymNameLabel.isHidden = true
         gymStatusLabel.isHidden = true
+        okayToCheckIn = false
         
         DispatchQueue.main.async {
             self.manager = CLLocationManager()
@@ -51,7 +53,13 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         self.myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
     
+    
+    @IBAction func viewGoalsBtnPressed(_ sender: Any) {
+        gymStatusLabel.isHidden = true
+    }
+    
     @IBAction func setGymBtnPressed(_ sender: UIButton) {
+        gymStatusLabel.isHidden = true
         let autocompleteController = GMSAutocompleteViewController()
         let filter = GMSAutocompleteFilter()
         
@@ -73,8 +81,10 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         let myCoordinates = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
         let distance: CLLocationDistance = myCoordinates.distance(from: gymCoordinates)
         print("DISTANCE: \(distance)")
+        
         attemptVisitFetch()
-        if distance < 100 {
+        
+        if distance < 100 && okayToCheckIn == true {
             gymStatusLabel.text = "You are checked in. Have a great workout!"
             gymStatusLabel.isHidden = false
             
@@ -91,8 +101,10 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
             print("COUNT CREATED!!!")
             print(newVisit.date)
-        } else {
-            print("You are not at the gym")
+        } else if distance < 100 && okayToCheckIn == false {
+            gymStatusLabel.text = "You must wait 2 hours between check-ins."
+            gymStatusLabel.isHidden = false
+        } else if distance >= 100 {
             gymStatusLabel.text = "Our location data indicates that you are not currently located at your preset gym."
             gymStatusLabel.isHidden = false
         }
@@ -154,12 +166,14 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
                 print(data![0].date)
                 print("******")
                 
-                let lastCheckIn = data![0].date.timeIntervalSince(Date() as Date)
+                let lastCheckIn = (Date() as Date).timeIntervalSince(data![0].date as Date)
                 print("lastCheckIn: \(lastCheckIn)")
-//                for day in data! {
-//                    print("$$$$$$$$$$$$$$")
-//                    print(day.date) // type = NSDate
-//                }
+                if lastCheckIn < 7200 {
+                    print("You cannot check in yet")
+                    okayToCheckIn = false
+                } else {
+                    okayToCheckIn = true
+                }
             }
         } catch {
             let error = error as NSError
