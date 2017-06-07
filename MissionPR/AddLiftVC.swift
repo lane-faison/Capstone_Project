@@ -109,41 +109,49 @@ class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
     @IBAction func addPressed(_ sender: Any) {
         var goal: Goal_Lift!
         
-        if goalToEdit == nil {
-            goal = Goal_Lift(context: context)
-        } else {
+        if goalToEdit != nil {
             goal = goalToEdit
         }
-        
-        if let name = nameTextField.text {
-            goal.name = name
-        }
-        
+
         let reps = self.reps[repsPicker.selectedRow(inComponent: 0)]
-        goal.reps = Int16(reps)
-        
         let goalWeight = self.goal[goalPicker.selectedRow(inComponent: 0)]
-        goal.weight = Int16(goalWeight)
-        
         let currentWeight = self.current[currentPicker.selectedRow(inComponent: 0)]
-        goal.current = Int16(currentWeight)
         
-        if (goal.current <= goal.weight && nameTextField.text != "") {
+        if (currentWeight <= goalWeight && nameTextField.text != "") {
             errorLabel.isHidden = true
-            ad.saveContext()
-            navigationController?.popViewController(animated: true)
+            
+            if goalToEdit == nil {
+                goal = Goal_Lift(context: context)
+                
+                if let name = nameTextField.text {
+                    goal.name = name
+                }
+                
+                goal.reps = Int16(reps)
+                goal.weight = Int16(goalWeight)
+                goal.current = Int16(currentWeight)
+                ad.saveContext()
+                navigationController?.popViewController(animated: true)
+            } else {
+                
+                if let name = nameTextField.text {
+                    goal.name = name
+                }
+                
+                goal.reps = Int16(reps)
+                goal.weight = Int16(goalWeight)
+                goal.current = Int16(currentWeight)
+                ad.saveContext()
+                navigationController?.popViewController(animated: true)
+            }
         }
-        else if goal.current > goal.weight {
+        else if currentWeight > goalWeight {
             errorLabel.isHidden = false
             errorLabel.text = "* Current max must be less than goal max"
-            print("Form error")
-            return
         }
         else if nameTextField.text == "" {
             errorLabel.isHidden = false
             errorLabel.text = "* Please give this goal a name"
-            print("Form error")
-            return
         }
         else {
             //
@@ -181,5 +189,10 @@ extension UIViewController {
     
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

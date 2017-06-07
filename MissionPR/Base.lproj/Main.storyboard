@@ -43,10 +43,10 @@
                                             <constraint firstAttribute="height" constant="81" id="KCn-Al-Dnt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="RifficFree-Bold" family="Riffic Free" pointSize="50"/>
-                                        <color key="textColor" red="0.0" green="0.90196078430000004" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finally, a fitness app that makes tracking all your goals easy and in one place. Let's get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhw-a3-O9a">
                                         <rect key="frame" x="50" y="228" width="275" height="121"/>
@@ -59,7 +59,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9Z-Pi-t5m" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                         <rect key="frame" x="75" y="381.5" width="225" height="40"/>
-                                        <color key="backgroundColor" red="0.32549019610000002" green="0.42745098040000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="225" id="SeG-pB-yaj"/>
                                             <constraint firstAttribute="height" constant="40" id="XYZ-K6-kYJ"/>
@@ -334,7 +334,7 @@
                                                 <rect key="frame" x="0.0" y="60" width="318" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="next"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhL-6j-1Mo">
                                                 <rect key="frame" x="0.0" y="100" width="318" height="20.5"/>
@@ -1205,22 +1205,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-nx-H98">
-                                <rect key="frame" x="151.5" y="315.5" width="72.5" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-Tk-quX">
+                                <rect key="frame" x="149.5" y="119" width="76" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-nx-H98">
+                                <rect key="frame" x="149.5" y="514.5" width="76" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Z0V-8U-6Hu">
+                                <rect key="frame" x="37" y="332.5" width="300" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="QFK-ZO-bex"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W5z-nx-H98" firstAttribute="centerX" secondItem="Wrx-Bj-Qz0" secondAttribute="centerX" id="0L1-Rf-2i6"/>
-                            <constraint firstItem="W5z-nx-H98" firstAttribute="centerY" secondItem="Wrx-Bj-Qz0" secondAttribute="centerY" id="Twx-j1-1mO"/>
+                            <constraint firstItem="Z0V-8U-6Hu" firstAttribute="top" secondItem="oMi-Tk-quX" secondAttribute="bottom" constant="180" id="GAu-nh-hqF"/>
+                            <constraint firstItem="W5z-nx-H98" firstAttribute="top" secondItem="Z0V-8U-6Hu" secondAttribute="bottom" constant="180" id="IZa-hy-JLQ"/>
+                            <constraint firstItem="Z0V-8U-6Hu" firstAttribute="centerY" secondItem="Wrx-Bj-Qz0" secondAttribute="centerY" id="JX4-OU-Fua"/>
+                            <constraint firstItem="Z0V-8U-6Hu" firstAttribute="centerX" secondItem="Wrx-Bj-Qz0" secondAttribute="centerX" id="POC-PP-aDp"/>
+                            <constraint firstItem="oMi-Tk-quX" firstAttribute="centerX" secondItem="Wrx-Bj-Qz0" secondAttribute="centerX" id="PcZ-Eq-urt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t2f-l5-FSS"/>
                     <connections>
-                        <outlet property="testLabel" destination="W5z-nx-H98" id="f3q-YZ-sKM"/>
+                        <outlet property="label1" destination="oMi-Tk-quX" id="0oZ-B6-5wm"/>
+                        <outlet property="label2" destination="W5z-nx-H98" id="TRs-WA-wM6"/>
+                        <outlet property="progressBar" destination="Z0V-8U-6Hu" id="bKQ-F8-FBh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeT-2p-CCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
