@@ -13,6 +13,8 @@ import SwiftyJSON
 
 class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var btnView: UIView!
+    @IBOutlet weak var captureBtn: RoundedOutlineButton!
     @IBOutlet weak var labelResults: UITextView!
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -23,6 +25,7 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(GP_KEY)")!
     }
     var foodToCheck: Goal_Food!
+//    let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: Selector(("rotateButton")), userInfo: nil, repeats: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +43,13 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }
     }
     
+
+    
     //$$$$$$$$$$$$$$$$$$$$$ IMAGE RECOGNITION FUNCTIONS $$$$$$$$$$$$$$$$$$$$$$
     
     @IBAction func findPhotoBtnPressed(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
+
             imagePicker.allowsEditing = false
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.cameraCaptureMode = .photo
@@ -165,6 +171,10 @@ extension CheckFoodVC {
             //            imageView.isHidden = true // You could optionally display the image here by setting imageView.image = pickedImage
             spinner.isHidden = false
             spinner.startAnimating()
+//            let btnTransform = CGAffineTransform(rotationAngle: CGFloat(20.0*Double.pi))
+//            UIView.animate(withDuration: 5.0, animations: ({
+//                self.captureBtn.transform = btnTransform
+//            }))
 //            faceResults.isHidden = true
             labelResults.isHidden = true
             

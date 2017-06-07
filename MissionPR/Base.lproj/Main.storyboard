@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -120,15 +121,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H9E-eV-n2x">
                                         <rect key="frame" x="0.0" y="0.0" width="201.5" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iur-6k-eTu" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iur-6k-eTu" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="66" y="0.0" width="70" height="70"/>
-                                                <color key="backgroundColor" red="0.32549019610000002" green="0.42745098040000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="GJc-af-Ggx"/>
                                                     <constraint firstAttribute="height" constant="70" id="rs1-7d-CSK"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="50"/>
-                                                <state key="normal" title="G">
+                                                <state key="normal" image="target">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -159,22 +159,25 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVw-bC-uHO" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="66" y="0.0" width="70" height="70"/>
-                                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="QoF-EQ-tlZ"/>
                                                     <constraint firstAttribute="height" constant="70" id="xQG-iG-5Zc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="50"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="L">
+                                                <state key="normal" image="marker">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
+                                                        <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="35"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -197,15 +200,15 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0x-hL-i4s" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="66" y="0.0" width="70" height="70"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="I2S-Wt-cci"/>
                                                     <constraint firstAttribute="width" constant="70" id="R9U-CF-kDg"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="50"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="45"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="?">
-                                                    <color key="titleColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -577,8 +580,11 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Eje-Ek-GY1">
                                 <rect key="frame" x="177" y="433" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2E-Uk-dlH">
-                                <rect key="frame" x="97" y="503" width="182" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2E-Uk-dlH">
+                                <rect key="frame" x="66" y="503" width="243" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="wKE-v1-hcV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -593,20 +599,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="G2E-Uk-dlH" firstAttribute="top" secondItem="Eje-Ek-GY1" secondAttribute="bottom" constant="50" id="2Fy-c9-ZJd"/>
+                            <constraint firstItem="RCi-CX-Rax" firstAttribute="top" secondItem="diZ-BY-3PF" secondAttribute="bottom" constant="50" id="AXS-6E-zkC"/>
                             <constraint firstItem="3aV-fg-2xS" firstAttribute="leading" secondItem="Sdp-Yx-zer" secondAttribute="leading" id="Hec-tp-9rK"/>
-                            <constraint firstItem="RCi-CX-Rax" firstAttribute="centerY" secondItem="Sdp-Yx-zer" secondAttribute="centerY" id="Lmz-ON-md2"/>
+                            <constraint firstItem="Eje-Ek-GY1" firstAttribute="top" secondItem="RCi-CX-Rax" secondAttribute="bottom" constant="50" id="M5j-LR-Riv"/>
                             <constraint firstAttribute="trailing" secondItem="3aV-fg-2xS" secondAttribute="trailing" id="MX9-ci-Quk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G2E-Uk-dlH" secondAttribute="trailing" constant="50" id="NX0-u1-UhH"/>
                             <constraint firstItem="G2E-Uk-dlH" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="NmE-0S-8vK"/>
                             <constraint firstItem="3aV-fg-2xS" firstAttribute="top" secondItem="WA3-KB-TyQ" secondAttribute="bottom" id="V9j-mo-SGJ"/>
-                            <constraint firstItem="RCi-CX-Rax" firstAttribute="top" secondItem="diZ-BY-3PF" secondAttribute="bottom" constant="50" id="a2T-PK-KW7"/>
                             <constraint firstItem="diZ-BY-3PF" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="asC-HE-Gvn"/>
+                            <constraint firstItem="G2E-Uk-dlH" firstAttribute="leading" secondItem="Sdp-Yx-zer" secondAttribute="leadingMargin" constant="50" id="iuM-cR-zk1"/>
                             <constraint firstItem="Eje-Ek-GY1" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="mZ1-eI-Jp9"/>
-                            <constraint firstItem="RCi-CX-Rax" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="nkG-3J-hmT"/>
-                            <constraint firstItem="Eje-Ek-GY1" firstAttribute="top" secondItem="RCi-CX-Rax" secondAttribute="bottom" constant="50" id="qJ1-1p-PtR"/>
+                            <constraint firstItem="RCi-CX-Rax" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="s0A-nC-YvI"/>
+                            <constraint firstItem="RCi-CX-Rax" firstAttribute="centerY" secondItem="Sdp-Yx-zer" secondAttribute="centerY" id="vAj-cI-Ccd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ToX-4q-MsW"/>
                     <connections>
+                        <outlet property="captureBtn" destination="RCi-CX-Rax" id="fwQ-tl-faJ"/>
                         <outlet property="labelResults" destination="3aV-fg-2xS" id="1aO-NO-Vq0"/>
                         <outlet property="resultsLabel" destination="G2E-Uk-dlH" id="qKk-ak-tOC"/>
                         <outlet property="spinner" destination="Eje-Ek-GY1" id="Mu4-9T-Xnk"/>
@@ -834,7 +843,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YVk-kX-Ej3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LiftGoalCell" rowHeight="150" id="BbO-kn-PLv" customClass="LiftGoalCell" customModule="MissionPR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
@@ -995,15 +1004,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pTu-Ym-IXl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pTu-Ym-IXl">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Dm8-kk-uw4">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dm8-kk-uw4" id="UOm-1w-0GD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1044,7 +1053,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-z3-uAd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodGoalCell" rowHeight="150" id="ar2-ah-Na4" customClass="FoodGoalCell" customModule="MissionPR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
@@ -1104,17 +1113,29 @@
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bvb-3E-cnZ">
                                                             <rect key="frame" x="8" y="70" width="343" height="2"/>
                                                         </progressView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a93-9i-N0D">
+                                                            <rect key="frame" x="321" y="8" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="2Kz-FB-9Mn"/>
+                                                                <constraint firstAttribute="width" constant="30" id="Mzp-7G-Bdu"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                                            <color key="textColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="bvb-3E-cnZ" secondAttribute="trailing" constant="8" id="2Wu-1n-E2L"/>
                                                         <constraint firstItem="IVl-XU-uEa" firstAttribute="top" secondItem="bvb-3E-cnZ" secondAttribute="bottom" constant="30" id="3D3-VZ-2Gk"/>
                                                         <constraint firstItem="bvb-3E-cnZ" firstAttribute="leading" secondItem="i5a-8r-491" secondAttribute="leading" constant="8" id="72u-Ju-NQT"/>
+                                                        <constraint firstItem="a93-9i-N0D" firstAttribute="top" secondItem="i5a-8r-491" secondAttribute="top" constant="8" id="Ay4-dd-FzL"/>
                                                         <constraint firstAttribute="bottom" secondItem="IVl-XU-uEa" secondAttribute="bottom" constant="8" id="VCI-Z2-fr3"/>
                                                         <constraint firstItem="uhU-MV-4bp" firstAttribute="leading" secondItem="i5a-8r-491" secondAttribute="leading" constant="8" id="ZEe-BY-6aH"/>
                                                         <constraint firstAttribute="trailing" secondItem="IVl-XU-uEa" secondAttribute="trailing" constant="8" id="cLo-58-TrN"/>
                                                         <constraint firstItem="uhU-MV-4bp" firstAttribute="top" secondItem="i5a-8r-491" secondAttribute="top" constant="8" id="ll0-AW-0YY"/>
                                                         <constraint firstItem="IVl-XU-uEa" firstAttribute="leading" secondItem="i5a-8r-491" secondAttribute="leading" constant="8" id="tVd-jx-RHG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="a93-9i-N0D" secondAttribute="trailing" constant="8" id="uXC-y2-jR2"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1276,7 +1297,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1308,6 +1329,8 @@
         <image name="RunPic" width="640" height="339"/>
         <image name="fruit-basket" width="3840" height="1782"/>
         <image name="lens" width="720" height="720"/>
+        <image name="marker" width="199" height="199"/>
+        <image name="target" width="199" height="199"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="n5C-2c-pjo"/>
