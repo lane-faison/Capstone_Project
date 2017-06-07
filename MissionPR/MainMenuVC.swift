@@ -73,6 +73,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         let myCoordinates = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
         let distance: CLLocationDistance = myCoordinates.distance(from: gymCoordinates)
         print("DISTANCE: \(distance)")
+        attemptVisitFetch()
         if distance < 100 {
             gymStatusLabel.text = "You are checked in. Have a great workout!"
             gymStatusLabel.isHidden = false
@@ -125,6 +126,40 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
                 
                 setGymBtn.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
                 setGymBtn.setTitle("✔️", for: .normal)
+            }
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
+    }
+    
+    func attemptVisitFetch() {
+        
+        let fetchRequest: NSFetchRequest<Gym_Visits> = Gym_Visits.fetchRequest()
+        let dateSort = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        let controller2 = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller2.delegate = self
+        self.controller2 = controller2
+        
+        do {
+            try self.controller2.performFetch()
+            print("###### FETCHING ALL VISITS ######")
+            let data = self.controller2.fetchedObjects
+            if (data?.count)! > 0 {
+                print((data?.count)!)
+                print("******")
+                print(data![0].date)
+                print("******")
+                
+                let lastCheckIn = data![0].date.timeIntervalSince(Date() as Date)
+                print("lastCheckIn: \(lastCheckIn)")
+//                for day in data! {
+//                    print("$$$$$$$$$$$$$$")
+//                    print(day.date) // type = NSDate
+//                }
             }
         } catch {
             let error = error as NSError
