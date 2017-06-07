@@ -138,7 +138,7 @@ extension CheckFoodVC {
                         labelResultsText += "\(label), "
                         
                         if label == self.foodToCheck.name {
-                            print("$$$$$ We have detected a \(self.foodToCheck.name!)!")
+                            print("\(self.foodToCheck.name!.capitalized)!")
                             var foodFound: Food_Log!
                             foodFound = Food_Log(context: context)
                             foodFound.name = label
@@ -146,7 +146,7 @@ extension CheckFoodVC {
                             ad.saveContext()
                             self.spinner.isHidden = true
                             let nameCapitalized = label.capitalized
-                            self.resultsLabel.text = "Success! \(nameCapitalized) detected!"
+                            self.resultsLabel.text = "\(nameCapitalized)!"
                             self.resultsLabel.isHidden = false
                             return
                         } else {
@@ -156,7 +156,7 @@ extension CheckFoodVC {
                     }
 //                    self.labelResults.text = labelResultsText
                       self.spinner.isHidden = true
-                      self.resultsLabel.text = "Not a \(self.foodToCheck.name!)"
+                      self.resultsLabel.text = "Not \(self.foodToCheck.name!)"
                       self.resultsLabel.isHidden = false
                 } else {
                     self.labelResults.text = "No labels found"
