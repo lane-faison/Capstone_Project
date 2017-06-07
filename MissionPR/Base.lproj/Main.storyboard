@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xqZ-41-Ovg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xqZ-41-Ovg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="stencil-army.ttf">
-            <string>StencilArmyWWI</string>
+        <array key="RifficFree-Bold.ttf">
+            <string>RifficFree-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -30,36 +30,38 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TRK-0z-peP">
                                 <rect key="frame" x="0.0" y="123" width="375" height="421.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MissionPR_logo" translatesAutoresizingMaskIntoConstraints="NO" id="4dQ-BR-6VD">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="4dQ-BR-6VD">
                                         <rect key="frame" x="125" y="0.0" width="125" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="FTT-3X-mUT"/>
                                             <constraint firstAttribute="width" constant="125" id="htK-m8-MFe"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FitPhocus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7r-qp-bR5">
-                                        <rect key="frame" x="61.5" y="135" width="252" height="81"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AppleFit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7r-qp-bR5">
+                                        <rect key="frame" x="87" y="135" width="201.5" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="81" id="KCn-Al-Dnt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="StencilArmyWWI" family="Stencil Army WW I" pointSize="50"/>
-                                        <color key="textColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="RifficFree-Bold" family="Riffic Free" pointSize="50"/>
+                                        <color key="textColor" red="0.0" green="0.90196078430000004" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finally, an app that makes tracking all your fitness goals easy and in one place. Let's get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhw-a3-O9a">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finally, a fitness app that makes tracking all your goals easy and in one place. Let's get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhw-a3-O9a">
                                         <rect key="frame" x="50" y="228" width="275" height="121"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="121" id="4Or-t4-v41"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9Z-Pi-t5m" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="381.5" width="275" height="40"/>
+                                        <rect key="frame" x="75" y="381.5" width="225" height="40"/>
                                         <color key="backgroundColor" red="0.32549019610000002" green="0.42745098040000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="275" id="SeG-pB-yaj"/>
+                                            <constraint firstAttribute="width" constant="225" id="SeG-pB-yaj"/>
                                             <constraint firstAttribute="height" constant="40" id="XYZ-K6-kYJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
@@ -71,10 +73,10 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.32549019607843138" green="0.42745098039215684" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="3"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -290,11 +292,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VdE-zl-hOz">
-                                <rect key="frame" x="29" y="94" width="318" height="450"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VdE-zl-hOz">
+                                <rect key="frame" x="29" y="94" width="318" height="450.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0pF-Kp-SVD">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="120.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rs1-rv-2S8">
                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="50"/>
@@ -334,17 +336,25 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhL-6j-1Mo">
+                                                <rect key="frame" x="0.0" y="100" width="318" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                <color key="textColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Rs1-rv-2S8" firstAttribute="leading" secondItem="0pF-Kp-SVD" secondAttribute="leading" id="6G2-m5-mSl"/>
                                             <constraint firstItem="Rs1-rv-2S8" firstAttribute="top" secondItem="0pF-Kp-SVD" secondAttribute="top" id="V3P-EE-Jdy"/>
                                             <constraint firstAttribute="trailing" secondItem="SDS-fz-rZ9" secondAttribute="trailing" id="Ycd-oP-ElH"/>
                                             <constraint firstItem="SDS-fz-rZ9" firstAttribute="leading" secondItem="0pF-Kp-SVD" secondAttribute="leading" id="esc-jz-mzd"/>
+                                            <constraint firstAttribute="trailing" secondItem="rhL-6j-1Mo" secondAttribute="trailing" id="g3P-Cq-h0y"/>
+                                            <constraint firstItem="rhL-6j-1Mo" firstAttribute="leading" secondItem="0pF-Kp-SVD" secondAttribute="leading" id="rJo-3z-9P0"/>
                                             <constraint firstAttribute="trailing" secondItem="Rs1-rv-2S8" secondAttribute="trailing" id="vVe-Mh-weA"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-2f-iaP">
-                                        <rect key="frame" x="0.0" y="110" width="318" height="100"/>
+                                        <rect key="frame" x="0.0" y="130.5" width="318" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNr-3c-eqg" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="50"/>
@@ -383,7 +393,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-uc-xdQ">
-                                        <rect key="frame" x="0.0" y="230" width="318" height="100"/>
+                                        <rect key="frame" x="0.0" y="240.5" width="318" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-Jg-3AY" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="50"/>
@@ -422,7 +432,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DxA-KN-Zhh">
-                                        <rect key="frame" x="0.0" y="350" width="318" height="100"/>
+                                        <rect key="frame" x="0.0" y="350.5" width="318" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvN-AL-ju3" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="50"/>
@@ -501,6 +511,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentPicker" destination="EDG-h0-dJN" id="9Wg-3O-LdB"/>
+                        <outlet property="errorLabel" destination="rhL-6j-1Mo" id="mVI-tK-Ukb"/>
                         <outlet property="goalPicker" destination="sAH-Fk-iR4" id="0gu-EK-JB7"/>
                         <outlet property="nameTextField" destination="SDS-fz-rZ9" id="OTF-Ib-Zf4"/>
                         <outlet property="repsPicker" destination="Gre-7y-Cnx" id="Qve-oI-Qrw"/>
@@ -1325,8 +1336,8 @@
     <resources>
         <image name="GymPic2" width="800" height="432"/>
         <image name="LiftPic" width="1109" height="614"/>
-        <image name="MissionPR_logo" width="600" height="600"/>
         <image name="RunPic" width="640" height="339"/>
+        <image name="apple" width="579" height="615"/>
         <image name="fruit-basket" width="3840" height="1782"/>
         <image name="lens" width="720" height="720"/>
         <image name="marker" width="199" height="199"/>

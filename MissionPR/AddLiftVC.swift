@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
+class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
 
     @IBOutlet weak var step1Label: UILabel!
     @IBOutlet weak var step2Label: UILabel!
@@ -17,6 +17,8 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     @IBOutlet weak var step4Label: UILabel!
     
     @IBOutlet weak var nameTextField: UITextField!
+    let limitLength = 22 //character length for above text field
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var repsPicker: UIPickerView!
     @IBOutlet weak var goalPicker: UIPickerView!
     @IBOutlet weak var currentPicker: UIPickerView!
@@ -35,12 +37,15 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
         
+        nameTextField.delegate = self
         repsPicker.delegate = self
         repsPicker.dataSource = self
         goalPicker.delegate = self
         goalPicker.dataSource = self
         currentPicker.delegate = self
         currentPicker.dataSource = self
+        
+        errorLabel.isHidden = true
         
         repsPicker.selectRow(0, inComponent: 0, animated: true)
         goalPicker.selectRow(19, inComponent: 0, animated: true)
@@ -56,6 +61,12 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
             step3Label.text = "Update current max"
             step4Label.text = "Update goal max"
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= limitLength
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -117,8 +128,26 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         let currentWeight = self.current[currentPicker.selectedRow(inComponent: 0)]
         goal.current = Int16(currentWeight)
         
-        ad.saveContext()
-        navigationController?.popViewController(animated: true)
+        if (goal.current <= goal.weight && nameTextField.text != "") {
+            errorLabel.isHidden = true
+            ad.saveContext()
+            navigationController?.popViewController(animated: true)
+        }
+        else if goal.current > goal.weight {
+            errorLabel.isHidden = false
+            errorLabel.text = "* Current max must be less than goal max"
+            print("Form error")
+            return
+        }
+        else if nameTextField.text == "" {
+            errorLabel.isHidden = false
+            errorLabel.text = "* Please give this goal a name"
+            print("Form error")
+            return
+        }
+        else {
+            //
+        }
     }
     
     func loadGoalData() {
@@ -141,7 +170,6 @@ class AddLiftVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         }
         navigationController?.popViewController(animated: true)
     }
-
 }
 
 extension UIViewController {
@@ -153,6 +181,5 @@ extension UIViewController {
     
     func dismissKeyboard() {
         view.endEditing(true)
-        
     }
 }

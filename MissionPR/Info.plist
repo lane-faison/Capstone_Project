@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>FitPhocus</string>
+	<string>AppleFit</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -31,6 +31,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>stencil-army.ttf</string>
+		<string>RifficFree-Bold.ttf</string>
+		<string>PoetsenOne-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
