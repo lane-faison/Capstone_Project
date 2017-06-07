@@ -27,7 +27,7 @@ class LiftGoalCell: UITableViewCell {
     
     func configureProgress(goalLift: Goal_Lift) {
         
-        let transform = CGAffineTransform(scaleX: 1.0, y: 8.0)
+        let transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         self.progressView.transform = transform
         
         let progress = Float(goalLift.current)/Float(goalLift.weight)

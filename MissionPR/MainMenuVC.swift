@@ -73,9 +73,8 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         let myCoordinates = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
         let distance: CLLocationDistance = myCoordinates.distance(from: gymCoordinates)
         print("DISTANCE: \(distance)")
-        if distance < 300 {
-            print("You are at the gym")
-            gymStatusLabel.text = "You are at the gym"
+        if distance < 100 {
+            gymStatusLabel.text = "You are checked in. Have a great workout!"
             gymStatusLabel.isHidden = false
             
             var newVisit: Gym_Visits!
@@ -93,7 +92,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             print(newVisit.date)
         } else {
             print("You are not at the gym")
-            gymStatusLabel.text = "You are not at the gym"
+            gymStatusLabel.text = "Our location data indicates that you are not currently located at your preset gym."
             gymStatusLabel.isHidden = false
         }
         
