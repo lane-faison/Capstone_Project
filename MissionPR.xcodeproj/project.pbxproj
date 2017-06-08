@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		592AD8B30BF18F56F967BBA7 /* Pods_MissionPR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A80AA58CDD61A549DFD44D /* Pods_MissionPR.framework */; };
+		F608BD731EE9B53700D62449 /* Goal_Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608BD711EE9B53700D62449 /* Goal_Run+CoreDataClass.swift */; };
+		F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608BD721EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift */; };
 		F610904D1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F610904B1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift */; };
 		F610904E1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F610904C1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift */; };
 		F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011A1EDF3D5B0067A794 /* MainMenuVC.swift */; };
@@ -51,6 +53,8 @@
 		336FFB2F87060AE3E2245311 /* Pods-MissionPR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissionPR.release.xcconfig"; path = "Pods/Target Support Files/Pods-MissionPR/Pods-MissionPR.release.xcconfig"; sourceTree = "<group>"; };
 		52A80AA58CDD61A549DFD44D /* Pods_MissionPR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissionPR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE882F1FE23FBA1CD47062E8 /* Pods-MissionPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissionPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MissionPR/Pods-MissionPR.debug.xcconfig"; sourceTree = "<group>"; };
+		F608BD711EE9B53700D62449 /* Goal_Run+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Run+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F608BD721EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F610904B1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Visits+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F610904C1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Visits+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F620011A1EDF3D5B0067A794 /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		F62001221EDF5DC40067A794 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				F608BD721EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift */,
 				F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */,
 				F67F02E21EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift */,
 				F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */,
@@ -175,6 +180,7 @@
 		F6F8299A1EDE2D1F00A2C183 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F608BD711EE9B53700D62449 /* Goal_Run+CoreDataClass.swift */,
 				F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */,
 				F67F02E11EE5BE160065F168 /* Goal_Food+CoreDataClass.swift */,
 				F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */,
@@ -370,6 +376,7 @@
 				F67F02E31EE5BE160065F168 /* Goal_Food+CoreDataClass.swift in Sources */,
 				F65D360E1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift in Sources */,
 				F6FF35DB1EE1FEB50086C31D /* VisitVC.swift in Sources */,
+				F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */,
 				F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
 				F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */,
@@ -382,6 +389,7 @@
 				F67F02E41EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift in Sources */,
 				F65D36181EE09055006C067A /* AddRunVC.swift in Sources */,
 				F6F8298E1EDE2ABE00A2C183 /* MissionPR.xcdatamodeld in Sources */,
+				F608BD731EE9B53700D62449 /* Goal_Run+CoreDataClass.swift in Sources */,
 				F6AFD8851EE66E000093253B /* Food_Log+CoreDataProperties.swift in Sources */,
 				F6FF35D91EE1FE9E0086C31D /* FoodVC.swift in Sources */,
 				F6F8299E1EDE306C00A2C183 /* RoundedOutlineView.swift in Sources */,
