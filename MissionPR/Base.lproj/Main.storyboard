@@ -538,9 +538,225 @@
                     <view key="view" contentMode="scaleToFill" id="HZk-Sx-Ngi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KL9-r6-s6N">
+                                <rect key="frame" x="10" y="84" width="355" height="444.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wt2-zM-arA">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="114.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ku3-Lo-BrA">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr1-dp-IHL" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="44" id="cfW-hh-l7h"/>
+                                                            <constraint firstAttribute="height" constant="44" id="uox-A6-IRq"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="22"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="rxi-OM-tR0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your goal a name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91D-sB-1Nb">
+                                                        <rect key="frame" x="49" y="0.0" width="306" height="44"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex. Incline Bench Press" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qLx-1S-HWZ">
+                                                <rect key="frame" x="0.0" y="54" width="355" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="next"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhn-f8-JVG">
+                                                <rect key="frame" x="0.0" y="94" width="355" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                <color key="textColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ku3-Lo-BrA" secondAttribute="trailing" id="0Np-de-viD"/>
+                                            <constraint firstItem="Mhn-f8-JVG" firstAttribute="leading" secondItem="Wt2-zM-arA" secondAttribute="leading" id="6xt-Kz-REK"/>
+                                            <constraint firstItem="qLx-1S-HWZ" firstAttribute="leading" secondItem="Wt2-zM-arA" secondAttribute="leading" id="F91-Er-TJF"/>
+                                            <constraint firstAttribute="trailing" secondItem="qLx-1S-HWZ" secondAttribute="trailing" id="jNA-A0-CJZ"/>
+                                            <constraint firstItem="ku3-Lo-BrA" firstAttribute="top" secondItem="Wt2-zM-arA" secondAttribute="top" id="kSa-2f-JiT"/>
+                                            <constraint firstItem="ku3-Lo-BrA" firstAttribute="leading" secondItem="Wt2-zM-arA" secondAttribute="leading" id="qPs-Cl-A1y"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mhn-f8-JVG" secondAttribute="trailing" id="yfv-zH-Zlm"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3od-j8-psZ">
+                                        <rect key="frame" x="0.0" y="124.5" width="355" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvm-cW-k3d" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="44" height="44"/>
+                                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="Wcj-5q-VzI"/>
+                                                    <constraint firstAttribute="height" constant="44" id="z1x-ea-zY3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="jNa-Nu-rXe"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzO-GV-Wh5">
+                                                <rect key="frame" x="49" y="38.5" width="201" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sg6-vr-fq3">
+                                                <rect key="frame" x="255" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="XcR-Wm-30x"/>
+                                                    <constraint firstAttribute="height" constant="100" id="evo-94-bwc"/>
+                                                </constraints>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bSc-Nu-ZmV">
+                                        <rect key="frame" x="0.0" y="234.5" width="355" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3j-Iu-2tl" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="44" height="44"/>
+                                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="pQq-2t-T6Q"/>
+                                                    <constraint firstAttribute="height" constant="44" id="xLC-jD-0zA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="kOV-Ql-ODv"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7N-qy-ZRT">
+                                                <rect key="frame" x="49" y="38.5" width="104" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srI-CK-QRd">
+                                                <rect key="frame" x="158" y="0.0" width="197" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="afY-Ul-zuu"/>
+                                                </constraints>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wcf-eI-AQL">
+                                        <rect key="frame" x="0.0" y="344.5" width="355" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRO-AX-of5" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="44" height="44"/>
+                                                <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="QpX-DL-G3U"/>
+                                                    <constraint firstAttribute="width" constant="44" id="TdC-jX-yru"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="d8S-Sw-ocJ"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkX-so-Q8z">
+                                                <rect key="frame" x="49" y="38.5" width="82" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkB-zi-8Ix">
+                                                <rect key="frame" x="136" y="0.0" width="219" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="cOo-rf-A4p"/>
+                                                </constraints>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDB-rR-tNk" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="567" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8gf-Ib-CCh"/>
+                                    <constraint firstAttribute="width" constant="200" id="kbh-AD-GvP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPressed:" destination="15j-Np-80E" eventType="touchUpInside" id="UDd-4P-yab"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KL9-r6-s6N" firstAttribute="top" secondItem="rcc-zT-FIE" secondAttribute="bottom" constant="20" id="5v9-4k-qf4"/>
+                            <constraint firstItem="uDB-rR-tNk" firstAttribute="centerX" secondItem="HZk-Sx-Ngi" secondAttribute="centerX" id="6oa-XI-9t7"/>
+                            <constraint firstItem="zQS-yu-jqM" firstAttribute="top" secondItem="uDB-rR-tNk" secondAttribute="bottom" constant="50" id="Axt-3S-Qvx"/>
+                            <constraint firstAttribute="trailing" secondItem="KL9-r6-s6N" secondAttribute="trailing" constant="10" id="BLR-Uj-eBY"/>
+                            <constraint firstItem="KL9-r6-s6N" firstAttribute="centerX" secondItem="HZk-Sx-Ngi" secondAttribute="centerX" id="Bpg-mL-X2f"/>
+                            <constraint firstItem="KL9-r6-s6N" firstAttribute="leading" secondItem="HZk-Sx-Ngi" secondAttribute="leading" constant="10" id="GXO-pA-J5d"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KLE-MT-I4K"/>
+                    <navigationItem key="navigationItem" title="Run Information" id="KLE-MT-I4K"/>
+                    <connections>
+                        <outlet property="currentPicker" destination="srI-CK-QRd" id="iqW-0F-RaM"/>
+                        <outlet property="distancePicker" destination="sg6-vr-fq3" id="Oun-Mf-lbe"/>
+                        <outlet property="goalPicker" destination="XkB-zi-8Ix" id="5xO-C1-qQY"/>
+                        <outlet property="name" destination="91D-sB-1Nb" id="uTC-SD-YhW"/>
+                        <outlet property="nameTextField" destination="qLx-1S-HWZ" id="3ig-o2-GSf"/>
+                        <outlet property="saveBtn" destination="uDB-rR-tNk" id="eIw-oh-JGk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGb-OF-EEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1450,7 +1666,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
