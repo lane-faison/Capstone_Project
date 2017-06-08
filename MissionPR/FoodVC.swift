@@ -29,12 +29,16 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         attemptFetch()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func configureCell(cell: FoodGoalCell, indexPath: NSIndexPath) {
         // update cell
-        
         let goal = controller.object(at: indexPath as IndexPath)
-//        cell.attemptFetch()
+        
         cell.configureCell(goalFood: goal)
+        
         cell.configureProgress(goalFood: goal)
     }
     

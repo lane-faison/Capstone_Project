@@ -23,6 +23,11 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var goal: UILabel!
     
     func configureCell(goalFood: Goal_Food) {
+        totalFruit = 0
+        totalVegetables = 0
+        
+        attemptFetch()
+        
         view.layer.cornerRadius = 5
         
         let dateFormatter = DateFormatter()
@@ -32,20 +37,15 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
         let interval = Calendar.current.dateInterval(of: .month, for: Date() as Date)!
         daysInMonth = Calendar.current.dateComponents([.day], from: interval.start, to: interval.end).day!
         goal.text = "\(daysInMonth)"
-
-//        attemptFetch()
         
         if goalFood.name == "fruit" {
             name.text = "🍎 Fruit in \(nameOfMonth)"
-            attemptFetch()
             current.text = "\(totalFruit)"
         }
         if goalFood.name == "vegetable" {
             name.text = "🥕 Vegetables in \(nameOfMonth)"
-            attemptFetch()
             current.text = "\(totalVegetables)"
         }
-        
     }
     
     func configureProgress(goalFood: Goal_Food) {
@@ -86,30 +86,25 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         controller.delegate = self
+
         self.controller = controller
         
         do {
             try self.controller.performFetch()
-            print("###### FETCH ######")
+
             let data = self.controller.fetchedObjects
             
             if (data?.count)! > 0 {
-                print((data?.count)!)
                 for log in data! {
-                    print("$$$$$$$$$$$$$$")
-                    print(log.date!) // type = NSDate
                     let component1 = NSCalendar.current.dateComponents([.month,.year,.day], from: (Date() as NSDate) as Date)
                     let component2 = NSCalendar.current.dateComponents([.month,.year], from: log.date! as Date)
                     
                     if component1.month == component2.month && component1.year == component2.year {
-                        print("SAME MONTH & YEAR")
                         if log.name == "fruit" {
                             totalFruit += 1
-                            print("FOUND FRUIT")
                         }
                         if log.name == "vegetable" {
                             totalVegetables += 1
-                            print("FOUND VEGETABLE")
                         }
                     }
                 }

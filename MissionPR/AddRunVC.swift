@@ -118,7 +118,18 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
     }
     
     func loadGoalData() {
-    
+        if let runGoal = goalToEdit {
+            nameTextField.text = runGoal.name
+            
+//            let indexOfDistance = distanceDataSource[0].index
+//                .index(of: Int(runGoal.distance))
+//            let indexOfUnits =
+//            let indexOfCurrent = current.index(of: Int(liftGoal.current))
+//            let indexOfGoal = goal.index(of: Int(liftGoal.weight))
+//            repsPicker.selectRow(indexOfReps!, inComponent: 0, animated: true)
+//            currentPicker.selectRow(indexOfCurrent!, inComponent: 0, animated: true)
+//            goalPicker.selectRow(indexOfGoal!, inComponent: 0, animated: true)
+        }
     }
     
 }

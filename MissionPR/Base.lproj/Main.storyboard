@@ -323,7 +323,7 @@
                                                             <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="jgf-r1-Tbz"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your goal a name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTc-eS-YHT">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give this lifting goal a name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTc-eS-YHT">
                                                         <rect key="frame" x="60" y="0.0" width="258" height="50"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -540,7 +540,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KL9-r6-s6N">
-                                <rect key="frame" x="10" y="84" width="355" height="437.5"/>
+                                <rect key="frame" x="10" y="84" width="355" height="459"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wt2-zM-arA">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="114.5"/>
@@ -569,7 +569,7 @@
                                                             <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="rxi-OM-tR0"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your running goal a name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91D-sB-1Nb">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give this running goal a name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91D-sB-1Nb">
                                                         <rect key="frame" x="49" y="0.0" width="306" height="44"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -577,7 +577,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex. Incline Bench Press" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qLx-1S-HWZ">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex. BolderBoulder 10K training" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qLx-1S-HWZ">
                                                 <rect key="frame" x="0.0" y="54" width="355" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -600,11 +600,11 @@
                                             <constraint firstAttribute="trailing" secondItem="Mhn-f8-JVG" secondAttribute="trailing" id="yfv-zH-Zlm"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3od-j8-psZ">
-                                        <rect key="frame" x="0.0" y="145.5" width="355" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3od-j8-psZ">
+                                        <rect key="frame" x="0.0" y="124.5" width="355" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvm-cW-k3d" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="44" height="44"/>
                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="44" id="Wcj-5q-VzI"/>
@@ -625,13 +625,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzO-GV-Wh5">
-                                                <rect key="frame" x="49" y="0.0" width="151" height="44"/>
+                                                <rect key="frame" x="49" y="38.5" width="151" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sg6-vr-fq3">
-                                                <rect key="frame" x="205" y="0.0" width="150" height="44"/>
+                                                <rect key="frame" x="205" y="0.0" width="150" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="evo-94-bwc"/>
                                                     <constraint firstAttribute="width" constant="150" id="ink-Un-qCF"/>
@@ -640,7 +640,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bSc-Nu-ZmV">
-                                        <rect key="frame" x="0.0" y="227.5" width="355" height="100"/>
+                                        <rect key="frame" x="0.0" y="242" width="355" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3j-Iu-2tl" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="44" height="44"/>
@@ -678,7 +678,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wcf-eI-AQL">
-                                        <rect key="frame" x="0.0" y="337.5" width="355" height="100"/>
+                                        <rect key="frame" x="0.0" y="359" width="355" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRO-AX-of5" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="44" height="44"/>
@@ -702,7 +702,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkX-so-Q8z">
-                                                <rect key="frame" x="49" y="38" width="82" height="23.5"/>
+                                                <rect key="frame" x="49" y="38.5" width="82" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
