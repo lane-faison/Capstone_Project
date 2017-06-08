@@ -14,10 +14,12 @@
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Goal_Run" representedClassName="Goal_Run" syncable="YES" codeGenerationType="class">
-        <attribute name="currentTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="goalTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    <entity name="Goal_Run" representedClassName=".Goal_Run" syncable="YES">
+        <attribute name="currentTime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="goalTime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="units" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Goal_Visits" representedClassName=".Goal_Visits" syncable="YES">
         <attribute name="frequency" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -33,12 +35,12 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Food_Log" positionX="-45" positionY="27" width="128" height="75"/>
         <element name="Goal_Food" positionX="-45" positionY="27" width="128" height="75"/>
         <element name="Goal_Lift" positionX="-54" positionY="18" width="128" height="105"/>
-        <element name="Goal_Run" positionX="-45" positionY="27" width="128" height="90"/>
+        <element name="Goal_Run" positionX="-45" positionY="27" width="128" height="120"/>
         <element name="Goal_Visits" positionX="-36" positionY="45" width="128" height="75"/>
         <element name="Gym_Location" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Gym_Visits" positionX="-45" positionY="27" width="128" height="75"/>
-        <element name="Food_Log" positionX="-45" positionY="27" width="128" height="75"/>
     </elements>
 </model>

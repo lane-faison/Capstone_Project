@@ -10,6 +10,8 @@ import UIKit
 
 class AddRunVC: UIViewController {
 
+    var goalToEdit: Goal_Run?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
