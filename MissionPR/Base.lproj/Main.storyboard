@@ -785,15 +785,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3aV-fg-2xS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="neA-hQ-kRS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCi-CX-Rax" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                 <rect key="frame" x="137" y="283" width="100" height="100"/>
                                 <constraints>
@@ -839,12 +830,9 @@
                         <constraints>
                             <constraint firstItem="G2E-Uk-dlH" firstAttribute="top" secondItem="Eje-Ek-GY1" secondAttribute="bottom" constant="50" id="2Fy-c9-ZJd"/>
                             <constraint firstItem="RCi-CX-Rax" firstAttribute="top" secondItem="diZ-BY-3PF" secondAttribute="bottom" constant="50" id="AXS-6E-zkC"/>
-                            <constraint firstItem="3aV-fg-2xS" firstAttribute="leading" secondItem="Sdp-Yx-zer" secondAttribute="leading" id="Hec-tp-9rK"/>
                             <constraint firstItem="Eje-Ek-GY1" firstAttribute="top" secondItem="RCi-CX-Rax" secondAttribute="bottom" constant="50" id="M5j-LR-Riv"/>
-                            <constraint firstAttribute="trailing" secondItem="3aV-fg-2xS" secondAttribute="trailing" id="MX9-ci-Quk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G2E-Uk-dlH" secondAttribute="trailing" constant="50" id="NX0-u1-UhH"/>
                             <constraint firstItem="G2E-Uk-dlH" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="NmE-0S-8vK"/>
-                            <constraint firstItem="3aV-fg-2xS" firstAttribute="top" secondItem="WA3-KB-TyQ" secondAttribute="bottom" id="V9j-mo-SGJ"/>
                             <constraint firstItem="diZ-BY-3PF" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="asC-HE-Gvn"/>
                             <constraint firstItem="G2E-Uk-dlH" firstAttribute="leading" secondItem="Sdp-Yx-zer" secondAttribute="leadingMargin" constant="50" id="iuM-cR-zk1"/>
                             <constraint firstItem="Eje-Ek-GY1" firstAttribute="centerX" secondItem="Sdp-Yx-zer" secondAttribute="centerX" id="mZ1-eI-Jp9"/>
@@ -855,7 +843,6 @@
                     <navigationItem key="navigationItem" id="ToX-4q-MsW"/>
                     <connections>
                         <outlet property="captureBtn" destination="RCi-CX-Rax" id="fwQ-tl-faJ"/>
-                        <outlet property="labelResults" destination="3aV-fg-2xS" id="1aO-NO-Vq0"/>
                         <outlet property="resultsLabel" destination="G2E-Uk-dlH" id="qKk-ak-tOC"/>
                         <outlet property="spinner" destination="Eje-Ek-GY1" id="Mu4-9T-Xnk"/>
                     </connections>
@@ -1677,7 +1664,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqZ-41-Ovg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6RL-ER-X6W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6RL-ER-X6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
