@@ -25,7 +25,6 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(GP_KEY)")!
     }
     var foodToCheck: Goal_Food!
-//    let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: Selector(("rotateButton")), userInfo: nil, repeats: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +42,6 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }
     }
     
-
-    
-    //$$$$$$$$$$$$$$$$$$$$$ IMAGE RECOGNITION FUNCTIONS $$$$$$$$$$$$$$$$$$$$$$
-    
     @IBAction func findPhotoBtnPressed(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
 
@@ -63,8 +58,6 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
 //        }
     }
 }
-
-/// Image processing
 
 extension CheckFoodVC {
     
