@@ -58,6 +58,7 @@ class RunGoalCell: UITableViewCell {
         
         if progress >= 1.00 {
             progressRatio = 1.00
+            name.text = "\(goalRun.name!) (Achieved!)"
         } else {
             progressRatio = progress
         }

@@ -13,9 +13,7 @@ import SwiftyJSON
 
 class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var btnView: UIView!
     @IBOutlet weak var captureBtn: RoundedOutlineButton!
-    @IBOutlet weak var labelResults: UITextView!
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -36,7 +34,7 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         imagePicker.delegate = self
         spinner.isHidden = true
         resultsLabel.isHidden = true
-        
+        //
         if foodToCheck != nil {
             print(foodToCheck.name!)
         }
@@ -71,49 +69,14 @@ extension CheckFoodVC {
             let errorObj: JSON = json["error"]
             
             self.spinner.stopAnimating()
-            self.labelResults.isHidden = false
-//            self.faceResults.isHidden = false
-//            self.faceResults.text = ""
             
             // Check for errors
             if (errorObj.dictionaryValue != [:]) {
-                self.labelResults.text = "Error code \(errorObj["code"]): \(errorObj["message"])"
+                print("Error code \(errorObj["code"]): \(errorObj["message"])")
             } else {
                 // Parse the response
                 print(json)
                 let responses: JSON = json["responses"][0]
-                
-                // Get face annotations
-                //                let faceAnnotations: JSON = responses["faceAnnotations"]
-                //                if faceAnnotations != nil {
-                //                    let emotions: Array<String> = ["joy", "sorrow", "surprise", "anger"]
-                //
-                //                    let numPeopleDetected:Int = faceAnnotations.count
-                //
-                //                    self.faceResults.text = "People detected: \(numPeopleDetected)\n\nEmotions detected:\n"
-                //
-                //                    var emotionTotals: [String: Double] = ["sorrow": 0, "joy": 0, "surprise": 0, "anger": 0]
-                //                    var emotionLikelihoods: [String: Double] = ["VERY_LIKELY": 0.9, "LIKELY": 0.75, "POSSIBLE": 0.5, "UNLIKELY":0.25, "VERY_UNLIKELY": 0.0]
-                //
-                //                    for index in 0..<numPeopleDetected {
-                //                        let personData:JSON = faceAnnotations[index]
-                //
-                //                        // Sum all the detected emotions
-                //                        for emotion in emotions {
-                //                            let lookup = emotion + "Likelihood"
-                //                            let result:String = personData[lookup].stringValue
-                //                            emotionTotals[emotion]! += emotionLikelihoods[result]!
-                //                        }
-                //                    }
-                //                    // Get emotion likelihood as a % and display in UI
-                //                    for (emotion, total) in emotionTotals {
-                //                        let likelihood:Double = total / Double(numPeopleDetected)
-                //                        let percent: Int = Int(round(likelihood * 100))
-                //                        self.faceResults.text! += "\(emotion): \(percent)%\n"
-                //                    }
-                //                } else {
-                //                    self.faceResults.text = "No faces found"
-                //                }
                 
                 // Get label annotations
                 let labelAnnotations: JSON = responses["labelAnnotations"]
@@ -127,11 +90,9 @@ extension CheckFoodVC {
                     }
                     for label in labels {
                         
-                        
                         labelResultsText += "\(label), "
                         
                         if label == self.foodToCheck.name {
-                            print("\(self.foodToCheck.name!.capitalized)!")
                             var foodFound: Food_Log!
                             foodFound = Food_Log(context: context)
                             foodFound.name = label
@@ -143,16 +104,14 @@ extension CheckFoodVC {
                             self.resultsLabel.isHidden = false
                             return
                         } else {
-
-                            print("$$$$$ We did not find a match")
+                            print("We did not find a match")
                         }
                     }
-//                    self.labelResults.text = labelResultsText
                       self.spinner.isHidden = true
                       self.resultsLabel.text = "Not \(self.foodToCheck.name!)"
                       self.resultsLabel.isHidden = false
                 } else {
-                    self.labelResults.text = "No labels found"
+                    print("No labels found.")
                 }
             }
         })
@@ -160,16 +119,9 @@ extension CheckFoodVC {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            //            imageView.contentMode = .scaleAspectFit
-            //            imageView.isHidden = true // You could optionally display the image here by setting imageView.image = pickedImage
+
             spinner.isHidden = false
             spinner.startAnimating()
-//            let btnTransform = CGAffineTransform(rotationAngle: CGFloat(20.0*Double.pi))
-//            UIView.animate(withDuration: 5.0, animations: ({
-//                self.captureBtn.transform = btnTransform
-//            }))
-//            faceResults.isHidden = true
-            labelResults.isHidden = true
             
             // Base64 encode the image and create the request
             let binaryImageData = base64EncodeImage(pickedImage)
@@ -193,9 +145,7 @@ extension CheckFoodVC {
     }
 }
 
-
 /// Networking
-
 extension CheckFoodVC {
     func base64EncodeImage(_ image: UIImage) -> String {
         var imagedata = UIImagePNGRepresentation(image)
