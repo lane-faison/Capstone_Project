@@ -181,7 +181,6 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         }
     }
     
-    
     @IBAction func addPressed(_ sender: Any) {
         var goal: Goal_Run!
         
