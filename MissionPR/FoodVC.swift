@@ -25,7 +25,6 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.delegate = self
         tableView.dataSource = self
         
-        //        generateTestData()
         attemptFetch()
     }
     
@@ -34,11 +33,8 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     
     func configureCell(cell: FoodGoalCell, indexPath: NSIndexPath) {
-        // update cell
         let goal = controller.object(at: indexPath as IndexPath)
-        
         cell.configureCell(goalFood: goal)
-        
         cell.configureProgress(goalFood: goal)
     }
     
@@ -125,7 +121,6 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         case.update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! FoodGoalCell
-                // update the cell data
                 configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
             break
@@ -138,18 +133,6 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             }
             break
         }
-    }
-    
-    func generateTestData() {
-        let goal1 = Goal_Food(context: context)
-        goal1.name = "Fruit"
-        goal1.date = Date() as NSDate
-        
-        let goal2 = Goal_Food(context: context)
-        goal2.name = "Vegetables"
-        goal2.date = Date() as NSDate
-
-        ad.saveContext()
     }
 }
 

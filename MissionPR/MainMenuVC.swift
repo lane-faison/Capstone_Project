@@ -137,7 +137,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
     }
     
     func attemptVisitFetch() {
-        
+    
         let fetchRequest: NSFetchRequest<Gym_Visits> = Gym_Visits.fetchRequest()
         let dateSort = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
@@ -164,6 +164,9 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
                 } else {
                     okayToCheckIn = true
                 }
+            } else {
+                print("ELSE: Okay To Check In")
+                okayToCheckIn = true
             }
         } catch {
             let error = error as NSError
