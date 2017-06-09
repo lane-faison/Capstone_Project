@@ -93,15 +93,15 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         
         if pickerView == distancePicker {
             
-            let choice = "\(distanceDataSource[component][row])"
+            var choice = "\(distanceDataSource[component][row])"
             
-            //            if distanceDataSource[1][row] == 0 {
-            //                choice = "mi"
-            //            }
-            //
-            //            if distanceDataSource[1][row] == 1 {
-            //                choice = "km"
-            //            }
+            if component == 1 && row == 0 {
+                choice = "mi"
+            }
+            
+            if component == 1 && row == 1 {
+                choice = "km"
+            }
             
             return choice
         }
