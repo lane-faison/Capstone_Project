@@ -735,6 +735,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addPressed:" destination="15j-Np-80E" eventType="touchUpInside" id="UDd-4P-yab"/>
+                                    <action selector="addPressed:" destination="X7X-bc-XXH" eventType="touchUpInside" id="boA-Px-ymB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -752,6 +753,7 @@
                     <connections>
                         <outlet property="currentPicker" destination="srI-CK-QRd" id="iqW-0F-RaM"/>
                         <outlet property="distancePicker" destination="sg6-vr-fq3" id="Oun-Mf-lbe"/>
+                        <outlet property="errorLabel" destination="Mhn-f8-JVG" id="BqO-ik-PmL"/>
                         <outlet property="goalPicker" destination="XkB-zi-8Ix" id="5xO-C1-qQY"/>
                         <outlet property="name" destination="91D-sB-1Nb" id="uTC-SD-YhW"/>
                         <outlet property="nameTextField" destination="qLx-1S-HWZ" id="3ig-o2-GSf"/>

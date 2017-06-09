@@ -180,9 +180,9 @@ class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
     }
 }
 
-extension UIViewController {
+extension AddLiftVC {
     func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddLiftVC.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }

@@ -15,6 +15,7 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     let limitLength = 22 //character length for above text field
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var distancePicker: UIPickerView!
     @IBOutlet weak var currentPicker: UIPickerView!
     @IBOutlet weak var goalPicker: UIPickerView!
@@ -40,10 +41,17 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         goalPicker.delegate = self
         goalPicker.dataSource = self
         
-        loadGoalData()
+        errorLabel.isHidden = true
+        
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         if goalToEdit != nil {
             loadGoalData()
+            //            step1Label.text = "Edit your goal's name"
+            //            step2Label.text = "Change number of reps"
+            //            step3Label.text = "Update current max"
+            //            step4Label.text = "Update goal max"
         }
     }
     
@@ -85,13 +93,13 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
             
             let choice = "\(distanceDataSource[component][row])"
             
-//            if distanceDataSource[1][row] == 0 {
-//                choice = "mi"
-//            }
-//            
-//            if distanceDataSource[1][row] == 1 {
-//                choice = "km"
-//            }
+            //            if distanceDataSource[1][row] == 0 {
+            //                choice = "mi"
+            //            }
+            //
+            //            if distanceDataSource[1][row] == 1 {
+            //                choice = "km"
+            //            }
             
             return choice
         }
@@ -145,22 +153,13 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
                 distancePicker.selectRow(1, inComponent: 1, animated: true)
             }
             
-            
             let h_current = runGoal.currentTime/3600
             let m_current = (runGoal.currentTime%3600)/60
             let s_current = (runGoal.currentTime%3600)%60
             
-            print(h_current)
-            print(m_current)
-            print(s_current)
-            
             let h_goal = runGoal.goalTime/3600
             let m_goal = (runGoal.goalTime%3600)/60
             let s_goal = (runGoal.goalTime%3600)%60
-            
-            print(h_goal)
-            print(m_goal)
-            print(s_goal)
             
             let indexOfCurrent_h = timeDataSource[0].index(of: Int(h_current))
             let indexOfCurrent_m = timeDataSource[1].index(of: Int(m_current))
@@ -177,9 +176,94 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
             goalPicker.selectRow(indexOfGoal_h!, inComponent: 0, animated: true)
             goalPicker.selectRow(indexOfGoal_m!, inComponent: 1, animated: true)
             goalPicker.selectRow(indexOfGoal_s!, inComponent: 2, animated: true)
-           
-
         }
     }
     
+    
+    @IBAction func addPressed(_ sender: Any) {
+        var goal: Goal_Run!
+        
+        if goalToEdit != nil {
+            goal = goalToEdit
+        }
+        
+        let distance = self.distanceDataSource[0][self.distancePicker.selectedRow(inComponent: 0)]
+        let units = self.distanceDataSource[1][self.distancePicker.selectedRow(inComponent: 1)]
+        
+        let current_h = self.timeDataSource[0][self.currentPicker.selectedRow(inComponent: 0)]
+        let current_m = self.timeDataSource[1][self.currentPicker.selectedRow(inComponent: 1)]
+        let current_s = self.timeDataSource[2][self.currentPicker.selectedRow(inComponent: 2)]
+        
+        let goal_h = self.timeDataSource[0][self.goalPicker.selectedRow(inComponent: 0)]
+        let goal_m = self.timeDataSource[1][self.goalPicker.selectedRow(inComponent: 1)]
+        let goal_s = self.timeDataSource[2][self.goalPicker.selectedRow(inComponent: 2)]
+        
+        let currentTimeInSeconds = (current_h * 3600) + (current_m * 60) + current_s
+        let goalTimeInSeconds = (goal_h * 3600) + (goal_m * 60) + goal_s
+        
+        if nameTextField.text != "" {
+            
+            errorLabel.isHidden = true
+            
+            if goalToEdit == nil {
+                goal = Goal_Run(context: context)
+                
+                if let name = nameTextField.text {
+                    goal.name = name
+                }
+                
+                goal.distance = Int16(distance)
+                
+                if units == 0 {
+                    goal.units = "mi"
+                }
+                if units == 1 {
+                    goal.units = "km"
+                }
+                
+                goal.currentTime = Int16(currentTimeInSeconds)
+                goal.goalTime = Int16(goalTimeInSeconds)
+                ad.saveContext()
+                navigationController?.popViewController(animated: true)
+            } else {
+                if let name = nameTextField.text {
+                    goal.name = name
+                }
+                
+                goal.distance = Int16(distance)
+                
+                if units == 0 {
+                    goal.units = "mi"
+                }
+                if units == 1 {
+                    goal.units = "km"
+                }
+                
+                goal.currentTime = Int16(currentTimeInSeconds)
+                goal.goalTime = Int16(goalTimeInSeconds)
+                ad.saveContext()
+                navigationController?.popViewController(animated: true)
+            }
+        } else {
+            errorLabel.text = "* Please give this goal a name"
+            errorLabel.isHidden = false
+        }
+    }
+}
+
+extension AddRunVC {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddRunVC.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

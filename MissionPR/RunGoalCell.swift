@@ -54,15 +54,23 @@ class RunGoalCell: UITableViewCell {
         
         let progress = Float(goalRun.goalTime)/Float(goalRun.currentTime)
         
-        progressView.setProgress(Float(goalRun.goalTime)/Float(goalRun.currentTime), animated: true)
+        var progressRatio: Float!
         
-        if progress <= 1.00 {
+        if progress >= 1.00 {
+            progressRatio = 1.00
+        } else {
+            progressRatio = progress
+        }
+        
+        progressView.setProgress(progressRatio, animated: true)
+        
+        if progressRatio > 0.85 {
             progressView.progressTintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
         }
-        if progress <= 0.85 {
+        if progressRatio <= 0.85 {
             progressView.progressTintColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1.0)
         }
-        if progress <= 0.70 {
+        if progressRatio <= 0.70 {
             progressView.progressTintColor = UIColor(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
         }
     }
