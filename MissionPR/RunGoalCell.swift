@@ -28,16 +28,64 @@ class RunGoalCell: UITableViewCell {
         let m_goal = (goalRun.goalTime%3600)/60
         let s_goal = (goalRun.goalTime%3600)%60
         
-        if h_current > 0 {
+        if h_current > 0 {            
             current.text = "\(h_current):\(m_current):\(s_current)"
+            
+            if m_current < 10 {
+                current.text = "\(h_current):0\(m_current):\(s_current)"
+            }
+            
+            if s_current < 10 {
+                current.text = "\(h_current):\(m_current):0\(s_current)"
+            }
+            
+            if m_current < 10 && s_current < 10 {
+                current.text = "\(h_current):0\(m_current):0\(s_current)"
+            }
         } else {
             current.text = "\(m_current):\(s_current)"
+            
+            if m_current < 10 {
+                current.text = "\(m_current):\(s_current)"
+            }
+            
+            if s_current < 10 {
+                current.text = "\(m_current):0\(s_current)"
+            }
+            
+            if m_current < 10 && s_current < 10 {
+                current.text = "\(m_current):0\(s_current)"
+            }
         }
         
         if h_goal > 0 {
             goal.text = "\(h_goal):\(m_goal):\(s_goal)"
+            
+            if m_goal < 10 {
+                goal.text = "\(h_goal):0\(m_goal):\(s_goal)"
+            }
+            
+            if s_goal < 10 {
+                goal.text = "\(h_goal):\(m_goal):0\(s_goal)"
+            }
+            
+            if m_goal < 10 && s_goal < 10 {
+                goal.text = "\(h_goal):0\(m_goal):0\(s_goal)"
+            }
         } else {
             goal.text = "\(m_goal):\(s_goal)"
+            
+            if m_goal < 10 {
+                goal.text = "\(m_goal):\(s_goal)"
+            }
+            
+            if s_goal < 10 {
+                goal.text = "\(m_goal):0\(s_goal)"
+            }
+            
+            if m_goal < 10 && s_goal < 10 {
+                goal.text = "\(m_goal):0\(s_goal)"
+            }
         }
         
         view.layer.cornerRadius = 5
@@ -48,7 +96,6 @@ class RunGoalCell: UITableViewCell {
     
     func configureProgress(goalRun: Goal_Run) {
         print("Configure process function...")
-        secondsToHoursMinutesSeconds(seconds: goalRun.currentTime)
         let transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         self.progressView.transform = transform
         
@@ -75,13 +122,4 @@ class RunGoalCell: UITableViewCell {
             progressView.progressTintColor = UIColor(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
         }
     }
-    
-    func secondsToHoursMinutesSeconds(seconds: Int16) -> (Int16,Int16,Int16) {
-        let h = seconds/3600
-        let m = (seconds%3600)/60
-        let s = (seconds%3600)%60
-        print("@@@@@ \(h), \(m), \(s)")
-        return (h,m,s)
-    }
-
 }

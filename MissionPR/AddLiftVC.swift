@@ -57,7 +57,7 @@ class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
         
         if goalToEdit != nil {
             loadGoalData()
-            step1Label.text = "Edit your goal's name"
+            step1Label.text = "Edit your lifting goal's name"
             step2Label.text = "Change number of reps"
             step3Label.text = "Update current max"
             step4Label.text = "Update goal max"

@@ -16,6 +16,7 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     @IBOutlet weak var captureBtn: RoundedOutlineButton!
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var noCameraMessage: UILabel!
     
     let imagePicker = UIImagePickerController()
     let session = URLSession.shared
@@ -34,26 +35,34 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         imagePicker.delegate = self
         spinner.isHidden = true
         resultsLabel.isHidden = true
-        //
-        if foodToCheck != nil {
-            print(foodToCheck.name!)
-        }
+        noCameraMessage.isHidden = true
     }
     
     @IBAction func findPhotoBtnPressed(_ sender: UIButton) {
+        
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-
+            noCameraMessage.isHidden = true
             imagePicker.allowsEditing = false
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.cameraCaptureMode = .photo
             imagePicker.modalPresentationStyle = .fullScreen
             present(imagePicker,animated: true,completion: nil)
+        } else {
+            //
         }
-//        else {
-//            imagePicker.allowsEditing = false
-//            imagePicker.sourceType = .photoLibrary
-//            present(imagePicker, animated: true, completion: nil)
-//        }
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            noCameraMessage.isHidden = true
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.cameraCaptureMode = .photo
+            imagePicker.modalPresentationStyle = .fullScreen
+            present(imagePicker,animated: true,completion: nil)
+        } else {
+            
+        }
     }
 }
 
@@ -107,9 +116,9 @@ extension CheckFoodVC {
                             print("We did not find a match")
                         }
                     }
-                      self.spinner.isHidden = true
-                      self.resultsLabel.text = "Not \(self.foodToCheck.name!)"
-                      self.resultsLabel.isHidden = false
+                    self.spinner.isHidden = true
+                    self.resultsLabel.text = "Not \(self.foodToCheck.name!)"
+                    self.resultsLabel.isHidden = false
                 } else {
                     print("No labels found.")
                 }
@@ -119,7 +128,7 @@ extension CheckFoodVC {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-
+            
             spinner.isHidden = false
             spinner.startAnimating()
             
@@ -239,4 +248,3 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
         return rhs < lhs
     }
 }
-

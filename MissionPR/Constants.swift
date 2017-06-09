@@ -20,7 +20,3 @@ let GP_KEY: String = "AIzaSyA3M24U3IUF8X2VU_CI1YuIrPXJQidUBPA"
 //    .secondary-text-color  { color: #757575; }
 //    .divider-color         { border-color: #BDBDBD; }
 //    .green                 { green-color: #4CD964 }
-
-// TODO LIST:
-//  1. Fix the Units in runs. 
-//  2. Change Runs directions in edit mode
