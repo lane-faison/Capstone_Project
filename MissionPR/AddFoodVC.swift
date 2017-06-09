@@ -11,7 +11,6 @@ import CoreData
 
 class AddFoodVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
 
-    
     @IBOutlet weak var foodPicker: UIPickerView!
     @IBOutlet weak var trackBtn: RoundedOutlineButton!
     
@@ -44,7 +43,6 @@ class AddFoodVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         // update when selected
     }
     
-
     @IBAction func trackBtnPressed(_ sender: Any) {
         var food: Goal_Food!
         food = Goal_Food(context: context)
@@ -61,6 +59,4 @@ class AddFoodVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         ad.saveContext()
         navigationController?.popViewController(animated: true)
     }
-
-
 }

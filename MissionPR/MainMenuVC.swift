@@ -11,7 +11,6 @@ import CoreData
 import CoreLocation
 import GooglePlaces
 
-
 class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate {
     
     var controller: NSFetchedResultsController<Gym_Location>!
@@ -20,7 +19,6 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
     var myLocation = CLLocationCoordinate2D()
     var gymLocation = CLLocationCoordinate2D()
     var okayToCheckIn = Bool()
-
     
     @IBOutlet weak var viewGoalsBtn: RoundedOutlineButton!
     @IBOutlet weak var gymCheckInBtn: RoundedOutlineButton!
@@ -53,7 +51,6 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         self.myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
     
-    
     @IBAction func viewGoalsBtnPressed(_ sender: Any) {
         gymStatusLabel.isHidden = true
     }
@@ -80,7 +77,6 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         let gymCoordinates = CLLocation(latitude: gymLocation.latitude, longitude: gymLocation.longitude)
         let myCoordinates = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
         let distance: CLLocationDistance = myCoordinates.distance(from: gymCoordinates)
-        print("DISTANCE: \(distance)")
         
         attemptVisitFetch()
         
@@ -98,9 +94,6 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             newVisit.date = todaysDate
 
             ad.saveContext()
-            print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-            print("COUNT CREATED!!!")
-            print(newVisit.date)
         } else if distance < 100 && okayToCheckIn == false {
             gymStatusLabel.text = "You must wait 2 hours between check-ins."
             gymStatusLabel.isHidden = false
@@ -108,7 +101,6 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             gymStatusLabel.text = "Our location data indicates that you are not currently located at your preset gym."
             gymStatusLabel.isHidden = false
         }
-        
     }
     
     func attemptFetch() {
@@ -125,7 +117,6 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             let data = controller.fetchedObjects
 
             if (data?.count)! > 0 {
-                print("ALL GYM DATA: \(data!)")
                 gymCheckInBtn.isEnabled = true
                 gymNameLabel.isHidden = false
                 gymNameLabel.text = data![0].name!
@@ -169,7 +160,6 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
                 let lastCheckIn = (Date() as Date).timeIntervalSince(data![0].date as Date)
                 print("lastCheckIn: \(lastCheckIn)")
                 if lastCheckIn < 7200 {
-                    print("You cannot check in yet")
                     okayToCheckIn = false
                 } else {
                     okayToCheckIn = true
@@ -241,6 +231,5 @@ extension MainMenuVC: GMSAutocompleteViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
-    
+    }    
 }

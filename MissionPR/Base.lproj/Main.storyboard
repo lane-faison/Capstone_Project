@@ -512,6 +512,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentPicker" destination="EDG-h0-dJN" id="9Wg-3O-LdB"/>
+                        <outlet property="deleteBtn" destination="Veb-Nl-QRW" id="kZx-kh-im9"/>
                         <outlet property="errorLabel" destination="rhL-6j-1Mo" id="mVI-tK-Ukb"/>
                         <outlet property="goalPicker" destination="sAH-Fk-iR4" id="0gu-EK-JB7"/>
                         <outlet property="nameTextField" destination="SDS-fz-rZ9" id="OTF-Ib-Zf4"/>
@@ -749,9 +750,17 @@
                             <constraint firstItem="KL9-r6-s6N" firstAttribute="leading" secondItem="HZk-Sx-Ngi" secondAttribute="leading" constant="10" id="GXO-pA-J5d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Run Information" id="KLE-MT-I4K"/>
+                    <navigationItem key="navigationItem" title="Run Information" id="KLE-MT-I4K">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="tzd-tO-4mm">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="X7X-bc-XXH" id="5Lf-xB-mHs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentPicker" destination="srI-CK-QRd" id="iqW-0F-RaM"/>
+                        <outlet property="deleteBtn" destination="tzd-tO-4mm" id="KAU-dP-s4G"/>
                         <outlet property="distancePicker" destination="sg6-vr-fq3" id="Oun-Mf-lbe"/>
                         <outlet property="errorLabel" destination="Mhn-f8-JVG" id="BqO-ik-PmL"/>
                         <outlet property="goalPicker" destination="XkB-zi-8Ix" id="5xO-C1-qQY"/>

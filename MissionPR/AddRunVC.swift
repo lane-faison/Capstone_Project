@@ -20,6 +20,7 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
     @IBOutlet weak var currentPicker: UIPickerView!
     @IBOutlet weak var goalPicker: UIPickerView!
     @IBOutlet weak var saveBtn: RoundedOutlineButton!
+    @IBOutlet weak var deleteBtn: UIBarButtonItem!
     
     var goalToEdit: Goal_Run?
     
@@ -34,6 +35,7 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
         
+        nameTextField.delegate = self
         distancePicker.delegate = self
         distancePicker.dataSource = self
         currentPicker.delegate = self
@@ -42,7 +44,7 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         goalPicker.dataSource = self
         
         errorLabel.isHidden = true
-        
+
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
@@ -179,7 +181,6 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         }
     }
     
-    
     @IBAction func addPressed(_ sender: Any) {
         var goal: Goal_Run!
         
@@ -249,6 +250,15 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
             errorLabel.isHidden = false
         }
     }
+    
+    @IBAction func deletePressed(_ sender: Any) {
+        if goalToEdit != nil {
+            context.delete(goalToEdit!)
+            ad.saveContext()
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension AddRunVC {
