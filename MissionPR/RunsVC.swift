@@ -142,8 +142,8 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         let goal2 = Goal_Run(context: context)
         goal2.name = "1 Mile Run"
-        goal2.currentTime = 500
-        goal2.goalTime = 450
+        goal2.currentTime = 450
+        goal2.goalTime = 359
         goal2.distance = 1
         goal2.units = "mi"
         
