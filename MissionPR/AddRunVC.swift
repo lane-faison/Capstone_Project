@@ -56,7 +56,7 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         if goalToEdit != nil {
             loadGoalData()
             step1Label.text = "Edit your running goal's name"
-            step3Label.text = "Update time"
+            step3Label.text = "Update time:"
         }
     }
     
@@ -67,6 +67,7 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
         if pickerView == distancePicker {
             return 2
         }
@@ -139,6 +140,18 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         }
         return " "
     }
+    
+//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+//        var pickerLabel: UILabel? = (view as? UILabel)
+//        if pickerLabel == nil {
+//            pickerLabel = UILabel()
+//            pickerLabel?.font = UIFont(name: "Avenir Next", size: 12)
+//            pickerLabel?.textAlignment = .center
+//        }
+////        pickerLabel?.text = <Data Array>[row]
+//        pickerLabel?.textColor = UIColor.blue
+//        return pickerLabel!
+//    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         return
