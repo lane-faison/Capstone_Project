@@ -37,7 +37,7 @@ class LiftGoalCell: UITableViewCell {
             name.text = "\(goalLift.name!) 🏅"
         }
         if progress <= 1.00 {
-            progressView.progressTintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
+            progressView.progressTintColor = UIColor(red: 169/255, green: 253/255, blue: 0/255, alpha: 1.0)
         }
         if progress <= 0.85 {
             progressView.progressTintColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1.0)
