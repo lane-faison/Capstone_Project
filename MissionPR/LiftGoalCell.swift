@@ -33,8 +33,12 @@ class LiftGoalCell: UITableViewCell {
         let progress = Float(goalLift.current)/Float(goalLift.weight)
         
         progressView.setProgress(Float(goalLift.current)/Float(goalLift.weight), animated: true)
+        self.view.layer.borderWidth = 0
+
         if progress == 1.00 {
             name.text = "\(goalLift.name!) 🏅"
+            self.view.layer.borderWidth = 4
+            self.view.layer.borderColor = UIColor(red: 114/255, green: 201/255, blue: 0/255, alpha: 1.0).cgColor
         }
         if progress <= 1.00 {
             progressView.progressTintColor = UIColor(red: 169/255, green: 253/255, blue: 0/255, alpha: 1.0)

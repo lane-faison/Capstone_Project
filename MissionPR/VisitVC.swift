@@ -48,20 +48,16 @@ class VisitVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         do {
             try self.controller.performFetch()
-            print("###### FETCH ######")
             let data = self.controller.fetchedObjects
             if (data?.count)! > 0 {
-               print((data?.count)!)
+                
                 for day in data! {
-                    print("$$$$$$$$$$$$$$")
-                    print(day.date) // type = NSDate
+
                     let component1 = NSCalendar.current.dateComponents([.month,.year], from: (Date() as NSDate) as Date)
                     let component2 = NSCalendar.current.dateComponents([.month,.year], from: day.date as Date)
 
                     if component1.month == component2.month && component1.year == component2.year {
-                        print("SAME MONTH & YEAR")
                         dayTrackerCount += 1
-                        print(dayTrackerCount)
                     }
                 }
             }
@@ -69,18 +65,6 @@ class VisitVC: UIViewController, NSFetchedResultsControllerDelegate {
             let error = error as NSError
             print("\(error)")
         }
-    }
-
-    func getCurrentDaysInMonth() {
-        let currentDateInfo = NSCalendar.current.dateComponents([.month,.year], from: (Date() as NSDate) as Date)
-
-        let dateComponents = DateComponents(year: currentDateInfo.year, month: currentDateInfo.month)
-        let calendar = Calendar.current
-        let date = calendar.date(from: dateComponents)!
-        
-        let range = calendar.range(of: .day, in: .month, for: date)!
-        let numOfDays = range.count
-        print(numOfDays)
     }
     
     func updateDays() {
@@ -101,18 +85,18 @@ class VisitVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     func configureProgress() {
         
-        let progress = Float(dayTrackerCount)/Float(daysInCurrentMonth)
+        let progressRatio = Float(dayTrackerCount)/Float(daysInCurrentMonth)
         
         progressBar.setProgress(Float(dayTrackerCount)/Float(daysInCurrentMonth), animated: true)
         
-        if progress <= 1.00 {
+        if progressRatio > 0.85 {
             progressBar.progressTintColor = UIColor(red: 169/255, green: 253/255, blue: 0/255, alpha: 1.0)
         }
-        if progress <= 0.85 {
+        if progressRatio <= 0.85 {
             progressBar.progressTintColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
         }
-        if progress <= 0.70 {
+        if progressRatio <= 0.70 {
             progressBar.progressTintColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0)
-        }    }
-
+        }
+    }
 }

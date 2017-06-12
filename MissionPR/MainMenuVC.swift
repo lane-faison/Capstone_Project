@@ -60,19 +60,13 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         let autocompleteController = GMSAutocompleteViewController()
         let filter = GMSAutocompleteFilter()
         
-        // Restrict results to establishments in the United States
         filter.type = .establishment
-        filter.country = "us"
         autocompleteController.delegate = self
         autocompleteController.autocompleteFilter = filter
         present(autocompleteController, animated: true, completion: nil)
     }
     
     @IBAction func gymCheckInBtnPressed(_ sender: Any) {
-        
-        print("########### TAPPED ###########")
-        print("GymCoordinates: \(gymLocation)")
-        print("myLocation: \(myLocation)")
         
         let gymCoordinates = CLLocation(latitude: gymLocation.latitude, longitude: gymLocation.longitude)
         let myCoordinates = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
@@ -149,23 +143,17 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         
         do {
             try self.controller2.performFetch()
-            print("###### FETCHING ALL VISITS ######")
             let data = self.controller2.fetchedObjects
             if (data?.count)! > 0 {
-                print((data?.count)!)
-                print("******")
-                print(data![0].date)
-                print("******")
                 
                 let lastCheckIn = (Date() as Date).timeIntervalSince(data![0].date as Date)
-                print("lastCheckIn: \(lastCheckIn)")
+                
                 if lastCheckIn < 7200 {
                     okayToCheckIn = false
                 } else {
                     okayToCheckIn = true
                 }
             } else {
-                print("ELSE: Okay To Check In")
                 okayToCheckIn = true
             }
         } catch {
@@ -193,8 +181,6 @@ extension MainMenuVC: GMSAutocompleteViewControllerDelegate {
                 
                 do {
                     try context.save()
-                    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-                    print("GYM UPDATED!!!")
                 } catch let error as NSError {
                     print("Could not save \(error), \(error.userInfo)")
                 }  
@@ -206,8 +192,6 @@ extension MainMenuVC: GMSAutocompleteViewControllerDelegate {
                 
                 gymLocation = CLLocationCoordinate2D(latitude: gym.latitude, longitude: gym.longitude)
                 ad.saveContext()
-                print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-                print("GYM CREATED!!!")
             }
         } catch {
             print("Error with request: \(error)")

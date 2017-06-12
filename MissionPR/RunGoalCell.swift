@@ -95,7 +95,6 @@ class RunGoalCell: UITableViewCell {
     }
     
     func configureProgress(goalRun: Goal_Run) {
-        print("Configure process function...")
         let transform = CGAffineTransform(scaleX: 1.0, y: 10.0)
         self.progressView.transform = transform
         
@@ -106,19 +105,22 @@ class RunGoalCell: UITableViewCell {
         if progress >= 1.00 {
             progressRatio = 1.00
             name.text = "\(goalRun.name!) 🏅"
+            self.view.layer.borderWidth = 4
+            self.view.layer.borderColor = UIColor(red: 114/255, green: 201/255, blue: 0/255, alpha: 1.0).cgColor
         } else {
+            self.view.layer.borderWidth = 0
             progressRatio = progress
         }
         
         progressView.setProgress(progressRatio, animated: true)
         
-        if progress <= 1.00 {
+        if progressRatio > 0.85 {
             progressView.progressTintColor = UIColor(red: 169/255, green: 253/255, blue: 0/255, alpha: 1.0)
         }
-        if progress <= 0.85 {
+        if progressRatio <= 0.85 {
             progressView.progressTintColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
         }
-        if progress <= 0.70 {
+        if progressRatio <= 0.70 {
             progressView.progressTintColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0)
         }
     }

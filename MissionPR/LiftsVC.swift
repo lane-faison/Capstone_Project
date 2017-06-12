@@ -12,6 +12,7 @@ import CoreData
 class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var directionsLabel: UILabel!
     
     var controller: NSFetchedResultsController<Goal_Lift>!
     
@@ -61,7 +62,12 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = controller.sections {
             let sectionInfo = sections[section]
-            return sectionInfo.numberOfObjects
+            if sectionInfo.numberOfObjects > 0 {
+                directionsLabel.isHidden = true
+                return sectionInfo.numberOfObjects
+            } else {
+                directionsLabel.isHidden = false
+            }
         }
         return 0
     }
@@ -149,7 +155,7 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
         goal3.name = "Barbell Squat"
         goal3.weight = 205
         goal3.reps = 10
-        goal3.current = 175
+        goal3.current = 180
         
         let goal4 = Goal_Lift(context: context)
         goal4.name = "Power Cleans"

@@ -17,6 +17,4 @@ class GoalMenuVC: UIViewController {
             topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
     }
-
-
 }
