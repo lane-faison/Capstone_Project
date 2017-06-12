@@ -16,7 +16,6 @@ class AuthenticationVC: UIViewController {
         
     }
     
-
     @IBAction func useTouchIdPressed(_ sender: Any) {
         
         let authenticationContext = LAContext()
@@ -60,13 +59,13 @@ class AuthenticationVC: UIViewController {
         case LAError.passcodeNotSet.rawValue:
             message = "Passcode is not set on the device"
         case LAError.systemCancel.rawValue:
-            message = "Authentication was canceled by the system"
+            message = "Authentication was cancelled by the system"
         case LAError.touchIDLockout.rawValue:
             message = "Too many failed attempts"
         case LAError.touchIDNotAvailable.rawValue:
             message = "Touch ID is not available on this device"
         case LAError.userCancel.rawValue:
-            message = "The user did cancel"
+            message = "The user cancelled"
         case LAError.userFallback.rawValue:
             message = "The user chose to use the fallback"
         default:

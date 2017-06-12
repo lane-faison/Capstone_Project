@@ -12,6 +12,7 @@ import CoreData
 class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var directionsLabel: UILabel!
     
     var controller: NSFetchedResultsController<Goal_Run>!
     
@@ -24,6 +25,8 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        directionsLabel.isHidden = true
         
 //        generateTestData()
         attemptFetch()
@@ -61,7 +64,12 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = controller.sections {
             let sectionInfo = sections[section]
-            return sectionInfo.numberOfObjects
+            if sectionInfo.numberOfObjects > 0 {
+                directionsLabel.isHidden = true
+                return sectionInfo.numberOfObjects
+            } else {
+                directionsLabel.isHidden = false
+            }
         }
         return 0
     }
@@ -156,6 +164,5 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         ad.saveContext()
     }
-    
 }
 

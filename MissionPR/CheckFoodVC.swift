@@ -17,6 +17,7 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var noCameraMessage: UILabel!
+    @IBOutlet weak var deleteBtn: UIBarButtonItem!
     
     let imagePicker = UIImagePickerController()
     let session = URLSession.shared
@@ -61,8 +62,16 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             imagePicker.modalPresentationStyle = .fullScreen
             present(imagePicker,animated: true,completion: nil)
         } else {
-            
+         //
         }
+    }
+    
+    @IBAction func deletePressed(_ sender: Any) {
+        if foodToCheck != nil {
+            context.delete(foodToCheck!)
+            ad.saveContext()
+        }
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -100,6 +109,7 @@ extension CheckFoodVC {
                     for label in labels {
                         
                         labelResultsText += "\(label), "
+                        print(labelResultsText)
                         
                         if label == self.foodToCheck.name {
                             var foodFound: Food_Log!
