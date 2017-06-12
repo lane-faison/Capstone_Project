@@ -42,6 +42,7 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     @IBAction func findPhotoBtnPressed(_ sender: UIButton) {
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            captureBtn.backgroundColor = UIColor(red: 169/255, green: 253/255, blue: 0/255, alpha: 1.0)
             noCameraMessage.isHidden = true
             imagePicker.allowsEditing = false
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
@@ -50,6 +51,13 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             present(imagePicker,animated: true,completion: nil)
         } else {
             //
+        }
+    }
+    
+    @IBAction func btnTouchDown(_ sender: UIButton) {
+        
+        if sender == captureBtn {
+            captureBtn.backgroundColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
         }
     }
     

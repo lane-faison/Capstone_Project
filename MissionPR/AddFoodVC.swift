@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class AddFoodVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var foodPicker: UIPickerView!
     @IBOutlet weak var trackBtn: RoundedOutlineButton!
     
@@ -18,7 +18,7 @@ class AddFoodVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
@@ -56,7 +56,16 @@ class AddFoodVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         }
         food.date = Date() as NSDate
         
+        trackBtn.backgroundColor = UIColor(red: 169/255, green: 253/255, blue: 0, alpha: 1.0)
+        
         ad.saveContext()
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnTouchDown(_ sender: UIButton) {
+        
+        if sender == trackBtn {
+            trackBtn.backgroundColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
+        }
     }
 }

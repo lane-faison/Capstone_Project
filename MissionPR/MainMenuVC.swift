@@ -161,6 +161,17 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             print("\(error)")
         }
     }
+    
+    @IBAction func btnTouchDown(_ sender: UIButton) {
+        
+        if sender == viewGoalsBtn {
+            viewGoalsBtn.backgroundColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
+        }
+    }
+    
+    @IBAction func btn1TouchUpInside(_ sender: UIButton) {
+        viewGoalsBtn.backgroundColor = UIColor(red: 169/255, green: 253/255, blue: 0, alpha: 1.0)
+    }
 }
 
 extension MainMenuVC: GMSAutocompleteViewControllerDelegate {
