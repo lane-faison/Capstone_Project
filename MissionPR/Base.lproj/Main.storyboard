@@ -101,6 +101,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="btnTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="M5q-WN-Gna"/>
                                             <action selector="useTouchIdPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQF-hR-6rk"/>
                                         </connections>
                                     </button>
@@ -121,6 +122,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="1Ex-hP-Ipt"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="enterBtn" destination="O9Z-Pi-t5m" id="w33-6u-hQA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,6 +170,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="btn1TouchUpInside:" destination="z0W-ie-S3c" eventType="touchUpInside" id="mhp-lC-eaP"/>
+                                                    <action selector="btnTouchDown:" destination="z0W-ie-S3c" eventType="touchDown" id="3Pc-VB-wIO"/>
                                                     <action selector="viewGoalsBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="EAZ-TE-K5L"/>
                                                     <segue destination="2YC-wm-zjb" kind="show" id="CY6-uB-cHx"/>
                                                 </connections>
@@ -207,6 +213,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="btnTouchDown:" destination="z0W-ie-S3c" eventType="touchDown" id="vHl-mP-eeo"/>
                                                     <action selector="gymCheckInBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="cDE-dE-HpJ"/>
                                                 </connections>
                                             </button>
@@ -248,6 +255,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="btnTouchDown:" destination="z0W-ie-S3c" eventType="touchDown" id="1lg-wG-yzO"/>
                                                     <action selector="setGymBtnPressed:" destination="z0W-ie-S3c" eventType="touchUpInside" id="EbQ-14-89r"/>
                                                 </connections>
                                             </button>
@@ -538,6 +546,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addPressed:" destination="15j-Np-80E" eventType="touchUpInside" id="gOO-dt-mya"/>
+                                    <action selector="btnTouchDown:" destination="15j-Np-80E" eventType="touchDown" id="tef-VQ-s4f"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -842,6 +851,7 @@
                                 <connections>
                                     <action selector="addPressed:" destination="15j-Np-80E" eventType="touchUpInside" id="UDd-4P-yab"/>
                                     <action selector="addPressed:" destination="X7X-bc-XXH" eventType="touchUpInside" id="boA-Px-ymB"/>
+                                    <action selector="btnTouchDown:" destination="X7X-bc-XXH" eventType="touchDown" id="DjG-Yi-Eg6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -914,6 +924,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="btnTouchDown:" destination="Rco-4a-Xxg" eventType="touchDown" id="BPw-vx-Ib7"/>
                                     <action selector="findPhotoBtnPressed:" destination="Rco-4a-Xxg" eventType="touchUpInside" id="UYi-NY-CKV"/>
                                 </connections>
                             </button>
@@ -1008,7 +1019,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-5z-w5s" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                        <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.44705882349999998" green="0.78823529410000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="Egn-RN-pqL"/>
                                                             <constraint firstAttribute="height" constant="80" id="yE6-wj-cuS"/>
@@ -1028,6 +1039,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="btn1TouchUpInside:" destination="2YC-wm-zjb" eventType="touchUpInside" id="bgz-Le-DbP"/>
+                                                            <action selector="btnTouchDown:" destination="2YC-wm-zjb" eventType="touchDown" id="4aV-CA-V7L"/>
                                                             <segue destination="LeG-yv-NSc" kind="show" id="32x-zs-LEn"/>
                                                         </connections>
                                                     </button>
@@ -1044,7 +1057,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jr-le-P48" customClass="RoundedOutlineButton" customModule="MissionPR" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                        <color key="backgroundColor" red="0.44705882349999998" green="0.78823529410000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="619-AM-E1P"/>
                                                             <constraint firstAttribute="width" constant="80" id="MXU-lJ-8gx"/>
@@ -1064,6 +1077,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="btn2TouchUpInside:" destination="2YC-wm-zjb" eventType="touchUpInside" id="9oZ-fS-7v3"/>
+                                                            <action selector="btnTouchDown:" destination="2YC-wm-zjb" eventType="touchDown" id="aby-iE-Lom"/>
                                                             <segue destination="1CY-bl-nyH" kind="show" id="BQp-zU-atJ"/>
                                                         </connections>
                                                     </button>
@@ -1105,6 +1120,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="btn3TouchUpInside:" destination="2YC-wm-zjb" eventType="touchUpInside" id="YJb-Fu-HGy"/>
+                                                            <action selector="btnTouchDown:" destination="2YC-wm-zjb" eventType="touchDown" id="Xoa-Px-4Hb"/>
                                                             <segue destination="eFU-L0-sHn" kind="show" id="oe8-RU-YIp"/>
                                                         </connections>
                                                     </button>
@@ -1141,6 +1158,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="btn4TouchUpInside:" destination="2YC-wm-zjb" eventType="touchUpInside" id="QtL-Vx-2Pb"/>
+                                                            <action selector="btnTouchDown:" destination="2YC-wm-zjb" eventType="touchDown" id="ZG5-SQ-K7U"/>
                                                             <segue destination="2kd-Pf-YW2" kind="show" id="1Rr-lR-Q2R"/>
                                                         </connections>
                                                     </button>
@@ -1165,6 +1184,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="nON-Eo-5QX"/>
+                    <connections>
+                        <outlet property="viewFoodGoalsBtn" destination="xrP-sd-bXS" id="D3h-Rg-TUW"/>
+                        <outlet property="viewLiftGoalsBtn" destination="oVw-5z-w5s" id="occ-ui-GgE"/>
+                        <outlet property="viewRunGoalsBtn" destination="7jr-le-P48" id="nsn-rs-29r"/>
+                        <outlet property="viewVisitGoalBtn" destination="fb2-aY-15f" id="UXG-d4-BSq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GuP-k7-hMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1786,6 +1811,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="btnTouchDown:" destination="MCt-0z-3aR" eventType="touchDown" id="vWg-Lk-ffg"/>
                                             <action selector="trackBtnPressed:" destination="MCt-0z-3aR" eventType="touchUpInside" id="eiZ-68-7kA"/>
                                         </connections>
                                     </button>

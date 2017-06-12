@@ -185,6 +185,9 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
     }
     
     @IBAction func addPressed(_ sender: Any) {
+        
+        saveBtn.backgroundColor = UIColor(red: 169/255, green: 253/255, blue: 0, alpha: 1.0)
+
         var goal: Goal_Run!
         
         if goalToEdit != nil {
@@ -251,6 +254,13 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         } else {
             errorLabel.text = "* Please give this goal a name"
             errorLabel.isHidden = false
+        }
+    }
+    
+    @IBAction func btnTouchDown(_ sender: UIButton) {
+        
+        if sender == saveBtn {
+            saveBtn.backgroundColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
         }
     }
     
