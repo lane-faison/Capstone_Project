@@ -106,14 +106,13 @@ class VisitVC: UIViewController, NSFetchedResultsControllerDelegate {
         progressBar.setProgress(Float(dayTrackerCount)/Float(daysInCurrentMonth), animated: true)
         
         if progress <= 1.00 {
-            progressBar.progressTintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
+            progressBar.progressTintColor = UIColor(red: 169/255, green: 253/255, blue: 0/255, alpha: 1.0)
         }
-        if progress <= 2/3 {
-            progressBar.progressTintColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1.0)
+        if progress <= 0.85 {
+            progressBar.progressTintColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
         }
-        if progress <= 1/3 {
-            progressBar.progressTintColor = UIColor(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
-        }
-    }
+        if progress <= 0.70 {
+            progressBar.progressTintColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0)
+        }    }
 
 }
