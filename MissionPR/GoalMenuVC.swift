@@ -41,10 +41,10 @@ class GoalMenuVC: UIViewController {
     }
     
     @IBAction func btn1TouchUpInside(_ sender: UIButton) {
-        viewLiftGoalsBtn.backgroundColor = UIColor(red: 114/255, green: 201/255, blue: 0, alpha: 1.0)
+        viewLiftGoalsBtn.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
     }
     @IBAction func btn2TouchUpInside(_ sender: UIButton) {
-        viewRunGoalsBtn.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
+        viewRunGoalsBtn.backgroundColor = UIColor(red: 114/255, green: 201/255, blue: 0, alpha: 1.0)
     }
     @IBAction func btn3TouchUpInside(_ sender: UIButton) {
         viewFoodGoalsBtn.backgroundColor = UIColor(red: 169/255, green: 253/255, blue: 0, alpha: 1.0)
