@@ -119,7 +119,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
                 gymLocation.latitude = data![0].latitude
                 gymLocation.longitude = data![0].longitude
                 
-                gymCheckInBtn.backgroundColor = UIColor(red: 169/255, green: 253/255, blue: 0/255, alpha: 1.0)
+                gymCheckInBtn.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
                 
                 setGymBtn.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
                 setGymBtn.setTitle("✔️", for: .normal)
