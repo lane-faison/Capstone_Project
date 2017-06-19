@@ -143,7 +143,7 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
         goal1.name = "Flat Bench Press"
         goal1.weight = 225
         goal1.reps = 10
-        goal1.current = 175
+        goal1.current = 185
         
         let goal2 = Goal_Lift(context: context)
         goal2.name = "Barbell Shoulder Press"
