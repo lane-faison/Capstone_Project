@@ -103,6 +103,7 @@
                                         <connections>
                                             <action selector="btnTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="M5q-WN-Gna"/>
                                             <action selector="useTouchIdPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQF-hR-6rk"/>
+                                            <segue destination="z0W-ie-S3c" kind="show" id="6ef-2y-2Dj"/>
                                         </connections>
                                     </button>
                                 </subviews>
