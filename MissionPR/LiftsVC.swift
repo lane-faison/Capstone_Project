@@ -143,19 +143,19 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
         goal1.name = "Flat Bench Press"
         goal1.weight = 225
         goal1.reps = 10
-        goal1.current = 185
+        goal1.current = 195
         
         let goal2 = Goal_Lift(context: context)
         goal2.name = "Barbell Shoulder Press"
         goal2.weight = 135
         goal2.reps = 10
-        goal2.current = 95
+        goal2.current = 110
         
         let goal3 = Goal_Lift(context: context)
         goal3.name = "Barbell Squat"
         goal3.weight = 205
         goal3.reps = 10
-        goal3.current = 180
+        goal3.current = 185
         
         let goal4 = Goal_Lift(context: context)
         goal4.name = "Power Cleans"
@@ -167,7 +167,7 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
         goal5.name = "Roman Deadlifts"
         goal5.weight = 265
         goal5.reps = 10
-        goal5.current = 195
+        goal5.current = 205
         
         ad.saveContext()
     }

@@ -157,8 +157,8 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         let goal3 = Goal_Run(context: context)
         goal3.name = "BolderBoulder"
-        goal3.currentTime = 3700
-        goal3.goalTime = 3000
+        goal3.currentTime = 2803
+        goal3.goalTime = 2700
         goal3.distance = 10
         goal3.units = "km"
         
