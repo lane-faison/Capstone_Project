@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 
-class RecordsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate {
+class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
-    @IBOutlet weak var collection: UICollectionView!
+    
+    @IBOutlet weak var table: UITableView!
     
     var controller: NSFetchedResultsController<Record_Lift>!
     
@@ -22,12 +23,12 @@ class RecordsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
         
-        collection.dataSource = self
-        collection.delegate = self
+        table.dataSource = self
+        table.delegate = self
 
         generateTestData()
         attemptFetch()
-        collection.reloadData()
+        table.reloadData()
     }
     
     func attemptFetch() {
@@ -54,20 +55,7 @@ class RecordsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         cell.configureCell(goal)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collection.dequeueReusableCell(withReuseIdentifier: "RecordCell", for: indexPath) as? RecordCell
-        configureCell(cell: cell!, indexPath: indexPath as NSIndexPath)
-        return cell!
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if let sections = controller.sections {
-            return sections.count
-        }
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = controller.sections {
             let sectionInfo = sections[section]
             if sectionInfo.numberOfObjects > 0 {
@@ -75,6 +63,23 @@ class RecordsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             }
         }
         return 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let sections = controller.sections {
+            return sections.count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = table.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath) as? RecordCell
+        configureCell(cell: cell!, indexPath: indexPath as NSIndexPath)
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     func generateTestData() {
