@@ -1749,7 +1749,7 @@
             </objects>
             <point key="canvasLocation" x="5032.8000000000002" y="439.43028485757122"/>
         </scene>
-        <!--RecordsVC-->
+        <!--Records-->
         <scene sceneID="Jqa-Ff-zuW">
             <objects>
                 <viewController id="pSp-Ih-a0Y" customClass="RecordsVC" customModule="MissionPR" customModuleProvider="target" sceneMemberID="viewController">
@@ -1762,8 +1762,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u0f-5e-woG">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" rowHeight="75" id="s5C-Gb-wmi" customClass="RecordCell" customModule="MissionPR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="75"/>
@@ -1819,6 +1819,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="hKT-4t-kUK" secondAttribute="bottom" id="wW0-Zo-eBS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="hoN-JQ-SNH" id="zs9-xS-mQu"/>
                                             <outlet property="nameLabel" destination="MOv-sp-gBD" id="lgW-Ds-aYt"/>
@@ -1835,9 +1836,10 @@
                             <constraint firstItem="zXE-Qf-lGe" firstAttribute="top" secondItem="u0f-5e-woG" secondAttribute="bottom" id="D3I-bA-Wen"/>
                             <constraint firstAttribute="trailing" secondItem="u0f-5e-woG" secondAttribute="trailing" id="sr2-gu-7MU"/>
                             <constraint firstItem="u0f-5e-woG" firstAttribute="leading" secondItem="OhN-eg-C1r" secondAttribute="leading" id="wfX-6O-6Nf"/>
-                            <constraint firstItem="u0f-5e-woG" firstAttribute="top" secondItem="e3D-2t-2XF" secondAttribute="bottom" id="zOt-GS-qEN"/>
+                            <constraint firstItem="u0f-5e-woG" firstAttribute="top" secondItem="e3D-2t-2XF" secondAttribute="bottom" constant="-64" id="zOt-GS-qEN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Records" id="Wgn-Ba-nud"/>
                     <connections>
                         <outlet property="table" destination="u0f-5e-woG" id="9H4-ZK-mIh"/>
                     </connections>
