@@ -8,10 +8,11 @@
 
 import UIKit
 
-class RecordCell: UICollectionViewCell {
+class RecordCell: UITableViewCell {
     
-    @IBOutlet weak var thumbImg: UIImageView!
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var repsLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
@@ -24,7 +25,7 @@ class RecordCell: UICollectionViewCell {
     
     func configureCell(_ recordLift: Record_Lift) {
         self.recordLift = recordLift
-        thumbImg.image = UIImage(named: "target-black")
+        dateLabel.text = "\(Date())"
         nameLabel.text = self.recordLift.name?.capitalized
         repsLabel.text = "\(self.recordLift.reps) reps"
         weightLabel.text = "\(self.recordLift.weight) Lbs."
