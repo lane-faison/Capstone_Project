@@ -26,8 +26,8 @@ class RecordCell: UICollectionViewCell {
         self.recordLift = recordLift
         thumbImg.image = UIImage(named: "target-black")
         nameLabel.text = self.recordLift.name?.capitalized
-        repsLabel.text = "\(self.recordLift.reps)"
-        weightLabel.text = "\(self.recordLift.weight)"
+        repsLabel.text = "\(self.recordLift.reps) reps"
+        weightLabel.text = "\(self.recordLift.weight) Lbs."
     }
     
 }
