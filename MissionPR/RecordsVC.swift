@@ -37,7 +37,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Record_Lift> = Record_Lift.fetchRequest()
-        let recordSort = NSSortDescriptor(key: "name", ascending: true)
+        let recordSort = NSSortDescriptor(key: "timeStamp", ascending: false)
         fetchRequest.sortDescriptors = [recordSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
