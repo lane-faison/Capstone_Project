@@ -124,6 +124,21 @@ class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
         if (currentWeight <= goalWeight && nameTextField.text != "") {
             errorLabel.isHidden = true
             
+            if currentWeight == goalWeight {
+                var newRecord: Record_Lift!
+                
+                newRecord = Record_Lift(context: context)
+                
+                newRecord.name = nameTextField.text
+                newRecord.reps = Int16(reps)
+                newRecord.weight = Int16(goalWeight)
+                newRecord.timeStamp = Date() as NSDate
+                
+                print(newRecord)
+                
+                ad.saveContext()
+            }
+            
             if goalToEdit == nil {
                 goal = Goal_Lift(context: context)
                 
