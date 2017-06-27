@@ -1837,7 +1837,7 @@
                                             <outlet property="dateLabel" destination="hoN-JQ-SNH" id="zs9-xS-mQu"/>
                                             <outlet property="nameLabel" destination="MOv-sp-gBD" id="lgW-Ds-aYt"/>
                                             <outlet property="repsLabel" destination="Qo5-po-S9D" id="cuA-Fn-XvK"/>
-                                            <outlet property="view" destination="RdK-JX-2mS" id="LHG-rO-Jsf"/>
+                                            <outlet property="view" destination="Jb4-cp-lRZ" id="Thp-xq-VUM"/>
                                             <outlet property="weightLabel" destination="ifs-Kc-kaO" id="RYi-gG-jXn"/>
                                         </connections>
                                     </tableViewCell>
