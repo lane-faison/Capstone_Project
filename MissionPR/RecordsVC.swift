@@ -81,6 +81,22 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         return 70
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let recordToDelete = controller.object(at: indexPath as IndexPath)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+            context.delete(recordToDelete)
+            ad.saveContext()
+            tableView.reloadData()
+        }
+    }
+    
     func generateTestData() {
         let record1 = Record_Lift(context: context)
         record1.name = "Flat Bench Press"
