@@ -26,9 +26,13 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         table.dataSource = self
         table.delegate = self
 
-        generateTestData()
+//        generateTestData()
         attemptFetch()
-        table.reloadData()
+    }
+    
+    func configureCell(cell: RecordCell, indexPath: NSIndexPath) {
+        let record = controller.object(at: indexPath as IndexPath)
+        cell.configureCell(recordLift: record)
     }
     
     func attemptFetch() {
@@ -48,11 +52,6 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
             let error = error as NSError
             print("\(error)")
         }
-    }
-    
-    func configureCell(cell: RecordCell, indexPath: NSIndexPath) {
-        let goal = controller.object(at: indexPath as IndexPath)
-        cell.configureCell(goal)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,16 +86,19 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         record1.name = "Flat Bench Press"
         record1.weight = 225
         record1.reps = 10
+        record1.timeStamp = Date() as NSDate
         
         let record2 = Record_Lift(context: context)
         record2.name = "Shoulder Barbell Press"
         record2.weight = 135
         record2.reps = 10
+        record2.timeStamp = Date() as NSDate
         
         let record3 = Record_Lift(context: context)
         record3.name = "Squat"
         record3.weight = 275
         record3.reps = 5
+        record3.timeStamp = Date() as NSDate
         
         ad.saveContext()
     }

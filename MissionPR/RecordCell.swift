@@ -10,6 +10,8 @@ import UIKit
 
 class RecordCell: UITableViewCell {
     
+    var recordDate = String()
+    
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -23,12 +25,19 @@ class RecordCell: UITableViewCell {
         layer.cornerRadius = 5.0
     }
     
-    func configureCell(_ recordLift: Record_Lift) {
-        self.recordLift = recordLift
-        dateLabel.text = "\(Date())"
-        nameLabel.text = self.recordLift.name?.capitalized
-        repsLabel.text = "\(self.recordLift.reps) reps"
-        weightLabel.text = "\(self.recordLift.weight) Lbs."
+    func configureCell(recordLift: Record_Lift) {
+        
+        view.layer.cornerRadius = 5
+        
+        let recordDateFormatter = DateFormatter()
+        recordDateFormatter.dateFormat = "MMMM dd, yyyy"
+        recordDate = recordDateFormatter.string(from: recordLift.timeStamp! as Date)
+        
+//        self.recordLift = recordLift
+        dateLabel.text = recordDate
+        nameLabel.text = recordLift.name?.capitalized
+        repsLabel.text = "\(recordLift.reps) reps"
+        weightLabel.text = "\(recordLift.weight) Lbs."
     }
     
 }
