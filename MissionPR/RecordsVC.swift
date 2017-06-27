@@ -15,6 +15,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     @IBOutlet weak var table: UITableView!
     
     var controller: NSFetchedResultsController<Record_Lift>!
+    var records = [Record_Lift]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,12 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         
         do {
             try self.controller.performFetch()
+            let data = self.controller.fetchedObjects
+            if (data?.count)! > 0 {
+                for record in data! {
+                  records.append(record)
+                }
+            }
             
         } catch {
             let error = error as NSError
@@ -55,20 +62,15 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let sections = controller.sections {
-            let sectionInfo = sections[section]
-            if sectionInfo.numberOfObjects > 0 {
-                return sectionInfo.numberOfObjects
-            }
-        }
-        return 0
+        return records.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if let sections = controller.sections {
-            return sections.count
-        }
-        return 0
+//        if let sections = controller.sections {
+//            return sections.count
+//        }
+//        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,6 +81,23 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let recordToDelete = records[indexPath.row]
+            print(recordToDelete)
+            records.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            context.delete(recordToDelete)
+            ad.saveContext()
+        }
     }
     
     func generateTestData() {
