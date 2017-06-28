@@ -31,20 +31,20 @@
                                 <rect key="frame" x="0.0" y="114" width="320" height="402"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bJl-np-uDe">
-                                        <rect key="frame" x="44" y="0.0" width="232.5" height="181"/>
+                                        <rect key="frame" x="33" y="0.0" width="254" height="181"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barbell-weightlifting" translatesAutoresizingMaskIntoConstraints="NO" id="4dQ-BR-6VD">
-                                                <rect key="frame" x="66" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="77" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="FTT-3X-mUT"/>
                                                     <constraint firstAttribute="width" constant="100" id="htK-m8-MFe"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wj-Zg-zhB">
-                                                <rect key="frame" x="0.0" y="100" width="232.5" height="81"/>
+                                                <rect key="frame" x="0.0" y="100" width="254" height="81"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7r-qp-bR5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="81"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="KCn-Al-Dnt"/>
                                                         </constraints>
@@ -55,7 +55,7 @@
                                                         <size key="shadowOffset" width="0.0" height="2"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRAX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54F-rL-daJ">
-                                                        <rect key="frame" x="106.5" y="0.0" width="126" height="81"/>
+                                                        <rect key="frame" x="117" y="0.0" width="137" height="81"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="fe5-JY-Wns"/>
                                                         </constraints>
@@ -1762,8 +1762,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u0f-5e-woG">
-                                <rect key="frame" x="0.0" y="3" width="320" height="565"/>
+                                <rect key="frame" x="0.0" y="120" width="320" height="448"/>
                                 <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" rowHeight="75" id="s5C-Gb-wmi" customClass="RecordCell" customModule="MissionPR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="75"/>
@@ -1843,17 +1844,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-Ry-5dH">
+                                <rect key="frame" x="50" y="84" width="220" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Lifts"/>
+                                    <segment title="Runs"/>
+                                </segments>
+                                <color key="tintColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="Wha-Ry-5dH" firstAttribute="top" secondItem="e3D-2t-2XF" secondAttribute="bottom" constant="20" id="7Yn-6m-VeK"/>
                             <constraint firstItem="u0f-5e-woG" firstAttribute="leading" secondItem="OhN-eg-C1r" secondAttribute="leading" id="FgZ-9n-0Ty"/>
+                            <constraint firstAttribute="trailing" secondItem="Wha-Ry-5dH" secondAttribute="trailing" constant="50" id="QsG-ax-SHU"/>
+                            <constraint firstItem="Wha-Ry-5dH" firstAttribute="leading" secondItem="OhN-eg-C1r" secondAttribute="leading" constant="50" id="aJ1-HM-PJ3"/>
                             <constraint firstItem="zXE-Qf-lGe" firstAttribute="top" secondItem="u0f-5e-woG" secondAttribute="bottom" id="xSd-b9-plk"/>
                             <constraint firstAttribute="trailing" secondItem="u0f-5e-woG" secondAttribute="trailing" id="xuo-5d-Izf"/>
-                            <constraint firstItem="u0f-5e-woG" firstAttribute="top" secondItem="OhN-eg-C1r" secondAttribute="top" constant="3" id="yYC-37-ig4"/>
+                            <constraint firstItem="u0f-5e-woG" firstAttribute="top" secondItem="OhN-eg-C1r" secondAttribute="top" constant="120" id="yYC-37-ig4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Records" id="Wgn-Ba-nud"/>
                     <connections>
+                        <outlet property="recordFilter" destination="Wha-Ry-5dH" id="0tq-rn-fMM"/>
                         <outlet property="table" destination="u0f-5e-woG" id="9H4-ZK-mIh"/>
                     </connections>
                 </viewController>
