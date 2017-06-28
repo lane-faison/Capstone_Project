@@ -12,6 +12,7 @@ import CoreData
 class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     
+    @IBOutlet weak var recordFilter: UISegmentedControl!
     @IBOutlet weak var table: UITableView!
     
     var controller: NSFetchedResultsController<Record_Lift>!
@@ -20,9 +21,13 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.automaticallyAdjustsScrollViewInsets = false;
+        
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
+        
+        recordFilter.layer.cornerRadius = 5
         
         table.dataSource = self
         table.delegate = self
