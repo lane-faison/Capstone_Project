@@ -24,8 +24,6 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.automaticallyAdjustsScrollViewInsets = false;
-        
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
@@ -34,7 +32,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         tableOfLifts.delegate = self
         tableOfRuns.dataSource = self
         tableOfRuns.delegate = self
-
+        
 //        generateTestData()
         attemptLiftFetch()
         attemptRunFetch()
@@ -68,7 +66,6 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
                   liftingRecords.append(record)
                 }
             }
-            
         } catch {
             let error = error as NSError
             print("\(error)")
@@ -93,7 +90,6 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
                     runningRecords.append(record)
                 }
             }
-            
         } catch {
             let error = error as NSError
             print("\(error)")
@@ -125,17 +121,19 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        var cell = UITableViewCell()
+        
         if tableView == self.tableOfLifts {
-            let cell = tableOfLifts.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath) as! RecordLiftCell
-            configureLiftCell(cell: cell, indexPath: indexPath as NSIndexPath)
-            return cell
+            cell = tableOfLifts.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath) as! RecordLiftCell
+            configureLiftCell(cell: cell as! RecordLiftCell, indexPath: indexPath as NSIndexPath)
         }
         
-        else {
-            let cell = tableOfRuns.dequeueReusableCell(withIdentifier: "RecordRunCell", for: indexPath) as! RecordRunCell
-            configureRunCell(cell: cell, indexPath: indexPath as NSIndexPath)
-            return cell
+        if tableView == self.tableOfRuns {
+            cell = tableOfRuns.dequeueReusableCell(withIdentifier: "RecordRunCell", for: indexPath) as! RecordRunCell
+            configureRunCell(cell: cell as! RecordRunCell, indexPath: indexPath as NSIndexPath)
         }
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
