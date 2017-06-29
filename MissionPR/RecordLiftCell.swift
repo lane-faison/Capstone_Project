@@ -19,12 +19,7 @@ class RecordLiftCell: UITableViewCell {
     @IBOutlet weak var weightLabel: UILabel!
     
     var recordLift: Record_Lift!
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        layer.cornerRadius = 5.0
-    }
-    
+        
     func configureCell(recordLift: Record_Lift) {
         
         view.layer.cornerRadius = 5

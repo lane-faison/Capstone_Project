@@ -21,11 +21,6 @@ class RecordRunCell: UITableViewCell {
     
     var recordRun: Record_Run!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        layer.cornerRadius = 5.0
-    }
-    
     func configureCell(recordRun: Record_Run) {
         
         view.layer.cornerRadius = 5.0
