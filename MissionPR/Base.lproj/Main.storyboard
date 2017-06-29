@@ -1922,11 +1922,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="distance" destination="8nx-MT-jCQ" id="1gf-lL-JDS"/>
-                                            <outlet property="name" destination="lHU-Oa-WDx" id="rk8-qs-SVe"/>
-                                            <outlet property="time" destination="Ocg-fQ-axB" id="DSA-Rh-qJA"/>
-                                            <outlet property="timeStamp" destination="7xe-BB-CBz" id="mTw-af-I8q"/>
-                                            <outlet property="units" destination="hH6-40-0Ru" id="fJe-Aq-qOk"/>
+                                            <outlet property="distanceLabel" destination="8nx-MT-jCQ" id="ea2-zM-BeE"/>
+                                            <outlet property="nameLabel" destination="lHU-Oa-WDx" id="Vdl-LB-b1h"/>
+                                            <outlet property="timeLabel" destination="Ocg-fQ-axB" id="ldS-8q-ac1"/>
+                                            <outlet property="timeStampLabel" destination="7xe-BB-CBz" id="9b5-nT-iHK"/>
+                                            <outlet property="unitsLabel" destination="hH6-40-0Ru" id="sXc-Ii-usu"/>
                                             <outlet property="view" destination="Mwh-CO-VBk" id="bbH-ht-sOO"/>
                                         </connections>
                                     </tableViewCell>

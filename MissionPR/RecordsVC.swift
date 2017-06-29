@@ -16,7 +16,10 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     @IBOutlet weak var table: UITableView!
     
     var controller: NSFetchedResultsController<Record_Lift>!
+    var controller2: NSFetchedResultsController<Record_Run>!
+    
     var records = [Record_Lift]()
+    var records2 = [Record_Run]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +36,21 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         table.delegate = self
 
 //        generateTestData()
-        attemptFetch()
+        attemptLiftFetch()
+        attemptRunFetch()
     }
     
-    func configureCell(cell: RecordLiftCell, indexPath: NSIndexPath) {
+    func configureLiftCell(cell: RecordLiftCell, indexPath: NSIndexPath) {
         let record = controller.object(at: indexPath as IndexPath)
         cell.configureCell(recordLift: record)
     }
     
-    func attemptFetch() {
+    func configureRunCell(cell: RecordRunCell, indexPath: NSIndexPath) {
+        let record = controller2.object(at: indexPath as IndexPath)
+        cell.configureCell(recordRun: record)
+    }
+    
+    func attemptLiftFetch() {
         let fetchRequest: NSFetchRequest<Record_Lift> = Record_Lift.fetchRequest()
         let recordSort = NSSortDescriptor(key: "timeStamp", ascending: false)
         fetchRequest.sortDescriptors = [recordSort]
@@ -66,22 +75,52 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return records.count
+    func attemptRunFetch() {
+        let fetchRequest: NSFetchRequest<Record_Run> = Record_Run.fetchRequest()
+        let recordSort = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [recordSort]
+        
+        let controller2 = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller2.delegate = self
+        self.controller2 = controller2
+        
+        do {
+            try self.controller2.performFetch()
+            let data = self.controller2.fetchedObjects
+            if (data?.count)! > 0 {
+                for record in data! {
+                    records2.append(record)
+                }
+            }
+            
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-//        if let sections = controller.sections {
-//            return sections.count
-//        }
-//        return 0
         return 1
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath) as? RecordLiftCell
-        configureCell(cell: cell!, indexPath: indexPath as NSIndexPath)
-        return cell!
+        
+        if indexPath.row == 0 {
+            let cell = table.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath) as? RecordLiftCell
+            configureLiftCell(cell: cell!, indexPath: indexPath as NSIndexPath)
+            return cell!
+        }
+        
+        else {
+            let cell = table.dequeueReusableCell(withIdentifier: "RecordRunCell", for: indexPath) as? RecordRunCell
+            configureRunCell(cell: cell!, indexPath: indexPath as NSIndexPath)
+            return cell!
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -94,15 +133,27 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            let recordToDelete = records[indexPath.row]
-            print(recordToDelete)
-            records.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            context.delete(recordToDelete)
-            ad.saveContext()
+        if indexPath.row == 0 {
+            if (editingStyle == UITableViewCellEditingStyle.delete) {
+                let recordToDelete = records[indexPath.row]
+                print(recordToDelete)
+                records.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                context.delete(recordToDelete)
+                ad.saveContext()
+            }
         }
+        else {
+            if (editingStyle == UITableViewCellEditingStyle.delete) {
+                let recordToDelete = records2[indexPath.row]
+                print(recordToDelete)
+                records2.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                context.delete(recordToDelete)
+                ad.saveContext()
+            }
+        }
+
     }
     
     func generateTestData() {
@@ -124,8 +175,13 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         record3.reps = 5
         record3.timeStamp = Date() as NSDate
         
+        let record4 = Record_Run(context: context)
+        record4.name = "3 Mile Run"
+        record4.distance = 3
+        record4.units = "Miles"
+        record4.date = Date() as NSDate
+        record4.time = 1000
+        
         ad.saveContext()
     }
-    
-
 }
