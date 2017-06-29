@@ -33,7 +33,6 @@ class RecordLiftCell: UITableViewCell {
         recordDateFormatter.dateFormat = "MMMM dd, yyyy"
         recordDate = recordDateFormatter.string(from: recordLift.timeStamp! as Date)
         
-//        self.recordLift = recordLift
         dateLabel.text = recordDate
         nameLabel.text = recordLift.name?.capitalized
         repsLabel.text = "\(recordLift.reps) reps"
