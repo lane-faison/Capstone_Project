@@ -36,7 +36,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         attemptFetch()
     }
     
-    func configureCell(cell: RecordCell, indexPath: NSIndexPath) {
+    func configureCell(cell: RecordLiftCell, indexPath: NSIndexPath) {
         let record = controller.object(at: indexPath as IndexPath)
         cell.configureCell(recordLift: record)
     }
@@ -79,7 +79,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath) as? RecordCell
+        let cell = table.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath) as? RecordLiftCell
         configureCell(cell: cell!, indexPath: indexPath as NSIndexPath)
         return cell!
     }
