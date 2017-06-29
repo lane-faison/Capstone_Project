@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		592AD8B30BF18F56F967BBA7 /* Pods_MissionPR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A80AA58CDD61A549DFD44D /* Pods_MissionPR.framework */; };
+		F6084A491F0498C900237D5B /* Record_Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084A471F0498C900237D5B /* Record_Run+CoreDataClass.swift */; };
+		F6084A4A1F0498C900237D5B /* Record_Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084A481F0498C900237D5B /* Record_Run+CoreDataProperties.swift */; };
 		F608BD731EE9B53700D62449 /* Goal_Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608BD711EE9B53700D62449 /* Goal_Run+CoreDataClass.swift */; };
 		F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608BD721EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift */; };
 		F610904D1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F610904B1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift */; };
@@ -16,6 +18,7 @@
 		F620011D1EDF3F9B0067A794 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011C1EDF3F9B0067A794 /* Constants.swift */; };
 		F62001201EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011E1EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift */; };
 		F62001211EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011F1EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift */; };
+		F63BE8721F044AFE000CE138 /* RecordRunCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63BE8711F044AFE000CE138 /* RecordRunCell.swift */; };
 		F65D360E1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */; };
 		F65D360F1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */; };
 		F65D36101EDFE715006C067A /* Goal_Visits+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D360C1EDFE715006C067A /* Goal_Visits+CoreDataClass.swift */; };
@@ -32,7 +35,7 @@
 		F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */; };
 		F6AFD8851EE66E000093253B /* Food_Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */; };
 		F6B2A88D1EF792AA005F2844 /* RecordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B2A88C1EF792AA005F2844 /* RecordsVC.swift */; };
-		F6B2A88F1EF79709005F2844 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B2A88E1EF79709005F2844 /* RecordCell.swift */; };
+		F6B2A88F1EF79709005F2844 /* RecordLiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */; };
 		F6C5052C1EE86B38008DBB93 /* RifficFree-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6C5052A1EE86A0E008DBB93 /* RifficFree-Bold.ttf */; };
 		F6C5052D1EE86B3D008DBB93 /* PoetsenOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6C5052B1EE86A0E008DBB93 /* PoetsenOne-Regular.ttf */; };
 		F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */; };
@@ -57,6 +60,8 @@
 		336FFB2F87060AE3E2245311 /* Pods-MissionPR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissionPR.release.xcconfig"; path = "Pods/Target Support Files/Pods-MissionPR/Pods-MissionPR.release.xcconfig"; sourceTree = "<group>"; };
 		52A80AA58CDD61A549DFD44D /* Pods_MissionPR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissionPR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE882F1FE23FBA1CD47062E8 /* Pods-MissionPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissionPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MissionPR/Pods-MissionPR.debug.xcconfig"; sourceTree = "<group>"; };
+		F6084A471F0498C900237D5B /* Record_Run+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Record_Run+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6084A481F0498C900237D5B /* Record_Run+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Record_Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F608BD711EE9B53700D62449 /* Goal_Run+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Run+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F608BD721EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F610904B1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Visits+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		F620011C1EDF3F9B0067A794 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F620011E1EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F620011F1EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F63BE8711F044AFE000CE138 /* RecordRunCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordRunCell.swift; sourceTree = "<group>"; };
 		F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Lift+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Lift+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F65D360C1EDFE715006C067A /* Goal_Visits+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Visits+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -81,7 +87,7 @@
 		F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6B2A88C1EF792AA005F2844 /* RecordsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsVC.swift; sourceTree = "<group>"; };
-		F6B2A88E1EF79709005F2844 /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
+		F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordLiftCell.swift; sourceTree = "<group>"; };
 		F6C5052A1EE86A0E008DBB93 /* RifficFree-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RifficFree-Bold.ttf"; sourceTree = "<group>"; };
 		F6C5052B1EE86A0E008DBB93 /* PoetsenOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoetsenOne-Regular.ttf"; sourceTree = "<group>"; };
 		F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftGoalCell.swift; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				F620011F1EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift */,
 				F610904C1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift */,
 				F67F42A21F02187D00D503CE /* Record_Lift+CoreDataProperties.swift */,
+				F6084A481F0498C900237D5B /* Record_Run+CoreDataProperties.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -189,6 +196,7 @@
 		F6F8299A1EDE2D1F00A2C183 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6084A471F0498C900237D5B /* Record_Run+CoreDataClass.swift */,
 				F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */,
 				F608BD711EE9B53700D62449 /* Goal_Run+CoreDataClass.swift */,
 				F67F02E11EE5BE160065F168 /* Goal_Food+CoreDataClass.swift */,
@@ -209,7 +217,8 @@
 				F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */,
 				F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */,
 				F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */,
-				F6B2A88E1EF79709005F2844 /* RecordCell.swift */,
+				F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */,
+				F63BE8711F044AFE000CE138 /* RecordRunCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -390,7 +399,7 @@
 				F6FF35DB1EE1FEB50086C31D /* VisitVC.swift in Sources */,
 				F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */,
 				F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */,
-				F6B2A88F1EF79709005F2844 /* RecordCell.swift in Sources */,
+				F6B2A88F1EF79709005F2844 /* RecordLiftCell.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
 				F67F42A31F02187D00D503CE /* Record_Lift+CoreDataClass.swift in Sources */,
 				F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */,
@@ -404,15 +413,18 @@
 				F65D36181EE09055006C067A /* AddRunVC.swift in Sources */,
 				F6F8298E1EDE2ABE00A2C183 /* MissionPR.xcdatamodeld in Sources */,
 				F608BD731EE9B53700D62449 /* Goal_Run+CoreDataClass.swift in Sources */,
+				F6084A491F0498C900237D5B /* Record_Run+CoreDataClass.swift in Sources */,
 				F6AFD8851EE66E000093253B /* Food_Log+CoreDataProperties.swift in Sources */,
 				F6FF35D91EE1FE9E0086C31D /* FoodVC.swift in Sources */,
 				F6F8299E1EDE306C00A2C183 /* RoundedOutlineView.swift in Sources */,
+				F63BE8721F044AFE000CE138 /* RecordRunCell.swift in Sources */,
 				F65D36161EE08FEB006C067A /* AddLiftVC.swift in Sources */,
 				F62001201EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift in Sources */,
 				F67F42A41F02187D00D503CE /* Record_Lift+CoreDataProperties.swift in Sources */,
 				F620011D1EDF3F9B0067A794 /* Constants.swift in Sources */,
 				F6B2A88D1EF792AA005F2844 /* RecordsVC.swift in Sources */,
 				F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */,
+				F6084A4A1F0498C900237D5B /* Record_Run+CoreDataProperties.swift in Sources */,
 				F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

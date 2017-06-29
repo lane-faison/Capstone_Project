@@ -1,5 +1,5 @@
 //
-//  RecordCell.swift
+//  RecordLiftCell.swift
 //  MissionPR
 //
 //  Created by Lane Faison on 6/18/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecordCell: UITableViewCell {
+class RecordLiftCell: UITableViewCell {
     
     var recordDate = String()
     
