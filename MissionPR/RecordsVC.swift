@@ -190,7 +190,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         let record4 = Record_Run(context: context)
         record4.name = "3 Mile Run"
         record4.distance = 3
-        record4.units = "Miles"
+        record4.units = "mi"
         record4.date = Date() as NSDate
         record4.time = 1000
         
