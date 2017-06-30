@@ -212,6 +212,26 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
             
             errorLabel.isHidden = true
             
+            if currentTimeInSeconds <= goalTimeInSeconds {
+                // Create new run record
+                var newRecord: Record_Run!
+                
+                newRecord = Record_Run(context: context)
+                
+                newRecord.name = nameTextField.text
+                newRecord.time = Int16(currentTimeInSeconds)
+                newRecord.date = Date() as NSDate
+                newRecord.distance = Int16(distance)
+                
+                if units == 0 {
+                    newRecord.units = "mi"
+                }
+                if units == 1 {
+                    newRecord.units = "km"
+                }
+                ad.saveContext()
+            }
+
             if goalToEdit == nil {
                 goal = Goal_Run(context: context)
                 
