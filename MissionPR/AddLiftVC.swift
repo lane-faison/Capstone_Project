@@ -133,9 +133,7 @@ class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
                 newRecord.reps = Int16(reps)
                 newRecord.weight = Int16(goalWeight)
                 newRecord.timeStamp = Date() as NSDate
-                
-                print(newRecord)
-                
+                                
                 ad.saveContext()
             }
             
