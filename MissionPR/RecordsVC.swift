@@ -50,7 +50,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     func attemptLiftFetch() {
         let fetchRequest: NSFetchRequest<Record_Lift> = Record_Lift.fetchRequest()
-        let recordSort = NSSortDescriptor(key: "timeStamp", ascending: false)
+        let recordSort = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [recordSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -74,7 +74,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     func attemptRunFetch() {
         let fetchRequest: NSFetchRequest<Record_Run> = Record_Run.fetchRequest()
-        let recordSort = NSSortDescriptor(key: "date", ascending: false)
+        let recordSort = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [recordSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)

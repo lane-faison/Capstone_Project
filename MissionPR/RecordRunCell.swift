@@ -67,7 +67,5 @@ class RecordRunCell: UITableViewCell {
         distanceLabel.text = "\(recordRun.distance)"
         unitsLabel.text = "\(recordRun.units!)"
         timeStampLabel.text = recordDate
-              
     }
-    
 }

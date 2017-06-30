@@ -32,6 +32,5 @@ class RecordLiftCell: UITableViewCell {
         nameLabel.text = recordLift.name?.capitalized
         repsLabel.text = "\(recordLift.reps) reps"
         weightLabel.text = "\(recordLift.weight) Lbs."
-    }
-    
+    }    
 }

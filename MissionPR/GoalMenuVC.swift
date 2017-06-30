@@ -14,6 +14,7 @@ class GoalMenuVC: UIViewController {
     @IBOutlet weak var viewRunGoalsBtn: RoundedOutlineButton!
     @IBOutlet weak var viewFoodGoalsBtn: RoundedOutlineButton!
     @IBOutlet weak var viewVisitGoalBtn: RoundedOutlineButton!
+    @IBOutlet weak var viewRecordsBtn: RoundedOutlineButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,9 @@ class GoalMenuVC: UIViewController {
         if sender == viewVisitGoalBtn {
             viewVisitGoalBtn.backgroundColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
         }
+        if sender == viewRecordsBtn {
+            viewRecordsBtn.backgroundColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
+        }
         
     }
     
@@ -51,5 +55,8 @@ class GoalMenuVC: UIViewController {
     }
     @IBAction func btn4TouchUpInside(_ sender: UIButton) {
         viewVisitGoalBtn.backgroundColor = UIColor(red: 224/255, green: 255/255, blue: 87/255, alpha: 1.0)
+    }
+    @IBAction func btn5TouchUpInside(_ sender: UIButton) {
+        viewRecordsBtn.backgroundColor = UIColor(red: 102/255, green: 255/255, blue: 102/255, alpha: 1.0)
     }
 }
