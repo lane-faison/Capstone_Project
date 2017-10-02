@@ -11,24 +11,25 @@ import CoreData
 
 class VisitVC: UIViewController, NSFetchedResultsControllerDelegate {
 
-    var controller: NSFetchedResultsController<Gym_Visits>!
-    var dayTrackerCount = Int()
-    var daysInCurrentMonth = Int()
-    var nameOfMonth = String()
+    private var controller: NSFetchedResultsController<Gym_Visits>!
+    private var dayTrackerCount = Int()
+    private var daysInCurrentMonth = Int()
+    private var nameOfMonth = String()
     
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     
+    let dateFormatter = DateFormatter()
+    
+    let transform = CGAffineTransform(rotationAngle: CGFloat(3*Double.pi/2)).scaledBy(x: 1.0, y: 20.0)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
         nameOfMonth = dateFormatter.string(from: Date() as Date)
         
-        let transform = CGAffineTransform(rotationAngle: CGFloat(3*Double.pi/2)).scaledBy(x: 1.0, y: 20.0)
-
         progressBar.transform = transform
         
         updateDays()
@@ -48,10 +49,10 @@ class VisitVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         do {
             try self.controller.performFetch()
-            let data = self.controller.fetchedObjects
-            if (data?.count)! > 0 {
+            guard let data = self.controller.fetchedObjects else { return }
+            if data.count > 0 {
                 
-                for day in data! {
+                for day in data {
 
                     let component1 = NSCalendar.current.dateComponents([.month,.year], from: (Date() as NSDate) as Date)
                     let component2 = NSCalendar.current.dateComponents([.month,.year], from: day.date as Date)
@@ -61,8 +62,7 @@ class VisitVC: UIViewController, NSFetchedResultsControllerDelegate {
                     }
                 }
             }
-        } catch {
-            let error = error as NSError
+        } catch let error {
             print("\(error)")
         }
     }
@@ -74,9 +74,8 @@ class VisitVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         let dateComponents = DateComponents(year: currentDateInfo.year, month: currentDateInfo.month)
         let calendar = Calendar.current
-        let date = calendar.date(from: dateComponents)!
-        
-        let range = calendar.range(of: .day, in: .month, for: date)!
+        guard let date = calendar.date(from: dateComponents) else { return }
+        guard let range = calendar.range(of: .day, in: .month, for: date) else { return }
         daysInCurrentMonth = range.count
         
         label1.text = "\(daysInCurrentMonth) days in \(nameOfMonth)"

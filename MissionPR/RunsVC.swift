@@ -12,9 +12,13 @@ import CoreData
 class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var directionsLabel: UILabel!
+    @IBOutlet weak var directionsLabel: UILabel! {
+        didSet {
+            directionsLabel.isHidden = true
+        }
+    }
     
-    var controller: NSFetchedResultsController<Goal_Run>!
+    private var controller: NSFetchedResultsController<Goal_Run>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +29,6 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        directionsLabel.isHidden = true
         
 //        generateTestData()
         attemptFetch()
@@ -52,12 +54,8 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editGoal" {
-            if let destination = segue.destination as? AddRunVC {
-                if let goal = sender as? Goal_Run {
-                    destination.goalToEdit = goal
-                }
-            }
+        if segue.identifier == "editGoal", let destination = segue.destination as? AddRunVC, let goal = sender as? Goal_Run {
+            destination.goalToEdit = goal
         }
     }
     
@@ -97,8 +95,7 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         do {
             try self.controller.performFetch()
-        } catch {
-            let error = error as NSError
+        } catch let error {
             print("\(error)")
         }
     }
@@ -113,23 +110,23 @@ class RunsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch(type) {
-        case.insert:
+        case .insert:
             if let indexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
             break
-        case.delete:
+        case .delete:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             break
-        case.update:
+        case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! RunGoalCell
                 configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
             break
-        case.move:
+        case .move:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
