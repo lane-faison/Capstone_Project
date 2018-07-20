@@ -211,7 +211,7 @@ extension AddLiftVC {
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    func dismissKeyboard() {
         view.endEditing(true)
     }
     
