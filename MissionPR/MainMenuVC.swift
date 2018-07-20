@@ -13,30 +13,38 @@ import GooglePlaces
 
 class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate {
     
-    var controller: NSFetchedResultsController<Gym_Location>!
-    var controller2: NSFetchedResultsController<Gym_Visits>!
-    var manager: CLLocationManager!
-    var myLocation = CLLocationCoordinate2D()
-    var gymLocation = CLLocationCoordinate2D()
-    var okayToCheckIn = Bool()
+    private var controller: NSFetchedResultsController<Gym_Location>!
+    private var controller2: NSFetchedResultsController<Gym_Visits>!
+    private var manager = CLLocationManager()
+    private var myLocation = CLLocationCoordinate2D()
+    private var gymLocation = CLLocationCoordinate2D()
+    private var okayToCheckIn = Bool()
     
     @IBOutlet weak var viewGoalsBtn: RoundedOutlineButton!
-    @IBOutlet weak var gymCheckInBtn: RoundedOutlineButton!
+    @IBOutlet weak var gymCheckInBtn: RoundedOutlineButton! {
+        didSet {
+            gymCheckInBtn.isEnabled = false
+        }
+    }
     @IBOutlet weak var setGymBtn: RoundedOutlineButton!
     @IBOutlet weak var setGymLabel: UILabel!
-    @IBOutlet weak var gymNameLabel: UILabel!
-    @IBOutlet weak var gymStatusLabel: UILabel!
+    @IBOutlet weak var gymNameLabel: UILabel! {
+        didSet {
+            gymNameLabel.isHidden = true
+        }
+    }
+    @IBOutlet weak var gymStatusLabel: UILabel! {
+        didSet {
+            gymStatusLabel.isHidden = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gymCheckInBtn.isEnabled = false
-        gymNameLabel.isHidden = true
-        gymStatusLabel.isHidden = true
         okayToCheckIn = false
         
         DispatchQueue.main.async {
-            self.manager = CLLocationManager()
             self.manager.delegate = self
             self.manager.desiredAccuracy = kCLLocationAccuracyBest
             self.manager.requestWhenInUseAuthorization()
@@ -74,12 +82,11 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
         
         attemptVisitFetch()
         
-        if distance < 100 && okayToCheckIn == true {
+        if distance < 100 && okayToCheckIn {
             gymStatusLabel.text = "You are checked in. Have a great workout!"
             gymStatusLabel.isHidden = false
             
-            var newVisit: Gym_Visits!
-            newVisit = Gym_Visits(context: context)
+            let newVisit: Gym_Visits = Gym_Visits(context: context)
             
             let count = 1
             newVisit.count = Int16(count)
@@ -88,7 +95,7 @@ class MainMenuVC: UIViewController, CLLocationManagerDelegate, NSFetchedResultsC
             newVisit.date = todaysDate
 
             ad.saveContext()
-        } else if distance < 100 && okayToCheckIn == false {
+        } else if distance < 100 && !okayToCheckIn {
             gymStatusLabel.text = "You must wait 2 hours between check-ins."
             gymStatusLabel.isHidden = false
         } else if distance >= 100 {

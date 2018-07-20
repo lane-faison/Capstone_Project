@@ -18,8 +18,12 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
-    let limitLength = 22 //character length for above text field
-    @IBOutlet weak var errorLabel: UILabel!
+    private let limitLength = 22 //character length for above text field
+    @IBOutlet weak var errorLabel: UILabel! {
+        didSet {
+            errorLabel.isHidden = true
+        }
+    }
     @IBOutlet weak var distancePicker: UIPickerView!
     @IBOutlet weak var currentPicker: UIPickerView!
     @IBOutlet weak var goalPicker: UIPickerView!
@@ -28,9 +32,9 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
     
     var goalToEdit: Goal_Run?
     
-    var distanceDataSource = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],[0,1]]
+    private var distanceDataSource = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],[0,1]]
     
-    var timeDataSource = [[0,1,2,3,4,5],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]]
+    private var timeDataSource = [[0,1,2,3,4,5],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +50,6 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         currentPicker.dataSource = self
         goalPicker.delegate = self
         goalPicker.dataSource = self
-        
-        errorLabel.isHidden = true
         
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -66,97 +68,91 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        
-        if pickerView == distancePicker {
+        switch pickerView {
+        case distancePicker:
             return 2
-        }
-        if pickerView == currentPicker {
+        case currentPicker:
             return 3
-        }
-        if pickerView == goalPicker {
+        case goalPicker:
             return 3
+        default:
+            return 1
         }
-        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == distancePicker {
+        switch pickerView {
+        case distancePicker:
             return distanceDataSource[component].count
-        }
-        if pickerView == currentPicker {
+        case currentPicker:
             return timeDataSource[component].count
-        }
-        if pickerView == goalPicker {
+        case goalPicker:
             return timeDataSource[component].count
+        default:
+            return 0
         }
-        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if pickerView == distancePicker {
+        switch pickerView {
             
-            var choice = "\(distanceDataSource[component][row])"
-            
+        case distancePicker:
             if component == 1 && row == 0 {
-                choice = "mi"
+                return "mi"
             }
-            
             if component == 1 && row == 1 {
-                choice = "km"
+                return "km"
             }
             
-            return choice
-        }
-        
-        if pickerView == currentPicker {
+        case currentPicker:
             if component == 0 {
-                let choice = "\(timeDataSource[component][row])h"
-                return choice
+                return "\(timeDataSource[component][row])h"
             }
             if component == 1 {
-                let choice = "\(timeDataSource[component][row])m"
-                return choice
+                return "\(timeDataSource[component][row])m"
             }
             if component == 2 {
-                let choice = "\(timeDataSource[component][row])s"
-                return choice
+                return "\(timeDataSource[component][row])s"
             }
-        }
-        if pickerView == goalPicker {
+            
+        case goalPicker:
             if component == 0 {
-                let choice = "\(timeDataSource[component][row])h"
-                return choice
+                return "\(timeDataSource[component][row])h"
             }
             if component == 1 {
-                let choice = "\(timeDataSource[component][row])m"
-                return choice
+                return "\(timeDataSource[component][row])m"
             }
             if component == 2 {
-                let choice = "\(timeDataSource[component][row])s"
-                return choice
+                return "\(timeDataSource[component][row])s"
             }
+            
+        default:
+            return " "
         }
-        return " "
+        return nil
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         return
     }
     
     func loadGoalData() {
-        if let runGoal = goalToEdit {
+        if let runGoal = goalToEdit, let units = goalToEdit?.units {
             nameTextField.text = runGoal.name
             
             let indexOfDistance = distanceDataSource[0].index(of: Int(runGoal.distance))
             distancePicker.selectRow(indexOfDistance!, inComponent: 0, animated: true)
             
-            if runGoal.units == "mi" {
+            switch units {
+            case "mi":
+                distancePicker.selectRow(0, inComponent: 1, animated: true)
+            case "km":
+                distancePicker.selectRow(1, inComponent: 1, animated: true)
+            default:
                 distancePicker.selectRow(0, inComponent: 1, animated: true)
             }
-            if runGoal.units == "km" {
-                distancePicker.selectRow(1, inComponent: 1, animated: true)
-            }
+            
             
             let h_current = runGoal.currentTime/3600
             let m_current = (runGoal.currentTime%3600)/60
@@ -174,20 +170,28 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
             let indexOfGoal_m = timeDataSource[1].index(of: Int(m_goal))
             let indexOfGoal_s = timeDataSource[2].index(of: Int(s_goal))
             
-            currentPicker.selectRow(indexOfCurrent_h!, inComponent: 0, animated: true)
-            currentPicker.selectRow(indexOfCurrent_m!, inComponent: 1, animated: true)
-            currentPicker.selectRow(indexOfCurrent_s!, inComponent: 2, animated: true)
+            guard let currentHourIndex = indexOfCurrent_h else { return }
+            guard let currentMinuteIndex = indexOfCurrent_m else { return }
+            guard let currentSecondIndex = indexOfCurrent_s else { return }
+            guard let goalHourIndex = indexOfGoal_h else { return }
+            guard let goalMinuteIndex = indexOfGoal_m else { return }
+            guard let goalSecondIndex = indexOfGoal_s else { return }
             
-            goalPicker.selectRow(indexOfGoal_h!, inComponent: 0, animated: true)
-            goalPicker.selectRow(indexOfGoal_m!, inComponent: 1, animated: true)
-            goalPicker.selectRow(indexOfGoal_s!, inComponent: 2, animated: true)
+            currentPicker.selectRow(currentHourIndex, inComponent: 0, animated: true)
+            currentPicker.selectRow(currentMinuteIndex, inComponent: 1, animated: true)
+            currentPicker.selectRow(currentSecondIndex, inComponent: 2, animated: true)
+            
+            goalPicker.selectRow(goalHourIndex, inComponent: 0, animated: true)
+            goalPicker.selectRow(goalMinuteIndex, inComponent: 1, animated: true)
+            goalPicker.selectRow(goalSecondIndex, inComponent: 2, animated: true)
         }
     }
+    
     
     @IBAction func addPressed(_ sender: Any) {
         
         saveBtn.backgroundColor = UIColor(red: 169/255, green: 253/255, blue: 0, alpha: 1.0)
-
+        
         var goal: Goal_Run!
         
         if goalToEdit != nil {
@@ -231,7 +235,7 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
                 }
                 ad.saveContext()
             }
-
+            
             if goalToEdit == nil {
                 goal = Goal_Run(context: context)
                 
@@ -301,7 +305,7 @@ extension AddRunVC {
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     

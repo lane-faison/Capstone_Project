@@ -14,7 +14,7 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var directionsLabel: UILabel!
     
-    var controller: NSFetchedResultsController<Goal_Lift>!
+    private var controller: NSFetchedResultsController<Goal_Lift>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +51,8 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editGoal" {
-            if let destination = segue.destination as? AddLiftVC {
-                if let goal = sender as? Goal_Lift {
-                    destination.goalToEdit = goal
-                }
+            if let destination = segue.destination as? AddLiftVC, let goal = sender as? Goal_Lift {
+                destination.goalToEdit = goal
             }
         }
     }
@@ -95,8 +93,7 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
         
         do {
             try self.controller.performFetch()
-        } catch {
-            let error = error as NSError
+        } catch let error {
             print("\(error)")
         }
     }
@@ -111,23 +108,23 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch(type) {
-        case.insert:
+        case .insert:
             if let indexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
             break
-        case.delete:
+        case .delete:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             break
-        case.update:
+        case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! LiftGoalCell
                 configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
             break
-        case.move:
+        case .move:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }

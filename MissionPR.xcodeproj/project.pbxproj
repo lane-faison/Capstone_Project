@@ -49,6 +49,7 @@
 		F6F829A11EDE344200A2C183 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */; };
 		F6F829A41EDEA4A300A2C183 /* stencil-army.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */; };
 		F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */; };
+		F6FDF0E81F83582D000DE708 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FDF0E71F83582D000DE708 /* MenuButton.swift */; };
 		F6FF35D11EE1384C0086C31D /* RunGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */; };
 		F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */; };
 		F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D61EE1FE400086C31D /* RunsVC.swift */; };
@@ -103,6 +104,7 @@
 		F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "stencil-army.ttf"; sourceTree = "<group>"; };
 		F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodGoalCell.swift; sourceTree = "<group>"; };
+		F6FDF0E71F83582D000DE708 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGoalCell.swift; sourceTree = "<group>"; };
 		F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalMenuVC.swift; sourceTree = "<group>"; };
 		F6FF35D61EE1FE400086C31D /* RunsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsVC.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */,
 				F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */,
 				F63BE8711F044AFE000CE138 /* RecordRunCell.swift */,
+				F6FDF0E71F83582D000DE708 /* MenuButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -290,12 +293,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Lane Faison";
 				TargetAttributes = {
 					F6F829811EDE2ABE00A2C183 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 34KC4VR7Y2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -399,6 +403,7 @@
 				F6FF35DB1EE1FEB50086C31D /* VisitVC.swift in Sources */,
 				F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */,
 				F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */,
+				F6FDF0E81F83582D000DE708 /* MenuButton.swift in Sources */,
 				F6B2A88F1EF79709005F2844 /* RecordLiftCell.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
 				F67F42A31F02187D00D503CE /* Record_Lift+CoreDataClass.swift in Sources */,
@@ -461,7 +466,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -469,7 +476,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -511,7 +522,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -519,7 +532,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -554,7 +571,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanefaison.MissionPR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -568,7 +586,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanefaison.MissionPR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
