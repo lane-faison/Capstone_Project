@@ -18,6 +18,7 @@
 		F620011D1EDF3F9B0067A794 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011C1EDF3F9B0067A794 /* Constants.swift */; };
 		F62001201EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011E1EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift */; };
 		F62001211EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620011F1EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift */; };
+		F6294F862101B0830096AF78 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6294F852101B0830096AF78 /* CircleButton.swift */; };
 		F63BE8721F044AFE000CE138 /* RecordRunCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63BE8711F044AFE000CE138 /* RecordRunCell.swift */; };
 		F65D360E1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */; };
 		F65D360F1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */; };
@@ -70,6 +71,7 @@
 		F620011C1EDF3F9B0067A794 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F620011E1EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F620011F1EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gym_Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6294F852101B0830096AF78 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		F63BE8711F044AFE000CE138 /* RecordRunCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordRunCell.swift; sourceTree = "<group>"; };
 		F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Lift+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Lift+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			name = Generated;
 			sourceTree = "<group>";
 		};
+		F6294F842101B0720096AF78 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F6294F852101B0830096AF78 /* CircleButton.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		F65D36141EE08FD4006C067A /* Add Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +191,7 @@
 			children = (
 				F6F829A21EDEA47600A2C183 /* Resources */,
 				F6F8299A1EDE2D1F00A2C183 /* Model */,
-				F6F8299B1EDE2D2D00A2C183 /* View */,
+				F6F8299B1EDE2D2D00A2C183 /* Views */,
 				F6F8299C1EDE2D3900A2C183 /* Controller */,
 				F6F829891EDE2ABE00A2C183 /* Main.storyboard */,
 				F6F8298F1EDE2ABE00A2C183 /* Assets.xcassets */,
@@ -210,9 +220,10 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		F6F8299B1EDE2D2D00A2C183 /* View */ = {
+		F6F8299B1EDE2D2D00A2C183 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6294F842101B0720096AF78 /* Buttons */,
 				F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */,
 				F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */,
 				F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */,
@@ -220,7 +231,7 @@
 				F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */,
 				F63BE8711F044AFE000CE138 /* RecordRunCell.swift */,
 			);
-			name = View;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F6F8299C1EDE2D3900A2C183 /* Controller */ = {
@@ -422,6 +433,7 @@
 				F62001201EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift in Sources */,
 				F67F42A41F02187D00D503CE /* Record_Lift+CoreDataProperties.swift in Sources */,
 				F620011D1EDF3F9B0067A794 /* Constants.swift in Sources */,
+				F6294F862101B0830096AF78 /* CircleButton.swift in Sources */,
 				F6B2A88D1EF792AA005F2844 /* RecordsVC.swift in Sources */,
 				F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */,
 				F6084A4A1F0498C900237D5B /* Record_Run+CoreDataProperties.swift in Sources */,
