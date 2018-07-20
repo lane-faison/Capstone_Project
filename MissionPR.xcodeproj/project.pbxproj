@@ -49,7 +49,6 @@
 		F6F829A11EDE344200A2C183 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */; };
 		F6F829A41EDEA4A300A2C183 /* stencil-army.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */; };
 		F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */; };
-		F6FDF0E81F83582D000DE708 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FDF0E71F83582D000DE708 /* MenuButton.swift */; };
 		F6FF35D11EE1384C0086C31D /* RunGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */; };
 		F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */; };
 		F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF35D61EE1FE400086C31D /* RunsVC.swift */; };
@@ -104,7 +103,6 @@
 		F6F829A01EDE344200A2C183 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		F6F829A31EDEA4A300A2C183 /* stencil-army.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "stencil-army.ttf"; sourceTree = "<group>"; };
 		F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodGoalCell.swift; sourceTree = "<group>"; };
-		F6FDF0E71F83582D000DE708 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		F6FF35D01EE1384C0086C31D /* RunGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGoalCell.swift; sourceTree = "<group>"; };
 		F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalMenuVC.swift; sourceTree = "<group>"; };
 		F6FF35D61EE1FE400086C31D /* RunsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsVC.swift; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 				F6FADA341EE5C0F500780327 /* FoodGoalCell.swift */,
 				F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */,
 				F63BE8711F044AFE000CE138 /* RecordRunCell.swift */,
-				F6FDF0E71F83582D000DE708 /* MenuButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -403,7 +400,6 @@
 				F6FF35DB1EE1FEB50086C31D /* VisitVC.swift in Sources */,
 				F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */,
 				F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */,
-				F6FDF0E81F83582D000DE708 /* MenuButton.swift in Sources */,
 				F6B2A88F1EF79709005F2844 /* RecordLiftCell.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
 				F67F42A31F02187D00D503CE /* Record_Lift+CoreDataClass.swift in Sources */,

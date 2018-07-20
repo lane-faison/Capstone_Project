@@ -222,9 +222,7 @@ extension CheckFoodVC {
                 ]
             ]
         ]
-        let jsonObject = JSON(jsonRequest)
-//        let jsonObject = JSON(dictionary: jsonRequest)
-//        let jsonObject = JSON(jsonDictionary: jsonRequest)
+        let jsonObject = JSON(jsonDictionary: jsonRequest)
         
         // Serialize the JSON
         guard let data = try? jsonObject.rawData() else { return }
