@@ -15,11 +15,11 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     @IBOutlet weak var tableOfLifts: UITableView!
     @IBOutlet weak var tableOfRuns: UITableView!
     
-    private var liftController: NSFetchedResultsController<Record_Lift>!
-    private var runController: NSFetchedResultsController<Record_Run>!
+    var liftController: NSFetchedResultsController<Record_Lift>!
+    var runController: NSFetchedResultsController<Record_Run>!
     
-    private var liftingRecords = [Record_Lift]()
-    private var runningRecords = [Record_Run]()
+    var liftingRecords = [Record_Lift]()
+    var runningRecords = [Record_Run]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,13 +60,14 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         
         do {
             try self.liftController.performFetch()
-            guard let data = self.liftController.fetchedObjects else { return }
-            if data.count > 0 {
-                for record in data {
+            let data = self.liftController.fetchedObjects
+            if (data?.count)! > 0 {
+                for record in data! {
                   liftingRecords.append(record)
                 }
             }
-        } catch let error {
+        } catch {
+            let error = error as NSError
             print("\(error)")
         }
     }
@@ -83,13 +84,14 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         
         do {
             try self.runController.performFetch()
-            guard let data = self.runController.fetchedObjects else { return }
-            if data.count > 0 {
-                for record in data {
+            let data = self.runController.fetchedObjects
+            if (data?.count)! > 0 {
+                for record in data! {
                     runningRecords.append(record)
                 }
             }
-        } catch let error {
+        } catch {
+            let error = error as NSError
             print("\(error)")
         }
     }

@@ -14,7 +14,7 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var directionsLabel: UILabel!
     
-    private var controller: NSFetchedResultsController<Goal_Food>!
+    var controller: NSFetchedResultsController<Goal_Food>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +100,8 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         do {
             try self.controller.performFetch()
-        } catch let error {
+        } catch {
+            let error = error as NSError
             print("\(error)")
         }
     }

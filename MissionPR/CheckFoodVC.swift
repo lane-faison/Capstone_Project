@@ -14,35 +14,16 @@ import SwiftyJSON
 class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var captureBtn: RoundedOutlineButton!
-    
-    @IBOutlet weak var resultsLabel: UILabel! {
-        didSet {
-            resultsLabel.isHidden = true
-        }
-    }
-    
-    @IBOutlet weak var spinner: UIActivityIndicatorView! {
-        didSet {
-            spinner.isHidden = true
-        }
-    }
-    
-    @IBOutlet weak var noCameraMessage: UILabel! {
-        didSet {
-            noCameraMessage.isHidden = true
-        }
-    }
-    
+    @IBOutlet weak var resultsLabel: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var noCameraMessage: UILabel!
     @IBOutlet weak var deleteBtn: UIBarButtonItem!
     
     let imagePicker = UIImagePickerController()
-    
     let session = URLSession.shared
-    
     var googleURL: URL {
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(GP_KEY)")!
     }
-    
     var foodToCheck: Goal_Food!
     
     override func viewDidLoad() {
@@ -51,7 +32,11 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
+        
         imagePicker.delegate = self
+        spinner.isHidden = true
+        resultsLabel.isHidden = true
+        noCameraMessage.isHidden = true
     }
     
     @IBAction func findPhotoBtnPressed(_ sender: UIButton) {
@@ -64,10 +49,13 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             imagePicker.cameraCaptureMode = .photo
             imagePicker.modalPresentationStyle = .fullScreen
             present(imagePicker,animated: true,completion: nil)
+        } else {
+            //
         }
     }
     
     @IBAction func btnTouchDown(_ sender: UIButton) {
+        
         if sender == captureBtn {
             captureBtn.backgroundColor = UIColor(red: 3/255, green: 169/255, blue: 244/255, alpha: 1.0)
         }
@@ -81,6 +69,8 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             imagePicker.cameraCaptureMode = .photo
             imagePicker.modalPresentationStyle = .fullScreen
             present(imagePicker,animated: true,completion: nil)
+        } else {
+         //
         }
     }
     
@@ -111,6 +101,7 @@ extension CheckFoodVC {
                 print("Error code \(errorObj["code"]): \(errorObj["message"])")
             } else {
                 // Parse the response
+                print(json)
                 let responses: JSON = json["responses"][0]
                 
                 // Get label annotations
@@ -126,6 +117,7 @@ extension CheckFoodVC {
                     for label in labels {
                         
                         labelResultsText += "\(label), "
+                        print(labelResultsText)
                         
                         if label == self.foodToCheck.name {
                             var foodFound: Food_Log!
@@ -138,12 +130,15 @@ extension CheckFoodVC {
                             self.resultsLabel.text = "\(nameCapitalized)!"
                             self.resultsLabel.isHidden = false
                             return
+                        } else {
+                            print("We did not find a match")
                         }
                     }
                     self.spinner.isHidden = true
+                    self.resultsLabel.text = "Not \(self.foodToCheck.name!)"
                     self.resultsLabel.isHidden = false
-                    guard let name = self.foodToCheck.name else { return }
-                    self.resultsLabel.text = "Not \(name)"
+                } else {
+                    print("No labels found.")
                 }
             }
         })
@@ -171,13 +166,9 @@ extension CheckFoodVC {
         UIGraphicsBeginImageContext(imageSize)
         image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        if let image = newImage {
-            let resizedImage = UIImagePNGRepresentation(image)
-            UIGraphicsEndImageContext()
-            if let resizedImage = resizedImage {
-                return resizedImage
-            }
-        }
+        let resizedImage = UIImagePNGRepresentation(newImage!)
+        UIGraphicsEndImageContext()
+        return resizedImage!
     }
 }
 
@@ -225,7 +216,9 @@ extension CheckFoodVC {
         let jsonObject = JSON(jsonDictionary: jsonRequest)
         
         // Serialize the JSON
-        guard let data = try? jsonObject.rawData() else { return }
+        guard let data = try? jsonObject.rawData() else {
+            return
+        }
         
         request.httpBody = data
         
@@ -234,10 +227,17 @@ extension CheckFoodVC {
     }
     
     func runRequestOnBackgroundThread(_ request: URLRequest) {
+        // run the request
+        
         let task: URLSessionDataTask = session.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil else { return }            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            
             self.analyzeResults(data)
         }
+        
         task.resume()
     }
 }
