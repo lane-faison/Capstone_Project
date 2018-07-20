@@ -103,10 +103,10 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
         do {
             try self.controller.performFetch()
 
-            guard let data = self.controller.fetchedObjects else { return }
+            let data = self.controller.fetchedObjects
             
-            if data.count > 0 {
-                for log in data {
+            if (data?.count)! > 0 {
+                for log in data! {
                     let component1 = NSCalendar.current.dateComponents([.month,.year,.day], from: (Date() as NSDate) as Date)
                     let component2 = NSCalendar.current.dateComponents([.month,.year], from: log.date! as Date)
                     
@@ -120,7 +120,8 @@ class FoodGoalCell: UITableViewCell, NSFetchedResultsControllerDelegate {
                     }
                 }
             }
-        } catch let error {
+        } catch {
+            let error = error as NSError
             print("\(error)")
         }
     }
