@@ -17,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {        
         GMSPlacesClient.provideAPIKey(GP_KEY)
-
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let homeViewController = HomeViewController()
+        let navController = UINavigationController(rootViewController: homeViewController)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
