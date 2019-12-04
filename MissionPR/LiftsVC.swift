@@ -135,6 +135,8 @@ class LiftsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSF
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
             break
+        @unknown default:
+            break
         }
     }
     

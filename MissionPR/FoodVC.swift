@@ -140,6 +140,8 @@ class FoodVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
             break
+        @unknown default:
+            break
         }
     }
 }
