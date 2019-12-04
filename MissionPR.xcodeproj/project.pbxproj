@@ -335,7 +335,7 @@
 					F6F829811EDE2ABE00A2C183 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 34KC4VR7Y2;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -345,6 +345,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -625,7 +626,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanefaison.MissionPR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -640,7 +641,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanefaison.MissionPR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

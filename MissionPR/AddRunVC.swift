@@ -148,7 +148,7 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
         if let runGoal = goalToEdit {
             nameTextField.text = runGoal.name
             
-            let indexOfDistance = distanceDataSource[0].index(of: Int(runGoal.distance))
+            let indexOfDistance = distanceDataSource[0].firstIndex(of: Int(runGoal.distance))
             distancePicker.selectRow(indexOfDistance!, inComponent: 0, animated: true)
             
             if runGoal.units == "mi" {
@@ -166,13 +166,13 @@ class AddRunVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIP
             let m_goal = (runGoal.goalTime%3600)/60
             let s_goal = (runGoal.goalTime%3600)%60
             
-            let indexOfCurrent_h = timeDataSource[0].index(of: Int(h_current))
-            let indexOfCurrent_m = timeDataSource[1].index(of: Int(m_current))
-            let indexOfCurrent_s = timeDataSource[2].index(of: Int(s_current))
+            let indexOfCurrent_h = timeDataSource[0].firstIndex(of: Int(h_current))
+            let indexOfCurrent_m = timeDataSource[1].firstIndex(of: Int(m_current))
+            let indexOfCurrent_s = timeDataSource[2].firstIndex(of: Int(s_current))
             
-            let indexOfGoal_h = timeDataSource[0].index(of: Int(h_goal))
-            let indexOfGoal_m = timeDataSource[1].index(of: Int(m_goal))
-            let indexOfGoal_s = timeDataSource[2].index(of: Int(s_goal))
+            let indexOfGoal_h = timeDataSource[0].firstIndex(of: Int(h_goal))
+            let indexOfGoal_m = timeDataSource[1].firstIndex(of: Int(m_goal))
+            let indexOfGoal_s = timeDataSource[2].firstIndex(of: Int(s_goal))
             
             currentPicker.selectRow(indexOfCurrent_h!, inComponent: 0, animated: true)
             currentPicker.selectRow(indexOfCurrent_m!, inComponent: 1, animated: true)

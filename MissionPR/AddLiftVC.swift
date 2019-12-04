@@ -186,9 +186,9 @@ class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
         if let liftGoal = goalToEdit {
             nameTextField.text = liftGoal.name
             
-            let indexOfReps = reps.index(of: Int(liftGoal.reps))
-            let indexOfCurrent = current.index(of: Int(liftGoal.current))
-            let indexOfGoal = goal.index(of: Int(liftGoal.weight))
+            let indexOfReps = reps.firstIndex(of: Int(liftGoal.reps))
+            let indexOfCurrent = current.firstIndex(of: Int(liftGoal.current))
+            let indexOfGoal = goal.firstIndex(of: Int(liftGoal.weight))
             repsPicker.selectRow(indexOfReps!, inComponent: 0, animated: true)
             currentPicker.selectRow(indexOfCurrent!, inComponent: 0, animated: true)
             goalPicker.selectRow(indexOfGoal!, inComponent: 0, animated: true)
