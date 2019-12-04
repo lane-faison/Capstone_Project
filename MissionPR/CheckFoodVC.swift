@@ -91,7 +91,7 @@ extension CheckFoodVC {
         DispatchQueue.main.async(execute: {
             
             // Use SwiftyJSON to parse results
-            let json = JSON(data: dataToParse)
+            let json = try JSON(data: dataToParse)
             let errorObj: JSON = json["error"]
             
             self.spinner.stopAnimating()
@@ -141,7 +141,7 @@ extension CheckFoodVC {
                     print("No labels found.")
                 }
             }
-        })
+            } as! @convention(block) () -> Void)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
