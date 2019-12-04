@@ -35,7 +35,7 @@ class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
         super.viewDidLoad()
         
         if let topItem = self.navigationController?.navigationBar.topItem {
-            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         }
         
         nameTextField.delegate = self
@@ -66,7 +66,7 @@ class AddLiftVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
-        let newLength = text.characters.count + string.characters.count - range.length
+        let newLength = text.count + string.count - range.length
         return newLength <= limitLength
     }
     
@@ -211,7 +211,7 @@ extension AddLiftVC {
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     

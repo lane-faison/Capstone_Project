@@ -30,7 +30,7 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         super.viewDidLoad()
         
         if let topItem = self.navigationController?.navigationBar.topItem {
-            topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+            topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         }
         
         imagePicker.delegate = self
@@ -45,7 +45,7 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             captureBtn.backgroundColor = UIColor(red: 169/255, green: 253/255, blue: 0/255, alpha: 1.0)
             noCameraMessage.isHidden = true
             imagePicker.allowsEditing = false
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.cameraCaptureMode = .photo
             imagePicker.modalPresentationStyle = .fullScreen
             present(imagePicker,animated: true,completion: nil)
@@ -65,7 +65,7 @@ class CheckFoodVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             noCameraMessage.isHidden = true
             imagePicker.allowsEditing = false
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.cameraCaptureMode = .photo
             imagePicker.modalPresentationStyle = .fullScreen
             present(imagePicker,animated: true,completion: nil)
@@ -144,8 +144,11 @@ extension CheckFoodVC {
             } as! @convention(block) () -> Void)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let pickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             
             spinner.isHidden = false
             spinner.startAnimating()
@@ -166,7 +169,7 @@ extension CheckFoodVC {
         UIGraphicsBeginImageContext(imageSize)
         image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        let resizedImage = UIImagePNGRepresentation(newImage!)
+        let resizedImage = newImage!.pngData()
         UIGraphicsEndImageContext()
         return resizedImage!
     }
@@ -175,7 +178,7 @@ extension CheckFoodVC {
 /// Networking
 extension CheckFoodVC {
     func base64EncodeImage(_ image: UIImage) -> String {
-        var imagedata = UIImagePNGRepresentation(image)
+        var imagedata = image.pngData()
         
         // Resize the image if it exceeds the 2MB API limit
         if (imagedata?.count > 2097152) {
@@ -265,4 +268,14 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     default:
         return rhs < lhs
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

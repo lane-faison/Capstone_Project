@@ -25,7 +25,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         super.viewDidLoad()
         
         if let topItem = self.navigationController?.navigationBar.topItem {
-            topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+            topItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         }
         
         tableOfLifts.dataSource = self
@@ -144,10 +144,10 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if tableView == self.tableOfLifts {
-            if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if (editingStyle == UITableViewCell.EditingStyle.delete) {
                 let recordToDelete = liftingRecords[indexPath.row]
                 print(recordToDelete)
                 liftingRecords.remove(at: indexPath.row)
@@ -157,7 +157,7 @@ class RecordsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
             }
         }
         else {
-            if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if (editingStyle == UITableViewCell.EditingStyle.delete) {
                 let recordToDelete = runningRecords[indexPath.row]
                 print(recordToDelete)
                 runningRecords.remove(at: indexPath.row)
