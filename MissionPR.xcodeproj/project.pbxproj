@@ -35,6 +35,8 @@
 		F67F02E41EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F02E21EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift */; };
 		F67F42A31F02187D00D503CE /* Record_Lift+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F42A11F02187D00D503CE /* Record_Lift+CoreDataClass.swift */; };
 		F67F42A41F02187D00D503CE /* Record_Lift+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F42A21F02187D00D503CE /* Record_Lift+CoreDataProperties.swift */; };
+		F68658C52398B54D0017F55C /* StoryboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658C42398B54D0017F55C /* StoryboardController.swift */; };
+		F68658C72398C0F90017F55C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68658C62398C0F90017F55C /* HomeViewController.storyboard */; };
 		F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693E61E1EDF9575002CCE33 /* LiftsVC.swift */; };
 		F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8801EE64B430093253B /* AddFoodVC.swift */; };
 		F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */; };
@@ -92,6 +94,8 @@
 		F67F02E21EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F67F42A11F02187D00D503CE /* Record_Lift+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Record_Lift+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F67F42A21F02187D00D503CE /* Record_Lift+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Record_Lift+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F68658C42398B54D0017F55C /* StoryboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardController.swift; sourceTree = "<group>"; };
+		F68658C62398C0F90017F55C /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		F693E61E1EDF9575002CCE33 /* LiftsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftsVC.swift; sourceTree = "<group>"; };
 		F6AFD8801EE64B430093253B /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
 		F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			children = (
 				F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */,
 				F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */,
+				F68658C62398C0F90017F55C /* HomeViewController.storyboard */,
 			);
 			name = MainMenuViewController;
 			sourceTree = "<group>";
@@ -192,6 +197,14 @@
 				F6AFD8801EE64B430093253B /* AddFoodVC.swift */,
 			);
 			name = "Add Controller";
+			sourceTree = "<group>";
+		};
+		F68658C32398B5250017F55C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F68658C42398B54D0017F55C /* StoryboardController.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		F6F829791EDE2ABE00A2C183 = {
@@ -215,6 +228,7 @@
 		F6F829841EDE2ABE00A2C183 /* MissionPR */ = {
 			isa = PBXGroup;
 			children = (
+				F68658C32398B5250017F55C /* Helpers */,
 				F6294F892101B0E80096AF78 /* Extensions */,
 				F6F829A21EDEA47600A2C183 /* Resources */,
 				F6F8299A1EDE2D1F00A2C183 /* Model */,
@@ -365,6 +379,7 @@
 			files = (
 				F6C5052D1EE86B3D008DBB93 /* PoetsenOne-Regular.ttf in Resources */,
 				F6C5052C1EE86B38008DBB93 /* RifficFree-Bold.ttf in Resources */,
+				F68658C72398C0F90017F55C /* HomeViewController.storyboard in Resources */,
 				F6F829931EDE2ABE00A2C183 /* LaunchScreen.storyboard in Resources */,
 				F6F829901EDE2ABE00A2C183 /* Assets.xcassets in Resources */,
 				F6F8298B1EDE2ABE00A2C183 /* Main.storyboard in Resources */,
@@ -438,6 +453,7 @@
 			files = (
 				F62001211EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift in Sources */,
 				F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */,
+				F68658C52398B54D0017F55C /* StoryboardController.swift in Sources */,
 				F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */,
 				F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */,
 				F65D361A1EE090FF006C067A /* CheckFoodVC.swift in Sources */,
@@ -555,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -608,7 +624,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
