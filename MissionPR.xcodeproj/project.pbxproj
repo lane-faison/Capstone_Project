@@ -37,6 +37,9 @@
 		F67F42A41F02187D00D503CE /* Record_Lift+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F42A21F02187D00D503CE /* Record_Lift+CoreDataProperties.swift */; };
 		F68658C52398B54D0017F55C /* StoryboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658C42398B54D0017F55C /* StoryboardController.swift */; };
 		F68658C72398C0F90017F55C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68658C62398C0F90017F55C /* HomeViewController.storyboard */; };
+		F68658CC2398C5460017F55C /* TitleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658CB2398C5460017F55C /* TitleButtonView.swift */; };
+		F68658CE2398C5D60017F55C /* TitleButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658CD2398C5D60017F55C /* TitleButtonViewModel.swift */; };
+		F68658D02398D1340017F55C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658CF2398D1340017F55C /* UIImage+Extensions.swift */; };
 		F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693E61E1EDF9575002CCE33 /* LiftsVC.swift */; };
 		F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8801EE64B430093253B /* AddFoodVC.swift */; };
 		F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */; };
@@ -96,6 +99,9 @@
 		F67F42A21F02187D00D503CE /* Record_Lift+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Record_Lift+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F68658C42398B54D0017F55C /* StoryboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardController.swift; sourceTree = "<group>"; };
 		F68658C62398C0F90017F55C /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		F68658CB2398C5460017F55C /* TitleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButtonView.swift; sourceTree = "<group>"; };
+		F68658CD2398C5D60017F55C /* TitleButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButtonViewModel.swift; sourceTree = "<group>"; };
+		F68658CF2398D1340017F55C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F693E61E1EDF9575002CCE33 /* LiftsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftsVC.swift; sourceTree = "<group>"; };
 		F6AFD8801EE64B430093253B /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
 		F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -175,18 +181,9 @@
 			children = (
 				F6294F872101B0C90096AF78 /* UIColor+Extensions.swift */,
 				F6294F8A2101B0FA0096AF78 /* UIFont+Extensions.swift */,
+				F68658CF2398D1340017F55C /* UIImage+Extensions.swift */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		F6294F8C2102F98A0096AF78 /* MainMenuViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */,
-				F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */,
-				F68658C62398C0F90017F55C /* HomeViewController.storyboard */,
-			);
-			name = MainMenuViewController;
 			sourceTree = "<group>";
 		};
 		F65D36141EE08FD4006C067A /* Add Controller */ = {
@@ -205,6 +202,33 @@
 				F68658C42398B54D0017F55C /* StoryboardController.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		F68658C82398C4EB0017F55C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				F68658C92398C4FC0017F55C /* Home */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		F68658C92398C4FC0017F55C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */,
+				F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */,
+				F68658C62398C0F90017F55C /* HomeViewController.storyboard */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		F68658CA2398C51B0017F55C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F68658CB2398C5460017F55C /* TitleButtonView.swift */,
+				F68658CD2398C5D60017F55C /* TitleButtonViewModel.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F6F829791EDE2ABE00A2C183 = {
@@ -228,11 +252,12 @@
 		F6F829841EDE2ABE00A2C183 /* MissionPR */ = {
 			isa = PBXGroup;
 			children = (
+				F68658C82398C4EB0017F55C /* Features */,
 				F68658C32398B5250017F55C /* Helpers */,
 				F6294F892101B0E80096AF78 /* Extensions */,
 				F6F829A21EDEA47600A2C183 /* Resources */,
 				F6F8299A1EDE2D1F00A2C183 /* Model */,
-				F6F8299B1EDE2D2D00A2C183 /* Views */,
+				F6F8299B1EDE2D2D00A2C183 /* Components */,
 				F6F829891EDE2ABE00A2C183 /* Main.storyboard */,
 				F6F8298F1EDE2ABE00A2C183 /* Assets.xcassets */,
 				F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */,
@@ -260,9 +285,10 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		F6F8299B1EDE2D2D00A2C183 /* Views */ = {
+		F6F8299B1EDE2D2D00A2C183 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F68658CA2398C51B0017F55C /* Views */,
 				F6294F842101B0720096AF78 /* Buttons */,
 				F6F8299C1EDE2D3900A2C183 /* View Controllers */,
 				F6F8299D1EDE306C00A2C183 /* RoundedOutlineView.swift */,
@@ -272,13 +298,12 @@
 				F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */,
 				F63BE8711F044AFE000CE138 /* RecordRunCell.swift */,
 			);
-			name = Views;
+			name = Components;
 			sourceTree = "<group>";
 		};
 		F6F8299C1EDE2D3900A2C183 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F6294F8C2102F98A0096AF78 /* MainMenuViewController */,
 				F65D36141EE08FD4006C067A /* Add Controller */,
 				F620011A1EDF3D5B0067A794 /* MainMenuVC.swift */,
 				F6FF35D41EE1E1460086C31D /* GoalMenuVC.swift */,
@@ -466,6 +491,7 @@
 				F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */,
 				F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */,
 				F6B2A88F1EF79709005F2844 /* RecordLiftCell.swift in Sources */,
+				F68658D02398D1340017F55C /* UIImage+Extensions.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
 				F67F42A31F02187D00D503CE /* Record_Lift+CoreDataClass.swift in Sources */,
 				F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */,
@@ -478,6 +504,7 @@
 				F67F02E41EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift in Sources */,
 				F65D36181EE09055006C067A /* AddRunVC.swift in Sources */,
 				F6F8298E1EDE2ABE00A2C183 /* MissionPR.xcdatamodeld in Sources */,
+				F68658CC2398C5460017F55C /* TitleButtonView.swift in Sources */,
 				F608BD731EE9B53700D62449 /* Goal_Run+CoreDataClass.swift in Sources */,
 				F6084A491F0498C900237D5B /* Record_Run+CoreDataClass.swift in Sources */,
 				F6AFD8851EE66E000093253B /* Food_Log+CoreDataProperties.swift in Sources */,
@@ -485,6 +512,7 @@
 				F6F8299E1EDE306C00A2C183 /* RoundedOutlineView.swift in Sources */,
 				F63BE8721F044AFE000CE138 /* RecordRunCell.swift in Sources */,
 				F65D36161EE08FEB006C067A /* AddLiftVC.swift in Sources */,
+				F68658CE2398C5D60017F55C /* TitleButtonViewModel.swift in Sources */,
 				F62001201EDF5D9B0067A794 /* Gym_Location+CoreDataClass.swift in Sources */,
 				F67F42A41F02187D00D503CE /* Record_Lift+CoreDataProperties.swift in Sources */,
 				F6294F8B2101B0FA0096AF78 /* UIFont+Extensions.swift in Sources */,
