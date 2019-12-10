@@ -30,6 +30,8 @@ final class TitleButtonView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
+        backgroundColor = .white
+        
         addSubview(titleLabel)
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true

@@ -1,8 +1,23 @@
 import UIKit
 
-final class HomeTableViewCell: UITableViewCell {
+final class HomeTableViewCell: UITableViewCell, ConfigurableCell {
     
-    var cellImage: UIImage?
+    let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.lightGray
+        view.layer.cornerRadius = 5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .white
+        imageView.alpha = 0.5
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -10,29 +25,43 @@ final class HomeTableViewCell: UITableViewCell {
         return label
     }()
     
+    var cellImage: UIImage?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initialize()
+        fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with title: String) {
-        titleLabel.text = title
+    func configure(viewModel: HomeCellViewModel) {
+        titleLabel.text = viewModel.title
     }
-    
 }
 
 extension HomeTableViewCell {
-    fileprivate func initialize() {
-        addSubview(titleLabel)
+    
+    private func initialize() {
+        selectionStyle = .none
         
+        contentView.addSubview(containerView)
+        NSLayoutConstraint.activate([containerView.topAnchor.constraint(equalTo: contentView.topAnchor), containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16), containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16), containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16), containerView.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        containerView.addSubview(iconImageView)
         NSLayoutConstraint.activate([
-            titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24.0)
-            ])
+            iconImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            iconImageView.heightAnchor.constraint(equalToConstant: 50),
+            iconImageView.widthAnchor.constraint(equalToConstant: 50),
+            iconImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16)])
+        
+        containerView.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0)
+        ])
     }
 }

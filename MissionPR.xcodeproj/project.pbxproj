@@ -40,6 +40,12 @@
 		F68658CC2398C5460017F55C /* TitleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658CB2398C5460017F55C /* TitleButtonView.swift */; };
 		F68658CE2398C5D60017F55C /* TitleButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658CD2398C5D60017F55C /* TitleButtonViewModel.swift */; };
 		F68658D02398D1340017F55C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658CF2398D1340017F55C /* UIImage+Extensions.swift */; };
+		F68658D32398D3EA0017F55C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658D22398D3EA0017F55C /* SettingsViewController.swift */; };
+		F68658D52398D40E0017F55C /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68658D42398D40E0017F55C /* SettingsViewController.storyboard */; };
+		F68658D7239F4B630017F55C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658D6239F4B630017F55C /* HomeViewModel.swift */; };
+		F68658D9239F4BEC0017F55C /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658D8239F4BEC0017F55C /* ConfigurableCell.swift */; };
+		F68658DB239F69EE0017F55C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658DA239F69EE0017F55C /* UIView+Extensions.swift */; };
+		F68658DD239F6AD70017F55C /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658DC239F6AD70017F55C /* HomeCellViewModel.swift */; };
 		F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693E61E1EDF9575002CCE33 /* LiftsVC.swift */; };
 		F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8801EE64B430093253B /* AddFoodVC.swift */; };
 		F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */; };
@@ -102,6 +108,12 @@
 		F68658CB2398C5460017F55C /* TitleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButtonView.swift; sourceTree = "<group>"; };
 		F68658CD2398C5D60017F55C /* TitleButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButtonViewModel.swift; sourceTree = "<group>"; };
 		F68658CF2398D1340017F55C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		F68658D22398D3EA0017F55C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F68658D42398D40E0017F55C /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		F68658D6239F4B630017F55C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F68658D8239F4BEC0017F55C /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		F68658DA239F69EE0017F55C /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F68658DC239F6AD70017F55C /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
 		F693E61E1EDF9575002CCE33 /* LiftsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftsVC.swift; sourceTree = "<group>"; };
 		F6AFD8801EE64B430093253B /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
 		F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -182,6 +194,7 @@
 				F6294F872101B0C90096AF78 /* UIColor+Extensions.swift */,
 				F6294F8A2101B0FA0096AF78 /* UIFont+Extensions.swift */,
 				F68658CF2398D1340017F55C /* UIImage+Extensions.swift */,
+				F68658DA239F69EE0017F55C /* UIView+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				F68658C42398B54D0017F55C /* StoryboardController.swift */,
+				F68658D8239F4BEC0017F55C /* ConfigurableCell.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -207,6 +221,7 @@
 		F68658C82398C4EB0017F55C /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F68658D12398D3D60017F55C /* Settings */,
 				F68658C92398C4FC0017F55C /* Home */,
 			);
 			name = Features;
@@ -218,6 +233,8 @@
 				F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */,
 				F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */,
 				F68658C62398C0F90017F55C /* HomeViewController.storyboard */,
+				F68658D6239F4B630017F55C /* HomeViewModel.swift */,
+				F68658DC239F6AD70017F55C /* HomeCellViewModel.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -229,6 +246,15 @@
 				F68658CD2398C5D60017F55C /* TitleButtonViewModel.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		F68658D12398D3D60017F55C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F68658D22398D3EA0017F55C /* SettingsViewController.swift */,
+				F68658D42398D40E0017F55C /* SettingsViewController.storyboard */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		F6F829791EDE2ABE00A2C183 = {
@@ -402,6 +428,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68658D52398D40E0017F55C /* SettingsViewController.storyboard in Resources */,
 				F6C5052D1EE86B3D008DBB93 /* PoetsenOne-Regular.ttf in Resources */,
 				F6C5052C1EE86B38008DBB93 /* RifficFree-Bold.ttf in Resources */,
 				F68658C72398C0F90017F55C /* HomeViewController.storyboard in Resources */,
@@ -479,6 +506,7 @@
 				F62001211EDF5D9B0067A794 /* Gym_Location+CoreDataProperties.swift in Sources */,
 				F6FF35D51EE1E1460086C31D /* GoalMenuVC.swift in Sources */,
 				F68658C52398B54D0017F55C /* StoryboardController.swift in Sources */,
+				F68658D7239F4B630017F55C /* HomeViewModel.swift in Sources */,
 				F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */,
 				F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */,
 				F65D361A1EE090FF006C067A /* CheckFoodVC.swift in Sources */,
@@ -493,12 +521,14 @@
 				F6B2A88F1EF79709005F2844 /* RecordLiftCell.swift in Sources */,
 				F68658D02398D1340017F55C /* UIImage+Extensions.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
+				F68658DB239F69EE0017F55C /* UIView+Extensions.swift in Sources */,
 				F67F42A31F02187D00D503CE /* Record_Lift+CoreDataClass.swift in Sources */,
 				F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */,
 				F6FF35D11EE1384C0086C31D /* RunGoalCell.swift in Sources */,
 				F610904D1EE4DBED0072FE0E /* Gym_Visits+CoreDataClass.swift in Sources */,
 				F65D36101EDFE715006C067A /* Goal_Visits+CoreDataClass.swift in Sources */,
 				F6F829861EDE2ABE00A2C183 /* AppDelegate.swift in Sources */,
+				F68658D9239F4BEC0017F55C /* ConfigurableCell.swift in Sources */,
 				F610904E1EE4DBED0072FE0E /* Gym_Visits+CoreDataProperties.swift in Sources */,
 				F65D360F1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift in Sources */,
 				F67F02E41EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift in Sources */,
@@ -506,6 +536,7 @@
 				F6F8298E1EDE2ABE00A2C183 /* MissionPR.xcdatamodeld in Sources */,
 				F68658CC2398C5460017F55C /* TitleButtonView.swift in Sources */,
 				F608BD731EE9B53700D62449 /* Goal_Run+CoreDataClass.swift in Sources */,
+				F68658D32398D3EA0017F55C /* SettingsViewController.swift in Sources */,
 				F6084A491F0498C900237D5B /* Record_Run+CoreDataClass.swift in Sources */,
 				F6AFD8851EE66E000093253B /* Food_Log+CoreDataProperties.swift in Sources */,
 				F6FF35D91EE1FE9E0086C31D /* FoodVC.swift in Sources */,
@@ -521,6 +552,7 @@
 				F6294F902102FCEC0096AF78 /* HomeTableViewCell.swift in Sources */,
 				F6B2A88D1EF792AA005F2844 /* RecordsVC.swift in Sources */,
 				F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */,
+				F68658DD239F6AD70017F55C /* HomeCellViewModel.swift in Sources */,
 				F6294F882101B0C90096AF78 /* UIColor+Extensions.swift in Sources */,
 				F6084A4A1F0498C900237D5B /* Record_Run+CoreDataProperties.swift in Sources */,
 				F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */,
