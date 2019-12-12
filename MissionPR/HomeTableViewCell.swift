@@ -1,5 +1,9 @@
 import UIKit
 
+enum HomeConstraintConstants: CGFloat {
+    case iconImageViewHeight = 50
+}
+
 final class HomeTableViewCell: UITableViewCell, ConfigurableCell {
     
     let containerView: UIView = {
@@ -14,7 +18,7 @@ final class HomeTableViewCell: UITableViewCell, ConfigurableCell {
         let imageView = UIImageView()
         imageView.backgroundColor = .white
         imageView.alpha = 0.5
-        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -53,9 +57,11 @@ extension HomeTableViewCell {
         containerView.addSubview(iconImageView)
         NSLayoutConstraint.activate([
             iconImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            iconImageView.heightAnchor.constraint(equalToConstant: 50),
-            iconImageView.widthAnchor.constraint(equalToConstant: 50),
+            iconImageView.heightAnchor.constraint(equalToConstant: HomeConstraintConstants.iconImageViewHeight.rawValue),
+            iconImageView.widthAnchor.constraint(equalToConstant: HomeConstraintConstants.iconImageViewHeight.rawValue),
             iconImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16)])
+        
+        iconImageView.layer.cornerRadius = HomeConstraintConstants.iconImageViewHeight.rawValue / 2
         
         containerView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
