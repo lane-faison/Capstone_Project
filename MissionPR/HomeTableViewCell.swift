@@ -9,7 +9,7 @@ final class HomeTableViewCell: UITableViewCell, ConfigurableCell {
     
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = .primaryColor
         view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -27,14 +27,14 @@ final class HomeTableViewCell: UITableViewCell, ConfigurableCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .textPrimaryColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let disclosureImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .white
-        imageView.alpha = 0.5
+        imageView.backgroundColor = .accentColor
         imageView.layer.masksToBounds = true
         imageView.image = AppImage.get(.arrowRight)
         imageView.contentMode = .center
