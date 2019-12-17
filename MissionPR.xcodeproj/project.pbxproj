@@ -47,6 +47,7 @@
 		F68658DB239F69EE0017F55C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658DA239F69EE0017F55C /* UIView+Extensions.swift */; };
 		F68658DD239F6AD70017F55C /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68658DC239F6AD70017F55C /* HomeCellViewModel.swift */; };
 		F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693E61E1EDF9575002CCE33 /* LiftsVC.swift */; };
+		F69A4C2523A8AEF500CCE013 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A4C2423A8AEF500CCE013 /* AppImage.swift */; };
 		F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8801EE64B430093253B /* AddFoodVC.swift */; };
 		F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */; };
 		F6AFD8851EE66E000093253B /* Food_Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */; };
@@ -115,6 +116,7 @@
 		F68658DA239F69EE0017F55C /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F68658DC239F6AD70017F55C /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
 		F693E61E1EDF9575002CCE33 /* LiftsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftsVC.swift; sourceTree = "<group>"; };
+		F69A4C2423A8AEF500CCE013 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		F6AFD8801EE64B430093253B /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
 		F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				F68658C42398B54D0017F55C /* StoryboardController.swift */,
 				F68658D8239F4BEC0017F55C /* ConfigurableCell.swift */,
+				F69A4C2423A8AEF500CCE013 /* AppImage.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -230,11 +233,10 @@
 		F68658C92398C4FC0017F55C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */,
-				F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */,
+				F69A4C2323A8A9E300CCE013 /* Cells */,
 				F68658C62398C0F90017F55C /* HomeViewController.storyboard */,
+				F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */,
 				F68658D6239F4B630017F55C /* HomeViewModel.swift */,
-				F68658DC239F6AD70017F55C /* HomeCellViewModel.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -255,6 +257,15 @@
 				F68658D42398D40E0017F55C /* SettingsViewController.storyboard */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		F69A4C2323A8A9E300CCE013 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */,
+				F68658DC239F6AD70017F55C /* HomeCellViewModel.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		F6F829791EDE2ABE00A2C183 = {
@@ -556,6 +567,7 @@
 				F6294F882101B0C90096AF78 /* UIColor+Extensions.swift in Sources */,
 				F6084A4A1F0498C900237D5B /* Record_Run+CoreDataProperties.swift in Sources */,
 				F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */,
+				F69A4C2523A8AEF500CCE013 /* AppImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
