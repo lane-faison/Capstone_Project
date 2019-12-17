@@ -12,7 +12,7 @@ final class TitleButtonView: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .darkGray
+        label.textColor = .primaryTextColor
         label.font = UIFont.boldSystemFont(ofSize: 32)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -50,7 +50,7 @@ final class TitleButtonView: UIView {
     
     func configure(with viewModel: TitleButtonViewModel) {
         titleLabel.text = viewModel.title
-        iconButton.setBackgroundImage(viewModel.buttonImage.tinted(tintColor: .darkGray), for: .normal)
+        iconButton.setBackgroundImage(viewModel.buttonImage.tinted(tintColor: .primaryTextColor), for: .normal)
         iconButtonTapAction = viewModel.buttonTapAction
         
         iconButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)

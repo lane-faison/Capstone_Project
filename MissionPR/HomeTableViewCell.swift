@@ -28,6 +28,7 @@ final class HomeTableViewCell: UITableViewCell, ConfigurableCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .textPrimaryColor
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
