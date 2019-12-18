@@ -6,8 +6,20 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -50,9 +62,14 @@ extension HomeViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - Navigation Helpers
+// MARK: - Navigation Helpers & HomeViewModelDelegate
 
-extension HomeViewController {
+extension HomeViewController: HomeViewModelDelegate {
+    
+    func cellTapped(type: HomeCellType) {
+        let listViewController = ListViewController.instantiate()
+        navigationController?.pushViewController(listViewController, animated: true)
+    }
     
     func navigateToSettings() {
         let settingsViewController = SettingsViewController.instantiate()

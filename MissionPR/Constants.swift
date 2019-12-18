@@ -9,14 +9,3 @@
 import Foundation
 
 let GP_KEY: String = "AIzaSyA3M24U3IUF8X2VU_CI1YuIrPXJQidUBPA"
-
-
-//    .dark-primary-color    { background: #D32F2F; }
-//    .default-primary-color { background: #F44336; }
-//    .light-primary-color   { background: #FFCDD2; }
-//    .text-primary-color    { color: #FFFFFF; }
-//    .accent-color          { background: #536DFE; }
-//    .primary-text-color    { color: #212121; }
-//    .secondary-text-color  { color: #757575; }
-//    .divider-color         { border-color: #BDBDBD; }
-//    .green                 { green-color: #4CD964 }

@@ -54,9 +54,20 @@ final class HomeTableViewCell: UITableViewCell, ConfigurableCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var viewModel: HomeCellViewModel?
+    
     func configure(viewModel: HomeCellViewModel) {
+        self.viewModel = viewModel
+        
         titleLabel.text = viewModel.title
         iconImageView.image = viewModel.image
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(containerTapped))
+        containerView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func containerTapped() {
+        viewModel?.tapAction?()
     }
 }
 

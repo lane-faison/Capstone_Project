@@ -12,9 +12,11 @@ final class HomeCellViewModel {
     
     var title: String
     var image: UIImage?
+    var tapAction: (() -> Void)?
     
-    init(type: HomeCellType) {
+    init(type: HomeCellType, tapAction: (() -> Void)?) {
         self.title = type.title()
         self.image = type.iconImage()
+        self.tapAction = tapAction
     }
 }

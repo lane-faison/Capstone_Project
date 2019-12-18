@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum HomeCellType: String {
+enum HomeCellType: String, CaseIterable {
     case biking
     case rowing
     case running
@@ -33,31 +33,33 @@ enum HomeCellType: String {
             return AppImage.get(.weight)
         }
     }
-    
+}
+
+protocol HomeViewModelDelegate: class {
+    func cellTapped(type: HomeCellType)
 }
 
 final class HomeViewModel {
     
     typealias HomeCellConfigurator = TableViewCellConfigurator<HomeTableViewCell, HomeCellViewModel>
     
-    private let firstOptionCellViewModel = HomeCellViewModel(type: .weightlifting)
-    private let secondOptionCellViewModel = HomeCellViewModel(type: .running)
-    private let thirdOptionCellViewModel = HomeCellViewModel(type: .biking)
-    private let fourthOptionCellViewModel = HomeCellViewModel(type: .rowing)
-    private let fifthOptionCellViewModel = HomeCellViewModel(type: .swimming)
+    weak var delegate: HomeViewModelDelegate?
     
     var data: [HomeCellConfigurator] {
         return getData()
     }
     
     private func getData() -> [HomeCellConfigurator] {
-        let data = [
-            HomeCellConfigurator(viewModel: firstOptionCellViewModel),
-            HomeCellConfigurator(viewModel: secondOptionCellViewModel),
-            HomeCellConfigurator(viewModel: thirdOptionCellViewModel),
-            HomeCellConfigurator(viewModel: fourthOptionCellViewModel),
-            HomeCellConfigurator(viewModel: fifthOptionCellViewModel)
-        ]
+        var data: [HomeCellConfigurator] = []
+        
+        for type in HomeCellType.allCases {
+            let cellViewModel = HomeCellViewModel(type: type) {
+                self.delegate?.cellTapped(type: type)
+            }
+            let configurator = HomeCellConfigurator(viewModel: cellViewModel)
+            data.append(configurator)
+        }
+        
         return data
     }
 }
