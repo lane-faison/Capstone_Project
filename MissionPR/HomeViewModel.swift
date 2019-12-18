@@ -8,28 +8,27 @@
 
 import UIKit
 
-enum HomeCellType {
+enum HomeCellType: String {
     case biking
+    case rowing
     case running
+    case swimming
     case weightlifting
     
     func title() -> String {
-        switch self {
-        case .biking:
-            return "Biking"
-        case .running:
-            return "Running"
-        case .weightlifting:
-            return "Weightlifting"
-        }
+        return self.rawValue.capitalized
     }
     
     func iconImage() -> UIImage? {
         switch self {
         case .biking:
             return AppImage.get(.biker)
+        case .rowing:
+            return AppImage.get(.rower)
         case .running:
             return AppImage.get(.runner)
+        case .swimming:
+            return AppImage.get(.swimmer)
         case .weightlifting:
             return AppImage.get(.weight)
         }
@@ -44,6 +43,8 @@ final class HomeViewModel {
     private let firstOptionCellViewModel = HomeCellViewModel(type: .weightlifting)
     private let secondOptionCellViewModel = HomeCellViewModel(type: .running)
     private let thirdOptionCellViewModel = HomeCellViewModel(type: .biking)
+    private let fourthOptionCellViewModel = HomeCellViewModel(type: .rowing)
+    private let fifthOptionCellViewModel = HomeCellViewModel(type: .swimming)
     
     var data: [HomeCellConfigurator] {
         return getData()
@@ -53,7 +54,9 @@ final class HomeViewModel {
         let data = [
             HomeCellConfigurator(viewModel: firstOptionCellViewModel),
             HomeCellConfigurator(viewModel: secondOptionCellViewModel),
-            HomeCellConfigurator(viewModel: thirdOptionCellViewModel)
+            HomeCellConfigurator(viewModel: thirdOptionCellViewModel),
+            HomeCellConfigurator(viewModel: fourthOptionCellViewModel),
+            HomeCellConfigurator(viewModel: fifthOptionCellViewModel)
         ]
         return data
     }

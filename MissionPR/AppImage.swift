@@ -14,7 +14,9 @@ enum AppImage: String {
     case biker
     case check
     case close
+    case rower
     case runner
+    case swimmer
     case weight
     
     static func get(_ type: AppImage) -> UIImage? {
