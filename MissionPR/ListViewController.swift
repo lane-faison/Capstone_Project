@@ -8,10 +8,19 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
-
+class ListViewController: BaseViewController {
+    
+    static func instantiate(with viewModel: ListViewModel) -> ListViewController {
+        let listViewController = ListViewController.instantiate()
+        listViewController.viewModel = viewModel
+        return listViewController
+    }
+    
+    var viewModel: ListViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = viewModel?.viewTitle
     }
 }

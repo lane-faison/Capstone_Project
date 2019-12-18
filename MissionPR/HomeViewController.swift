@@ -67,7 +67,8 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: HomeViewModelDelegate {
     
     func cellTapped(type: HomeCellType) {
-        let listViewController = ListViewController.instantiate()
+        let listViewModel = ListViewModel(type: type)
+        let listViewController = ListViewController.instantiate(with: listViewModel)
         navigationController?.pushViewController(listViewController, animated: true)
     }
     

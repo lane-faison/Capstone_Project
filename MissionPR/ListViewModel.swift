@@ -10,4 +10,13 @@ import Foundation
 
 final class ListViewModel {
     
+    private var type: HomeCellType!
+    
+    init(type: HomeCellType) {
+        self.type = type
+    }
+    
+    var viewTitle: String {
+        return type.title().capitalized
+    }
 }
