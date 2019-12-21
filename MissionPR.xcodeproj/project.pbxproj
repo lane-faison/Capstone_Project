@@ -51,6 +51,7 @@
 		F69A4C2C23A9E95700CCE013 /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69A4C2B23A9E95700CCE013 /* ListViewController.storyboard */; };
 		F69A4C2E23A9FBFF00CCE013 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A4C2D23A9FBFF00CCE013 /* ListViewModel.swift */; };
 		F69A4C3023A9FE1D00CCE013 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A4C2F23A9FE1D00CCE013 /* BaseViewController.swift */; };
+		F69A4C3223ADEBDE00CCE013 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A4C3123ADEBDE00CCE013 /* CoreDataService.swift */; };
 		F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8801EE64B430093253B /* AddFoodVC.swift */; };
 		F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */; };
 		F6AFD8851EE66E000093253B /* Food_Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */; };
@@ -123,6 +124,7 @@
 		F69A4C2B23A9E95700CCE013 /* ListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
 		F69A4C2D23A9FBFF00CCE013 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		F69A4C2F23A9FE1D00CCE013 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F69A4C3123ADEBDE00CCE013 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		F6AFD8801EE64B430093253B /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
 		F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				F68658D8239F4BEC0017F55C /* ConfigurableCell.swift */,
 				F69A4C2423A8AEF500CCE013 /* AppImage.swift */,
 				F69A4C2F23A9FE1D00CCE013 /* BaseViewController.swift */,
+				F69A4C3123ADEBDE00CCE013 /* CoreDataService.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */,
 				F69A4C2E23A9FBFF00CCE013 /* ListViewModel.swift in Sources */,
 				F67F02E31EE5BE160065F168 /* Goal_Food+CoreDataClass.swift in Sources */,
+				F69A4C3223ADEBDE00CCE013 /* CoreDataService.swift in Sources */,
 				F65D360E1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift in Sources */,
 				F6FF35DB1EE1FEB50086C31D /* VisitVC.swift in Sources */,
 				F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */,
