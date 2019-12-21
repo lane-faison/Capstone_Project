@@ -11,5 +11,4 @@ pod 'GooglePlaces'
 pod 'RealmSwift'
 pod 'SwiftyJSON'
 
-
 end
