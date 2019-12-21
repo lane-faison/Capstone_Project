@@ -8,6 +8,7 @@ target 'MissionPR' do
   # Pods for MissionPR
   
 pod 'GooglePlaces'
+pod 'RealmSwift'
 pod 'SwiftyJSON'
 
 
