@@ -7,16 +7,31 @@
 //
 
 import Foundation
-import CoreData
+import RealmSwift
+
+protocol ListViewDelegate: class {
+    func needsReload()
+}
 
 final class ListViewModel {
+    
+    typealias ListCellConfigurator = TableViewCellConfigurator<ListTableViewCell, ListCellViewModel>
+    
+    weak var delegate: ListViewDelegate?
+    
+    var data: [ListCellConfigurator] = [] {
+        didSet {
+            delegate?.needsReload()
+        }
+    }
     
     private var type: HomeCellType!
     
     init(type: HomeCellType) {
         self.type = type
         
-        generateTestDataForLists()
+//        generateTestDataForLists()
+        getListData(byType: type)
     }
     
     var viewTitle: String {
@@ -26,37 +41,34 @@ final class ListViewModel {
 
 extension ListViewModel {
     
+    private func getListData(byType type: HomeCellType) {
+        RealmService.fetchObjects(Lift.self) { (objects) in
+            self.buildListData(with: objects)
+        }
+    }
+    
+    private func buildListData(with items: [Object]) {
+        var data: [ListCellConfigurator] = []
+        
+        for item in items {
+            if let liftItem = item as? Lift {
+                let cellViewModel = ListCellViewModel(title: liftItem.name)
+                let configurator = ListCellConfigurator(viewModel: cellViewModel)
+                data.append(configurator)
+            }
+        }
+        
+        self.data = data
+    }
+    
     private func generateTestDataForLists() {
-        let goal1 = Goal_Lift(context: context)
-        goal1.name = "Flat Bench Press"
-        goal1.weight = 225
-        goal1.reps = 10
-        goal1.current = 205
+        let newLift = Lift()
+        newLift.name = "Bench Press"
+        newLift.currentWeight = 165
+        newLift.goalWeight = 185
+        newLift.reps = 12
+        newLift.typeEnum = .barbell
         
-        let goal2 = Goal_Lift(context: context)
-        goal2.name = "Barbell Shoulder Press"
-        goal2.weight = 135
-        goal2.reps = 10
-        goal2.current = 110
-        
-        let goal3 = Goal_Lift(context: context)
-        goal3.name = "Barbell Squat"
-        goal3.weight = 205
-        goal3.reps = 10
-        goal3.current = 195
-        
-        let goal4 = Goal_Lift(context: context)
-        goal4.name = "Power Cleans"
-        goal4.weight = 135
-        goal4.reps = 10
-        goal4.current = 85
-        
-        let goal5 = Goal_Lift(context: context)
-        goal5.name = "Roman Deadlifts"
-        goal5.weight = 265
-        goal5.reps = 10
-        goal5.current = 205
-        
-        ad.saveContext()
+        RealmService.createObject(newLift)
     }
 }

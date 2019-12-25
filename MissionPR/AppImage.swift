@@ -9,6 +9,7 @@
 import UIKit
 
 enum AppImage: String {
+    case add
     case arrowLeft = "arrow-left"
     case arrowRight = "arrow-right"
     case biker

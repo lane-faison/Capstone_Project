@@ -23,6 +23,12 @@
 		F6294F8E2102F9DE0096AF78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */; };
 		F6294F902102FCEC0096AF78 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */; };
 		F638E58D23AEA75B006B58A9 /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638E58C23AEA75A006B58A9 /* Lift.swift */; };
+		F638E59023AEB2DF006B58A9 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638E58F23AEB2DF006B58A9 /* CreateGoalViewController.swift */; };
+		F638E59223AEB2EC006B58A9 /* CreateGoalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F638E59123AEB2EC006B58A9 /* CreateGoalViewController.storyboard */; };
+		F638E59423AEB370006B58A9 /* CreateGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638E59323AEB370006B58A9 /* CreateGoalViewModel.swift */; };
+		F638E59623AEB5C6006B58A9 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638E59523AEB5C6006B58A9 /* UIViewController+Extensions.swift */; };
+		F638E59823AED5A1006B58A9 /* GoalOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638E59723AED5A1006B58A9 /* GoalOptionTableViewCell.swift */; };
+		F638E59A23AED5B1006B58A9 /* GoalOptionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638E59923AED5B1006B58A9 /* GoalOptionCellViewModel.swift */; };
 		F63BE8721F044AFE000CE138 /* RecordRunCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63BE8711F044AFE000CE138 /* RecordRunCell.swift */; };
 		F65D360E1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */; };
 		F65D360F1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */; };
@@ -52,7 +58,7 @@
 		F69A4C2C23A9E95700CCE013 /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69A4C2B23A9E95700CCE013 /* ListViewController.storyboard */; };
 		F69A4C2E23A9FBFF00CCE013 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A4C2D23A9FBFF00CCE013 /* ListViewModel.swift */; };
 		F69A4C3023A9FE1D00CCE013 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A4C2F23A9FE1D00CCE013 /* BaseViewController.swift */; };
-		F69A4C3223ADEBDE00CCE013 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A4C3123ADEBDE00CCE013 /* CoreDataService.swift */; };
+		F69A4C3223ADEBDE00CCE013 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A4C3123ADEBDE00CCE013 /* RealmService.swift */; };
 		F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8801EE64B430093253B /* AddFoodVC.swift */; };
 		F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */; };
 		F6AFD8851EE66E000093253B /* Food_Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */; };
@@ -60,6 +66,8 @@
 		F6B2A88F1EF79709005F2844 /* RecordLiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */; };
 		F6C5052C1EE86B38008DBB93 /* RifficFree-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6C5052A1EE86A0E008DBB93 /* RifficFree-Bold.ttf */; };
 		F6C5052D1EE86B3D008DBB93 /* PoetsenOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6C5052B1EE86A0E008DBB93 /* PoetsenOne-Regular.ttf */; };
+		F6DCBD9923B3318B00F5665F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DCBD9823B3318B00F5665F /* ListTableViewCell.swift */; };
+		F6DCBD9B23B331B900F5665F /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DCBD9A23B331B900F5665F /* ListCellViewModel.swift */; };
 		F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */; };
 		F6F829861EDE2ABE00A2C183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */; };
 		F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F829871EDE2ABE00A2C183 /* AuthenticationVC.swift */; };
@@ -97,6 +105,12 @@
 		F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		F638E58C23AEA75A006B58A9 /* Lift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
+		F638E58F23AEB2DF006B58A9 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
+		F638E59123AEB2EC006B58A9 /* CreateGoalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateGoalViewController.storyboard; sourceTree = "<group>"; };
+		F638E59323AEB370006B58A9 /* CreateGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewModel.swift; sourceTree = "<group>"; };
+		F638E59523AEB5C6006B58A9 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		F638E59723AED5A1006B58A9 /* GoalOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOptionTableViewCell.swift; sourceTree = "<group>"; };
+		F638E59923AED5B1006B58A9 /* GoalOptionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOptionCellViewModel.swift; sourceTree = "<group>"; };
 		F63BE8711F044AFE000CE138 /* RecordRunCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordRunCell.swift; sourceTree = "<group>"; };
 		F65D360A1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Lift+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F65D360B1EDFE715006C067A /* Goal_Lift+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal_Lift+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -126,7 +140,7 @@
 		F69A4C2B23A9E95700CCE013 /* ListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
 		F69A4C2D23A9FBFF00CCE013 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		F69A4C2F23A9FE1D00CCE013 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		F69A4C3123ADEBDE00CCE013 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		F69A4C3123ADEBDE00CCE013 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		F6AFD8801EE64B430093253B /* AddFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
 		F6AFD8821EE66E000093253B /* Food_Log+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F6AFD8831EE66E000093253B /* Food_Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Food_Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -134,6 +148,8 @@
 		F6B2A88E1EF79709005F2844 /* RecordLiftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordLiftCell.swift; sourceTree = "<group>"; };
 		F6C5052A1EE86A0E008DBB93 /* RifficFree-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RifficFree-Bold.ttf"; sourceTree = "<group>"; };
 		F6C5052B1EE86A0E008DBB93 /* PoetsenOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoetsenOne-Regular.ttf"; sourceTree = "<group>"; };
+		F6DCBD9823B3318B00F5665F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		F6DCBD9A23B331B900F5665F /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 		F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftGoalCell.swift; sourceTree = "<group>"; };
 		F6F829821EDE2ABE00A2C183 /* MissionPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissionPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,16 +222,36 @@
 				F6294F872101B0C90096AF78 /* UIColor+Extensions.swift */,
 				F68658CF2398D1340017F55C /* UIImage+Extensions.swift */,
 				F68658DA239F69EE0017F55C /* UIView+Extensions.swift */,
+				F638E59523AEB5C6006B58A9 /* UIViewController+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		F638E58B23AEA748006B58A9 /* Models */ = {
+		F638E58B23AEA748006B58A9 /* Realm Models */ = {
 			isa = PBXGroup;
 			children = (
 				F638E58C23AEA75A006B58A9 /* Lift.swift */,
 			);
-			name = Models;
+			name = "Realm Models";
+			sourceTree = "<group>";
+		};
+		F638E58E23AEB2A8006B58A9 /* Create Goal */ = {
+			isa = PBXGroup;
+			children = (
+				F638E59323AEB370006B58A9 /* CreateGoalViewModel.swift */,
+				F638E58F23AEB2DF006B58A9 /* CreateGoalViewController.swift */,
+				F638E59123AEB2EC006B58A9 /* CreateGoalViewController.storyboard */,
+			);
+			name = "Create Goal";
+			sourceTree = "<group>";
+		};
+		F638E59B23AED5B6006B58A9 /* Goal Option */ = {
+			isa = PBXGroup;
+			children = (
+				F638E59723AED5A1006B58A9 /* GoalOptionTableViewCell.swift */,
+				F638E59923AED5B1006B58A9 /* GoalOptionCellViewModel.swift */,
+			);
+			name = "Goal Option";
 			sourceTree = "<group>";
 		};
 		F65D36141EE08FD4006C067A /* Add Controller */ = {
@@ -235,7 +271,7 @@
 				F68658D8239F4BEC0017F55C /* ConfigurableCell.swift */,
 				F69A4C2423A8AEF500CCE013 /* AppImage.swift */,
 				F69A4C2F23A9FE1D00CCE013 /* BaseViewController.swift */,
-				F69A4C3123ADEBDE00CCE013 /* CoreDataService.swift */,
+				F69A4C3123ADEBDE00CCE013 /* RealmService.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -243,6 +279,7 @@
 		F68658C82398C4EB0017F55C /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F638E58E23AEB2A8006B58A9 /* Create Goal */,
 				F69A4C2823A9E92300CCE013 /* List */,
 				F68658D12398D3D60017F55C /* Settings */,
 				F68658C92398C4FC0017F55C /* Home */,
@@ -298,6 +335,32 @@
 			name = List;
 			sourceTree = "<group>";
 		};
+		F6DCBD9523B3313900F5665F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F6DCBD9623B3313F00F5665F /* Table View Cells */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		F6DCBD9623B3313F00F5665F /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F6DCBD9723B3316100F5665F /* List */,
+				F638E59B23AED5B6006B58A9 /* Goal Option */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		F6DCBD9723B3316100F5665F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F6DCBD9823B3318B00F5665F /* ListTableViewCell.swift */,
+				F6DCBD9A23B331B900F5665F /* ListCellViewModel.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
 		F6F829791EDE2ABE00A2C183 = {
 			isa = PBXGroup;
 			children = (
@@ -319,7 +382,8 @@
 		F6F829841EDE2ABE00A2C183 /* MissionPR */ = {
 			isa = PBXGroup;
 			children = (
-				F638E58B23AEA748006B58A9 /* Models */,
+				F6DCBD9523B3313900F5665F /* Components */,
+				F638E58B23AEA748006B58A9 /* Realm Models */,
 				F68658C82398C4EB0017F55C /* Features */,
 				F68658C32398B5250017F55C /* Helpers */,
 				F6294F892101B0E80096AF78 /* Extensions */,
@@ -474,6 +538,7 @@
 				F6C5052D1EE86B3D008DBB93 /* PoetsenOne-Regular.ttf in Resources */,
 				F6C5052C1EE86B38008DBB93 /* RifficFree-Bold.ttf in Resources */,
 				F68658C72398C0F90017F55C /* HomeViewController.storyboard in Resources */,
+				F638E59223AEB2EC006B58A9 /* CreateGoalViewController.storyboard in Resources */,
 				F6F829931EDE2ABE00A2C183 /* LaunchScreen.storyboard in Resources */,
 				F69A4C2C23A9E95700CCE013 /* ListViewController.storyboard in Resources */,
 				F6F829901EDE2ABE00A2C183 /* Assets.xcassets in Resources */,
@@ -557,22 +622,26 @@
 				F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */,
 				F69A4C3023A9FE1D00CCE013 /* BaseViewController.swift in Sources */,
 				F6AFD8811EE64B430093253B /* AddFoodVC.swift in Sources */,
+				F638E59423AEB370006B58A9 /* CreateGoalViewModel.swift in Sources */,
 				F65D361A1EE090FF006C067A /* CheckFoodVC.swift in Sources */,
 				F6294F8E2102F9DE0096AF78 /* HomeViewController.swift in Sources */,
 				F65D36111EDFE715006C067A /* Goal_Visits+CoreDataProperties.swift in Sources */,
 				F6AFD8841EE66E000093253B /* Food_Log+CoreDataClass.swift in Sources */,
 				F69A4C2E23A9FBFF00CCE013 /* ListViewModel.swift in Sources */,
 				F67F02E31EE5BE160065F168 /* Goal_Food+CoreDataClass.swift in Sources */,
-				F69A4C3223ADEBDE00CCE013 /* CoreDataService.swift in Sources */,
+				F69A4C3223ADEBDE00CCE013 /* RealmService.swift in Sources */,
 				F65D360E1EDFE715006C067A /* Goal_Lift+CoreDataClass.swift in Sources */,
 				F6FF35DB1EE1FEB50086C31D /* VisitVC.swift in Sources */,
+				F6DCBD9923B3318B00F5665F /* ListTableViewCell.swift in Sources */,
 				F608BD741EE9B53700D62449 /* Goal_Run+CoreDataProperties.swift in Sources */,
 				F6FF35D71EE1FE400086C31D /* RunsVC.swift in Sources */,
 				F6B2A88F1EF79709005F2844 /* RecordLiftCell.swift in Sources */,
 				F68658D02398D1340017F55C /* UIImage+Extensions.swift in Sources */,
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
 				F68658DB239F69EE0017F55C /* UIView+Extensions.swift in Sources */,
+				F638E59023AEB2DF006B58A9 /* CreateGoalViewController.swift in Sources */,
 				F638E58D23AEA75B006B58A9 /* Lift.swift in Sources */,
+				F638E59823AED5A1006B58A9 /* GoalOptionTableViewCell.swift in Sources */,
 				F67F42A31F02187D00D503CE /* Record_Lift+CoreDataClass.swift in Sources */,
 				F6FADA351EE5C0F500780327 /* FoodGoalCell.swift in Sources */,
 				F6FF35D11EE1384C0086C31D /* RunGoalCell.swift in Sources */,
@@ -585,6 +654,7 @@
 				F67F02E41EE5BE160065F168 /* Goal_Food+CoreDataProperties.swift in Sources */,
 				F65D36181EE09055006C067A /* AddRunVC.swift in Sources */,
 				F6F8298E1EDE2ABE00A2C183 /* MissionPR.xcdatamodeld in Sources */,
+				F638E59623AEB5C6006B58A9 /* UIViewController+Extensions.swift in Sources */,
 				F68658CC2398C5460017F55C /* TitleButtonView.swift in Sources */,
 				F69A4C2A23A9E94100CCE013 /* ListViewController.swift in Sources */,
 				F608BD731EE9B53700D62449 /* Goal_Run+CoreDataClass.swift in Sources */,
@@ -604,7 +674,9 @@
 				F6B2A88D1EF792AA005F2844 /* RecordsVC.swift in Sources */,
 				F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */,
 				F68658DD239F6AD70017F55C /* HomeCellViewModel.swift in Sources */,
+				F638E59A23AED5B1006B58A9 /* GoalOptionCellViewModel.swift in Sources */,
 				F6294F882101B0C90096AF78 /* UIColor+Extensions.swift in Sources */,
+				F6DCBD9B23B331B900F5665F /* ListCellViewModel.swift in Sources */,
 				F6084A4A1F0498C900237D5B /* Record_Run+CoreDataProperties.swift in Sources */,
 				F693E61F1EDF9575002CCE33 /* LiftsVC.swift in Sources */,
 				F69A4C2523A8AEF500CCE013 /* AppImage.swift in Sources */,
