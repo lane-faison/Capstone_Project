@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GoalOptionTableViewCell: UITableViewCell, ConfigurableCell {
+class GoalTextFieldTableViewCell: UITableViewCell, ConfigurableCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -44,7 +44,7 @@ class GoalOptionTableViewCell: UITableViewCell, ConfigurableCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(viewModel: GoalOptionCellViewModel) {
+    func configure(viewModel: GoalTextFieldCellViewModel) {
         
     }
     

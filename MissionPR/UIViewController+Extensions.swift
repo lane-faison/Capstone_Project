@@ -12,6 +12,7 @@ extension UIViewController {
     
     func presentViewControllerAsPopup(_ viewController: UIViewController) {
         let newNavigationController = UINavigationController(rootViewController: viewController)
+        newNavigationController.modalPresentationStyle = .fullScreen
         navigationController?.present(newNavigationController, animated: true, completion: nil)
     }
 }
