@@ -18,6 +18,14 @@ final class RealmService {
         }
     }
     
+    static func createLift(_ lift: Lift) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(lift)
+        }
+    }
+    
     static func fetchObjects(_ object: Object.Type, completion: (([Object]) -> Void)?) {
         let realm = try! Realm()
         let objects = realm.objects(object.self)

@@ -12,6 +12,8 @@ class ListTableViewCell: UITableViewCell, ConfigurableCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
@@ -23,6 +25,10 @@ class ListTableViewCell: UITableViewCell, ConfigurableCell {
     func configure(viewModel: ListCellViewModel) {
         self.viewModel = viewModel
         
-        textLabel?.text = viewModel.title
+        if viewModel.title.isEmpty {
+            textLabel?.text = "Null!"
+        } else {
+            textLabel?.text = viewModel.title
+        }
     }
 }

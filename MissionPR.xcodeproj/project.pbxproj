@@ -290,7 +290,6 @@
 		F68658C92398C4FC0017F55C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F69A4C2323A8A9E300CCE013 /* Cells */,
 				F68658C62398C0F90017F55C /* HomeViewController.storyboard */,
 				F6294F8D2102F9DE0096AF78 /* HomeViewController.swift */,
 				F68658D6239F4B630017F55C /* HomeViewModel.swift */,
@@ -316,13 +315,13 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
-		F69A4C2323A8A9E300CCE013 /* Cells */ = {
+		F69A4C2323A8A9E300CCE013 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				F6294F8F2102FCEC0096AF78 /* HomeTableViewCell.swift */,
 				F68658DC239F6AD70017F55C /* HomeCellViewModel.swift */,
 			);
-			name = Cells;
+			name = Home;
 			sourceTree = "<group>";
 		};
 		F69A4C2823A9E92300CCE013 /* List */ = {
@@ -346,6 +345,7 @@
 		F6DCBD9623B3313F00F5665F /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F69A4C2323A8A9E300CCE013 /* Home */,
 				F6DCBD9723B3316100F5665F /* List */,
 				F638E59B23AED5B6006B58A9 /* Goal Option */,
 			);

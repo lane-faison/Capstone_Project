@@ -9,11 +9,11 @@
 import RealmSwift
 
 final class Lift: Object {
-    var name: String = ""
-    var reps: Int = 0
-    var goalWeight: Int = 0
-    var currentWeight: Int = 0
-    var type = LiftType.barbell.rawValue
+    @objc dynamic var name: String = ""
+    @objc dynamic var reps: Int = 0
+    @objc dynamic var goalWeight: Int = 0
+    @objc dynamic var currentWeight: Int = 0
+    @objc dynamic var type = LiftType.barbell.rawValue
     var typeEnum: LiftType {
         get {
             return LiftType(rawValue: type)!

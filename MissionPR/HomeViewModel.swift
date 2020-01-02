@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 enum HomeCellType: String, CaseIterable {
     case biking
@@ -31,6 +32,15 @@ enum HomeCellType: String, CaseIterable {
             return AppImage.get(.swimmer)
         case .weightlifting:
             return AppImage.get(.weight)
+        }
+    }
+    
+    func objectType() -> Object.Type? {
+        switch self {
+        case .weightlifting:
+            return Lift.self
+        default:
+            return nil
         }
     }
 }

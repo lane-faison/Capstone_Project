@@ -30,8 +30,8 @@ final class ListViewModel {
     init(type: HomeCellType) {
         self.type = type
         
-//        generateTestDataForLists()
         getListData(byType: type)
+//        generateTestDataForLists()
     }
     
     var viewTitle: String {
@@ -42,7 +42,9 @@ final class ListViewModel {
 extension ListViewModel {
     
     private func getListData(byType type: HomeCellType) {
-        RealmService.fetchObjects(Lift.self) { (objects) in
+        guard let type = type.objectType() else { return }
+        
+        RealmService.fetchObjects(type) { (objects) in
             self.buildListData(with: objects)
         }
     }
@@ -69,6 +71,6 @@ extension ListViewModel {
         newLift.reps = 12
         newLift.typeEnum = .barbell
         
-        RealmService.createObject(newLift)
+        RealmService.createLift(newLift)
     }
 }
