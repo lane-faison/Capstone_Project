@@ -68,6 +68,8 @@
 		F6C5052D1EE86B3D008DBB93 /* PoetsenOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6C5052B1EE86A0E008DBB93 /* PoetsenOne-Regular.ttf */; };
 		F6DCBD9923B3318B00F5665F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DCBD9823B3318B00F5665F /* ListTableViewCell.swift */; };
 		F6DCBD9B23B331B900F5665F /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DCBD9A23B331B900F5665F /* ListCellViewModel.swift */; };
+		F6DCBD9F23BEFC8D00F5665F /* GoalPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DCBD9E23BEFC8D00F5665F /* GoalPickerTableViewCell.swift */; };
+		F6DCBDA123BEFCBA00F5665F /* GoalPickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DCBDA023BEFCBA00F5665F /* GoalPickerCellViewModel.swift */; };
 		F6E07CCF1EDFB21700F53A15 /* LiftGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */; };
 		F6F829861EDE2ABE00A2C183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */; };
 		F6F829881EDE2ABE00A2C183 /* AuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F829871EDE2ABE00A2C183 /* AuthenticationVC.swift */; };
@@ -150,6 +152,8 @@
 		F6C5052B1EE86A0E008DBB93 /* PoetsenOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoetsenOne-Regular.ttf"; sourceTree = "<group>"; };
 		F6DCBD9823B3318B00F5665F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		F6DCBD9A23B331B900F5665F /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
+		F6DCBD9E23BEFC8D00F5665F /* GoalPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPickerTableViewCell.swift; sourceTree = "<group>"; };
+		F6DCBDA023BEFCBA00F5665F /* GoalPickerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPickerCellViewModel.swift; sourceTree = "<group>"; };
 		F6E07CCE1EDFB21700F53A15 /* LiftGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftGoalCell.swift; sourceTree = "<group>"; };
 		F6F829821EDE2ABE00A2C183 /* MissionPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissionPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F829851EDE2ABE00A2C183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -248,8 +252,8 @@
 		F638E59B23AED5B6006B58A9 /* Goal Options */ = {
 			isa = PBXGroup;
 			children = (
-				F638E59723AED5A1006B58A9 /* GoalTextFieldTableViewCell.swift */,
-				F638E59923AED5B1006B58A9 /* GoalTextFieldCellViewModel.swift */,
+				F6DCBD9D23BEFC6D00F5665F /* Picker */,
+				F6DCBD9C23BEFC6500F5665F /* Text Field */,
 			);
 			name = "Goal Options";
 			sourceTree = "<group>";
@@ -359,6 +363,24 @@
 				F6DCBD9A23B331B900F5665F /* ListCellViewModel.swift */,
 			);
 			name = List;
+			sourceTree = "<group>";
+		};
+		F6DCBD9C23BEFC6500F5665F /* Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				F638E59723AED5A1006B58A9 /* GoalTextFieldTableViewCell.swift */,
+				F638E59923AED5B1006B58A9 /* GoalTextFieldCellViewModel.swift */,
+			);
+			name = "Text Field";
+			sourceTree = "<group>";
+		};
+		F6DCBD9D23BEFC6D00F5665F /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				F6DCBD9E23BEFC8D00F5665F /* GoalPickerTableViewCell.swift */,
+				F6DCBDA023BEFCBA00F5665F /* GoalPickerCellViewModel.swift */,
+			);
+			name = Picker;
 			sourceTree = "<group>";
 		};
 		F6F829791EDE2ABE00A2C183 = {
@@ -640,6 +662,7 @@
 				F620011B1EDF3D5B0067A794 /* MainMenuVC.swift in Sources */,
 				F68658DB239F69EE0017F55C /* UIView+Extensions.swift in Sources */,
 				F638E59023AEB2DF006B58A9 /* CreateGoalViewController.swift in Sources */,
+				F6DCBDA123BEFCBA00F5665F /* GoalPickerCellViewModel.swift in Sources */,
 				F638E58D23AEA75B006B58A9 /* Lift.swift in Sources */,
 				F638E59823AED5A1006B58A9 /* GoalTextFieldTableViewCell.swift in Sources */,
 				F67F42A31F02187D00D503CE /* Record_Lift+CoreDataClass.swift in Sources */,
@@ -655,6 +678,7 @@
 				F65D36181EE09055006C067A /* AddRunVC.swift in Sources */,
 				F6F8298E1EDE2ABE00A2C183 /* MissionPR.xcdatamodeld in Sources */,
 				F638E59623AEB5C6006B58A9 /* UIViewController+Extensions.swift in Sources */,
+				F6DCBD9F23BEFC8D00F5665F /* GoalPickerTableViewCell.swift in Sources */,
 				F68658CC2398C5460017F55C /* TitleButtonView.swift in Sources */,
 				F69A4C2A23A9E94100CCE013 /* ListViewController.swift in Sources */,
 				F608BD731EE9B53700D62449 /* Goal_Run+CoreDataClass.swift in Sources */,

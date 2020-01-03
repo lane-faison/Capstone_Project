@@ -11,17 +11,20 @@ import Foundation
 final class CreateGoalViewModel {
     
     typealias GoalTextFieldCellConfigurator = TableViewCellConfigurator<GoalTextFieldTableViewCell, GoalTextFieldCellViewModel>
+    typealias GoalPickerCellConfigurator = TableViewCellConfigurator<GoalPickerTableViewCell, GoalPickerCellViewModel>
     
     private let nameModel = GoalTextFieldCellViewModel(title: "Name", placeholder: "Edit")
+    private let repModel = GoalPickerCellViewModel()
     
     var data: [CellConfigurator] {
         return getData()
     }
     
-    private func getData() -> [GoalTextFieldCellConfigurator] {
-        var data: [GoalTextFieldCellConfigurator] = []
+    private func getData() -> [CellConfigurator] {
+        var data: [CellConfigurator] = []
         
         data.append(GoalTextFieldCellConfigurator(viewModel: nameModel))
+        data.append(GoalPickerCellConfigurator(viewModel: repModel))
         
         return data
     }
