@@ -12,9 +12,9 @@ final class CreateGoalViewModel {
     
     typealias GoalTextFieldCellConfigurator = TableViewCellConfigurator<GoalTextFieldTableViewCell, GoalTextFieldCellViewModel>
     
-    private let nameModel = GoalTextFieldCellViewModel()
+    private let nameModel = GoalTextFieldCellViewModel(title: "Name", placeholder: "Edit")
     
-    var data: [GoalTextFieldCellConfigurator] {
+    var data: [CellConfigurator] {
         return getData()
     }
     

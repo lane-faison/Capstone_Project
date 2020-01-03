@@ -12,21 +12,18 @@ class GoalTextFieldTableViewCell: UITableViewCell, ConfigurableCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "TEST"
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var detailLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var editButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
+    private lazy var textField: UITextField = {
+        let textField = UITextField()
+        textField.textAlignment = .right
+        textField.font = UIFont.boldSystemFont(ofSize: 14)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -36,8 +33,15 @@ class GoalTextFieldTableViewCell: UITableViewCell, ConfigurableCell {
         
         contentView.addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        titleLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        contentView.addSubview(textField)
+        textField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 16).isActive = true
+        textField.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
     }
     
     required init?(coder: NSCoder) {
@@ -45,7 +49,8 @@ class GoalTextFieldTableViewCell: UITableViewCell, ConfigurableCell {
     }
     
     func configure(viewModel: GoalTextFieldCellViewModel) {
-        
+        titleLabel.text = viewModel.title
+        textField.placeholder = viewModel.placeholder
     }
     
 }

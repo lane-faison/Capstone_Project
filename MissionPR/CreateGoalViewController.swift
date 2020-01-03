@@ -27,6 +27,7 @@ final class CreateGoalViewController: BaseViewController {
         
         updateNavigationButtons()
         
+        tableView.delegate = self
         tableView.dataSource = self
         
         registerTableViewCells()
@@ -48,6 +49,15 @@ final class CreateGoalViewController: BaseViewController {
     
     @objc private func cancelButtonTapped() {
         navigationController?.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension CreateGoalViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }
 

@@ -7,32 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "13845E31-B0A0-4271-B2F9-8AA417E46BBC"
+            uuid = "339ABEF2-70F1-4FB7-B9F8-8042D91C0EFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MissionPR/RealmService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "createObject(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "339ABEF2-70F1-4FB7-B9F8-8042D91C0EFC - 230d3533e75c7ace"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MissionPR.RealmService.createObject(RealmSwift.Object) -&gt; ()"
+                  moduleName = "MissionPR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christopherfaison/iOS%20Apps/MissionPR/MissionPR/RealmService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  uuid = "339ABEF2-70F1-4FB7-B9F8-8042D91C0EFC - ccc759710a239992"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in static MissionPR.RealmService.createObject(RealmSwift.Object) -&gt; ()"
+                  moduleName = "MissionPR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christopherfaison/iOS%20Apps/MissionPR/MissionPR/RealmService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E8751D4-A770-486A-A740-0622E452365B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MissionPR/ListTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "configure(viewModel:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C1C70910-333D-421D-87EE-F5DC7E6891E9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MissionPR/ListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "buildListData(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

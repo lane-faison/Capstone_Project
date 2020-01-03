@@ -245,13 +245,13 @@
 			name = "Create Goal";
 			sourceTree = "<group>";
 		};
-		F638E59B23AED5B6006B58A9 /* Goal Option */ = {
+		F638E59B23AED5B6006B58A9 /* Goal Options */ = {
 			isa = PBXGroup;
 			children = (
 				F638E59723AED5A1006B58A9 /* GoalTextFieldTableViewCell.swift */,
 				F638E59923AED5B1006B58A9 /* GoalTextFieldCellViewModel.swift */,
 			);
-			name = "Goal Option";
+			name = "Goal Options";
 			sourceTree = "<group>";
 		};
 		F65D36141EE08FD4006C067A /* Add Controller */ = {
@@ -347,7 +347,7 @@
 			children = (
 				F69A4C2323A8A9E300CCE013 /* Home */,
 				F6DCBD9723B3316100F5665F /* List */,
-				F638E59B23AED5B6006B58A9 /* Goal Option */,
+				F638E59B23AED5B6006B58A9 /* Goal Options */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
