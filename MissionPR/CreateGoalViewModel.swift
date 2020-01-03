@@ -14,7 +14,7 @@ final class CreateGoalViewModel {
     typealias GoalPickerCellConfigurator = TableViewCellConfigurator<GoalPickerTableViewCell, GoalPickerCellViewModel>
     
     private let nameModel = GoalTextFieldCellViewModel(title: "Name", placeholder: "Edit")
-    private let repModel = GoalPickerCellViewModel()
+    private let repModel = GoalPickerCellViewModel(title: "Reps", placeholder: "Edit", type: .reps)
     
     var data: [CellConfigurator] {
         return getData()

@@ -8,9 +8,23 @@
 
 import Foundation
 
+enum PickerType {
+    case reps
+    case time
+    case weight
+}
+
 final class GoalPickerCellViewModel {
     
-    init() {
-        
+    var title: String
+    
+    var placeholder: String
+    
+    var type: PickerType
+    
+    init(title: String, placeholder: String, type: PickerType) {
+        self.title = title
+        self.placeholder = placeholder
+        self.type = type
     }
 }
