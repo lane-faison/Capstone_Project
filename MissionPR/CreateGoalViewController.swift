@@ -14,6 +14,7 @@ final class CreateGoalViewController: BaseViewController {
     
     static func instantiate(with viewModel: CreateGoalViewModel) -> CreateGoalViewController {
         let createGoalViewController = CreateGoalViewController.instantiate()
+        viewModel.delegate = createGoalViewController
         createGoalViewController.viewModel = viewModel
         return createGoalViewController
     }
@@ -76,5 +77,11 @@ extension CreateGoalViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: type(of: model.self).reuseId, for: indexPath)
         model.configure(cell: cell)
         return cell
+    }
+}
+
+extension CreateGoalViewController: CreateGoalViewDelegate {
+    func pickerButtonTapped() {
+        print("HI")
     }
 }
