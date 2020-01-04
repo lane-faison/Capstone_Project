@@ -34,6 +34,7 @@ final class CreateGoalViewController: BaseViewController {
     }
     
     private func updateNavigationButtons() {
+        hideBackButton()
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
         cancelButton.tintColor = .primaryTextColor
         navigationItem.rightBarButtonItem = cancelButton

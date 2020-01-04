@@ -33,8 +33,9 @@ class ListViewController: BaseViewController {
     }
     
     private func addRightBarButtonItem() {
-        let iconImage = AppImage.get(.add)?.tinted(tintColor: .primaryTextColor)
+        let iconImage = AppImage.get(.add)
         let button = UIBarButtonItem(image: iconImage, style: .plain, target: self, action: #selector(addButtonTapped))
+        button.tintColor = .primaryTextColor
         navigationItem.rightBarButtonItem = button
     }
     

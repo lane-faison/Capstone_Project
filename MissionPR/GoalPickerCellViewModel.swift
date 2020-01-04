@@ -6,7 +6,7 @@
 //  Copyright © 2020 Lane Faison. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum PickerType {
     case reps
@@ -22,9 +22,12 @@ final class GoalPickerCellViewModel {
     
     var type: PickerType
     
-    init(title: String, placeholder: String, type: PickerType) {
+    var buttonAction: (() -> Void)?
+    
+    init(title: String, placeholder: String, type: PickerType, buttonAction: (() -> Void)?) {
         self.title = title
         self.placeholder = placeholder
         self.type = type
+        self.buttonAction = buttonAction
     }
 }

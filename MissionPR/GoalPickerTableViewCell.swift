@@ -28,6 +28,8 @@ class GoalPickerTableViewCell: UITableViewCell, ConfigurableCell {
         return button
     }()
     
+    private var buttonTapAction: (() -> Void)?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -53,9 +55,10 @@ class GoalPickerTableViewCell: UITableViewCell, ConfigurableCell {
     func configure(viewModel: GoalPickerCellViewModel) {
         titleLabel.text = viewModel.title
         button.setTitle(viewModel.placeholder, for: .normal)
+        buttonTapAction = viewModel.buttonAction
     }
     
     @objc private func buttonTapped() {
-        print("Tapped")
+        buttonTapAction?()
     }
 }

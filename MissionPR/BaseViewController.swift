@@ -25,4 +25,8 @@ class BaseViewController: UIViewController {
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
+    
+    func hideBackButton() {
+        navigationItem.leftBarButtonItem = nil
+    }
 }
