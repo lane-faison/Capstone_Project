@@ -28,6 +28,13 @@ class GoalPickerTableViewCell: UITableViewCell, ConfigurableCell {
         return button
     }()
     
+    private lazy var divider: UIView = {
+        let view = UIView()
+        view.backgroundColor = .dividerColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private var buttonTapAction: (() -> Void)?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,16 +42,22 @@ class GoalPickerTableViewCell: UITableViewCell, ConfigurableCell {
         
         selectionStyle = .none
         
+        contentView.addSubview(divider)
+        divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        divider.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        divider.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
         contentView.addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        titleLabel.widthAnchor.constraint(equalToConstant: contentView.frame.width / 3).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: divider.topAnchor).isActive = true
+        titleLabel.widthAnchor.constraint(equalToConstant: contentView.frame.width / 2).isActive = true
         
         contentView.addSubview(button)
         button.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
         button.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: divider.topAnchor).isActive = true
         button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
     }
     
@@ -55,6 +68,7 @@ class GoalPickerTableViewCell: UITableViewCell, ConfigurableCell {
     func configure(viewModel: GoalPickerCellViewModel) {
         titleLabel.text = viewModel.title
         button.setTitle(viewModel.placeholder, for: .normal)
+        divider.isHidden = viewModel.shouldHideDivider ?? false
         buttonTapAction = viewModel.buttonAction
     }
     

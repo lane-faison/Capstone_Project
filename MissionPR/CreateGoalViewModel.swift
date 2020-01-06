@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CreateGoalViewDelegate: class {
-    func pickerButtonTapped()
+    func pickerButtonTapped(type: PickerType)
 }
 final class CreateGoalViewModel {
     
@@ -28,14 +28,28 @@ final class CreateGoalViewModel {
         let models: [CellConfigurator] = [
             GoalTextFieldCellConfigurator(viewModel: nameModel),
             GoalPickerCellConfigurator(viewModel: GoalPickerCellViewModel(title: "Reps", placeholder: "Edit", type: .reps, buttonAction: {
-                self.pickerButtonTapped()
+                self.pickerButtonTapped(type: .reps)
+            })),
+            GoalPickerCellConfigurator(viewModel: GoalPickerCellViewModel(title: "Current Weight", placeholder: "Edit", type: .weight, buttonAction: {
+                self.pickerButtonTapped(type: .weight)
+            })),
+            GoalPickerCellConfigurator(viewModel: GoalPickerCellViewModel(title: "Goal Weight", placeholder: "Edit", type: .weight, shouldHideDivider: true, buttonAction: {
+                self.pickerButtonTapped(type: .weight)
             }))
         ]
         
         return models
     }
     
-    private func pickerButtonTapped() {
-        delegate?.pickerButtonTapped()
+    private func pickerButtonTapped(type: PickerType) {
+        delegate?.pickerButtonTapped(type: type)
+    }
+    
+    func getNumberOfPickerComponents() -> Int {
+        return 1
+    }
+    
+    func getNumberOfRowsInPickerComponent() -> Int {
+        return 2
     }
 }

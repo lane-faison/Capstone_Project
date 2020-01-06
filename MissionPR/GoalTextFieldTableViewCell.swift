@@ -26,21 +26,34 @@ class GoalTextFieldTableViewCell: UITableViewCell, ConfigurableCell {
         return textField
     }()
     
+    private lazy var divider: UIView = {
+        let view = UIView()
+        view.backgroundColor = .dividerColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
         
+        contentView.addSubview(divider)
+        divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        divider.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        divider.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
         contentView.addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: divider.topAnchor).isActive = true
         titleLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         contentView.addSubview(textField)
         textField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 16).isActive = true
         textField.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        textField.bottomAnchor.constraint(equalTo: divider.topAnchor).isActive = true
         textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
     }
     

@@ -22,12 +22,15 @@ final class GoalPickerCellViewModel {
     
     var type: PickerType
     
+    var shouldHideDivider: Bool?
+    
     var buttonAction: (() -> Void)?
     
-    init(title: String, placeholder: String, type: PickerType, buttonAction: (() -> Void)?) {
+    init(title: String, placeholder: String, type: PickerType, shouldHideDivider: Bool? = false, buttonAction: (() -> Void)?) {
         self.title = title
         self.placeholder = placeholder
         self.type = type
+        self.shouldHideDivider = shouldHideDivider
         self.buttonAction = buttonAction
     }
 }
